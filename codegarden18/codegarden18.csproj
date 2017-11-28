@@ -252,6 +252,7 @@
     <Content Include="config\imageprocessor\processing.config" />
     <Content Include="config\imageprocessor\cache.config" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
+    <Content Include="css\Style.css" />
     <Content Include="Media\Web.config" />
     <Content Include="config\umbracoSettings.config" />
     <Content Include="config\trees.config" />
@@ -271,6 +272,7 @@
     <Content Include="config\applications.config" />
     <Content Include="config\404handlers.config" />
     <None Include="packages.config" />
+    <Content Include="scripts\functions.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
@@ -282,6 +284,13 @@
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap2-Fluid.cshtml" />
+    <Content Include="Views\Awards.cshtml" />
+    <Content Include="Views\Feed.cshtml" />
+    <Content Include="Views\Frontpage.cshtml" />
+    <Content Include="Views\OdenseLife.cshtml" />
+    <Content Include="Views\Schedule.cshtml" />
+    <Content Include="Views\SiteMaster.cshtml" />
+    <Content Include="Views\Speakers.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
