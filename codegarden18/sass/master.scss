@@ -1,6 +1,75 @@
-﻿body {
+﻿/* imports */
+@import '_variables.scss';
+@import '_navigation.scss';
+
+
+.container {
+    padding-right: 0;
+    padding-left: 0; //TODO
 }
 
-footer{
+paddigbox {
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+/* body */
+.baseBody {
+    background-color: $cg-violet;
+    width: 100; //TODO
+}
 
+
+/* content frontpage */
+.top-buffer {
+    padding-top: 10%;
+}
+
+.buttom-buffer {
+    padding-bottom: 10%;
+}
+
+.firstbox { //TODO could be more scemantic
+    background-color: $cg-lightblue;
+    display: flex;
+    color: white;
+    width: 100%;
+}
+
+.firstboxcontent {
+    text-align: left;
+    margin-left: 10%;
+    width: 70%;
+}
+
+/* Buttons and elements */
+.buttonsDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 5% 5%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 80%;
+    margin-top: 5%;
+}
+
+.button-red {
+    @extend .button;
+    background-color: $cg-red;
+}
+
+.button-orange {
+    @extend .button;
+    background-color: $cg-orange;
+}
+
+.button-green {
+    @extend .button;
+    background-color: $cg-orange;
 }
