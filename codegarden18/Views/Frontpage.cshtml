@@ -1,0 +1,71 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Frontpage>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "SiteMaster.cshtml";
+}
+
+<div class="container">
+    <div class="row ">
+       <div class="firstbox"> 
+
+            <div class="firstboxcontent top-buffer">
+                   <h4> @Umbraco.Field("headline")</h4>
+            </div>
+        
+        
+    </div>
+        <div class="firstbox">
+
+            
+            <div class="firstboxcontent">
+                <p> @Umbraco.Field("bodyText") </p>
+            </div>
+
+        </div>
+</div>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 paddigbox">
+
+            <div class="buttonsDiv">
+                <a class="button1" href="~/Views/Feed.cshtml"> Feed </a>
+            </div>
+            <div class="buttonsDiv">
+                <a class="button2"  href="~/Views/Speakers.cshtml"> Speakers </a>
+            </div>
+            <div class="buttonsDiv">
+                <a class="button3" href="~/Views/Schedule.cshtml"> Schedule </a>
+            </div>
+           
+            
+
+        </div>
+
+
+    </div>
+</div>
+
