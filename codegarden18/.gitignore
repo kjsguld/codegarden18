@@ -20,3 +20,6 @@
 
 # Web.config with creditals
 *Web.config
+
+# ignore VS17 project file
+**.csproj
