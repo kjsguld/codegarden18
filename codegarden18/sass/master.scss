@@ -1,7 +1,9 @@
-﻿/* imports */
+﻿/* base imports */
 @import '_variables.scss';
+@import '_functions.scss';
+/* partial imports */
 @import '_navigation.scss';
-
+@import '_menu.scss';
 
 .full-w-box {
     padding-left: 0;

@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+	var selection = Model.Content.Site().Children()
+						.Where(x => x.IsVisible());
+}
+<nav>
+    <ul>
+        @foreach (var item in selection)
+        {
+            <li class="nav-item-top">
+                <a href="@item.Url">@item.Name</a>
+            </li>}
+    </ul>
+</nav>
+

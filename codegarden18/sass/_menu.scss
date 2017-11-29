@@ -1,0 +1,41 @@
+﻿/* menu items */
+
+$nav-before-width: 2rem;
+
+nav {
+
+    ul li.nav-item-top {
+        position: relative;
+        list-style: none;
+        padding-left: $nav-before-width * 1.5;
+        line-height: $nav-before-width;
+        margin-top: $nav-before-width * .25;
+        margin-bottom: $nav-before-width * .25;
+
+        a {
+            color: $cg-font-color;
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            border-radius: 50%;
+            background-color: $cg-orange;
+            width: $nav-before-width;
+            height: $nav-before-width;
+            left: -$nav-before-width * .25;
+        }
+
+        // remove bg-color && calculate colors for :nth-childs 
+        $bg-color-pos: index($cg-colors, $cg-violet);
+        $new-colors: list-remove($cg-colors, $bg-color-pos);
+        @each $current-color in $new-colors {
+            $i: index($new-colors, $current-color);
+            
+            &:nth-child(#{$i})::before {
+                background-color: $current-color;
+            }
+        }
+    }
+}
+
