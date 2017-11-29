@@ -14,6 +14,10 @@
     overflow: hidden;
 }
 
+nav.navbar-fixed-top {
+    margin-top: 32px;
+}
+
 .topbar .nav.open {
     right: 0;
     z-index: 50;
