@@ -13,9 +13,6 @@
   z-index: 50;
   overflow: hidden; }
 
-nav.navbar-fixed-top {
-  margin-top: 32px; }
-
 .topbar .nav.open {
   right: 0;
   z-index: 50;
@@ -99,9 +96,9 @@ nav.navbar-fixed-top {
   display: flex;
   justify-content: center; }
 
-.full-w-box {
-  padding-left: 0;
-  padding-right: 0; }
+.container {
+  padding-right: 0;
+  padding-left: 0; }
 
 paddigbox {
   padding-top: 10%;
@@ -110,7 +107,7 @@ paddigbox {
 /* body */
 .baseBody {
   background-color: #413659;
-  width: 100%; }
+  width: 100; }
 
 /* content frontpage */
 .top-buffer {
@@ -153,5 +150,5 @@ paddigbox {
   background-color: #F36F21; }
 
 .button-green {
-  background-color: #4CAF50; }
+  background-color: #F36F21; }
 

@@ -3,9 +3,9 @@
 @import '_navigation.scss';
 
 
-.full-w-box {
-    padding-left: 0;
+.container {
     padding-right: 0;
+    padding-left: 0; //TODO
 }
 
 paddigbox {
@@ -15,7 +15,7 @@ paddigbox {
 /* body */
 .baseBody {
     background-color: $cg-violet;
-    width: 100%; 
+    width: 100; //TODO
 }
 
 
@@ -71,5 +71,5 @@ paddigbox {
 
 .button-green {
     @extend .button;
-    background-color: $cg-green;
+    background-color: $cg-orange;
 }
