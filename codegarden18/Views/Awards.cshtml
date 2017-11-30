@@ -1,5 +1,60 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Awards>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = "SiteMaster.cshtml";
+    Layout = "SiteMaster.cshtml";
+    var awards = Model.Content.Site().Descendants<Award>();
 }
+
+
+
+<div class "title">
+    <div class="font-weight-bold">
+    <h1 class="text-white">@Umbraco.Field("Headline")</h1>
+    </div>
+   
+</div>
+    <div class "content">
+        <div class="text-white">
+            <p>@Umbraco.Field("Bodytext")</p>
+        </div>
+    </div>
+
+
+<br /> 
+
+
+
+
+  <div class="row">
+      @foreach (var award in awards )
+        {
+            <div class="col-md-4">
+                <font color="white">
+              <h4><strong>@award.HeadlineAward</strong></h4>
+                <p>@award.Description</p>
+                    </font>
+            </div>
+         }
+  </div>
+
+<br />
+<hr color="white" /> 
+<br />
+<font color="white">
+<h4>@Model.Content.HeadlineRules</h4>
+<p>@Model.Content.BodytextRules</p>
+
+<br />
+<h4>@Model.Content.HeadlineSubmit</h4>
+<p>@Model.Content.BodytextSubmit</p>
+   
+    </font>
+
+
+
+
+
+
+
+
+
