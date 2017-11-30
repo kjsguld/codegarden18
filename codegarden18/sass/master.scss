@@ -1,11 +1,21 @@
 ﻿/* imports */
 @import '_variables.scss';
 @import '_navigation.scss';
+@import '_frontpage.scss';
+
+
+
 
 
 .container {
     padding-right: 0;
     padding-left: 0; //TODO
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+
 }
 
 paddigbox {
@@ -52,5 +62,5 @@ paddigbox {
 
 .button-green {
     @extend .button;
-    background-color: $cg-orange;
+    background-color: $cg-green;
 }
