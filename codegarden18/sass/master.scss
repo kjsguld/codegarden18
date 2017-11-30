@@ -20,26 +20,7 @@ paddigbox {
 
 
 /* content frontpage */
-.top-buffer {
-    padding-top: 10%;
-}
 
-.buttom-buffer {
-    padding-bottom: 10%;
-}
-
-.firstbox { //TODO could be more scemantic
-    background-color: $cg-lightblue;
-    display: flex;
-    color: white;
-    width: 100%;
-}
-
-.firstboxcontent {
-    text-align: left;
-    margin-left: 10%;
-    width: 70%;
-}
 
 /* Buttons and elements */
 .buttonsDiv {
