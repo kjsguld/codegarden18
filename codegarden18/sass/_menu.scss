@@ -1,39 +1,79 @@
 ﻿/* menu items */
 
-$nav-before-width: 2rem;
+$nav-before-width: 1rem;
 
 nav {
+    justify-content: center;
 
-    ul li.nav-item-top {
-        position: relative;
-        list-style: none;
-        padding-left: $nav-before-width * 1.5;
-        line-height: $nav-before-width;
-        margin-top: $nav-before-width * .25;
-        margin-bottom: $nav-before-width * .25;
+    #nav-svg-wrapper {
+        width: 33%;
+    }
 
-        a {
-            color: $cg-font-color;
+    ul {
+        width: 80%;
+
+        $divider: 4;
+        $start: 1;
+        $end: 8; // even numbers gives an even spread after splitpoint
+
+        @for $i from $start through $end {
+            li.nav-item-top:nth-child(#{$i})::before {
+                @if $i <= $end/2 {
+                    $size: $nav-before-width * (1 + ($i - 1) / $divider);
+
+                    width: $size;
+                    height: $size;
+                }
+                @else {
+                    $size: $nav-before-width * (1 + ($end/2) / $divider);
+                    $substraction: ($i + 1) / $divider;
+                    $smaller-size: ($size - $substraction) + 1;
+
+                    width: $smaller-size;
+                    height: $smaller-size;
+                }
+            }
         }
 
-        &::before {
-            position: absolute;
-            content: "";
-            border-radius: 50%;
-            background-color: $cg-orange;
-            width: $nav-before-width;
-            height: $nav-before-width;
-            left: -$nav-before-width * .25;
-        }
 
-        // remove bg-color && calculate colors for :nth-childs 
-        $bg-color-pos: index($cg-colors, $cg-violet);
-        $new-colors: list-remove($cg-colors, $bg-color-pos);
-        @each $current-color in $new-colors {
-            $i: index($new-colors, $current-color);
-            
-            &:nth-child(#{$i})::before {
-                background-color: $current-color;
+        li.nav-item-top {
+            position: relative;
+            list-style: none;
+            padding-left: $nav-before-width * 1.5;
+            line-height: $nav-before-width * 2;
+            margin-top: $nav-before-width * .25;
+            margin-bottom: $nav-before-width * .25;
+
+
+            a {
+                color: $cg-font-color;
+            }
+
+            &::before {
+                position: absolute;
+                content: "";
+                display: block;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                -moz-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+                border-radius: 50%;
+                background-color: $cg-orange;
+                width: $nav-before-width;
+                height: $nav-before-width;
+                left: -$nav-before-width * .35;
+            }
+            // remove bg-color && calculate colors for :nth-childs
+            $bg-color-pos: index($cg-colors, $cg-violet);
+            $new-colors: list-remove($cg-colors, $bg-color-pos);
+
+            @each $current-color in $new-colors {
+                $i: index($new-colors, $current-color);
+
+                &:nth-child(#{$i})::before {
+                    background-color: $current-color;
+                }
             }
         }
     }
