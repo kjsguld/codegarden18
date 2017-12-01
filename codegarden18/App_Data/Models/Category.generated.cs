@@ -20,27 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	// Mixin content Type 1083 with alias "award"
-	/// <summary>Award</summary>
-	public partial interface IAward : IPublishedContent
-	{
-		/// <summary>Description</summary>
-		string Description { get; }
-
-		/// <summary>headlineAward</summary>
-		string HeadlineAward { get; }
-	}
-
-	/// <summary>Award</summary>
-	[PublishedContentModel("award")]
-	public partial class Award : PublishedContentModel, IAward
+	/// <summary>Category</summary>
+	[PublishedContentModel("category")]
+	public partial class Category : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "award";
+		public new const string ModelTypeAlias = "category";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Award(IPublishedContent content)
+		public Category(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -51,33 +40,45 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Award, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Category, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Description
+		/// bodytext
 		///</summary>
-		[ImplementPropertyType("description")]
-		public string Description
+		[ImplementPropertyType("bodytext")]
+		public IHtmlString Bodytext
 		{
-			get { return GetDescription(this); }
+			get { return this.GetPropertyValue<IHtmlString>("bodytext"); }
 		}
-
-		/// <summary>Static getter for Description</summary>
-		public static string GetDescription(IAward that) { return that.GetPropertyValue<string>("description"); }
 
 		///<summary>
-		/// headlineAward
+		/// bodytextToVote
 		///</summary>
-		[ImplementPropertyType("headlineAward")]
-		public string HeadlineAward
+		[ImplementPropertyType("bodytextToVote")]
+		public IHtmlString BodytextToVote
 		{
-			get { return GetHeadlineAward(this); }
+			get { return this.GetPropertyValue<IHtmlString>("bodytextToVote"); }
 		}
 
-		/// <summary>Static getter for headlineAward</summary>
-		public static string GetHeadlineAward(IAward that) { return that.GetPropertyValue<string>("headlineAward"); }
+		///<summary>
+		/// headline
+		///</summary>
+		[ImplementPropertyType("headline")]
+		public string Headline
+		{
+			get { return this.GetPropertyValue<string>("headline"); }
+		}
+
+		///<summary>
+		/// picture
+		///</summary>
+		[ImplementPropertyType("picture")]
+		public IPublishedContent Picture
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("picture"); }
+		}
 	}
 }

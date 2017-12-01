@@ -1,0 +1,50 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Awards>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "SiteMaster.cshtml";
+    var categories = Model.Content.Site().Descendants<Category>();
+}
+
+<head>
+    <style type="text/css">
+        button {
+            background-color: #d96a6a;
+            width: 700px;
+            height: 300px;
+            color: white;
+            border-color: #d96a6a;
+        }
+    </style>
+</head>
+<body>
+<div class="awardsduring">
+    <div class "title">
+        <div class="font-weight-bold">
+            <h1 class="text-white">@Umbraco.Field("headlineDuring")</h1>
+        </div>
+        <div class "content">
+            <div class="text-white">
+                <p>@Umbraco.Field("bodytextDuring")</p>
+            </div>
+        </div>
+        
+        <div class="button">
+           <div class="col-md-4">
+        @foreach (var category in categories)
+        {
+            <a href="@category.Url">
+        <form action=## target=_blank>
+            <button name ="vote" type="button" >
+                
+                <img src="@category.Picture" title="@category.Headline" />
+                <b>@category.Headline</b>
+                <p>@category.Bodytext</p>
+            </button>
+        </form>
+        </a>
+        <br /> <br />
+        }
+           </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,42 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Category>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "SiteMaster.cshtml";
+    var projects = Model.Content.Site().Descendants<Project>();
+}
+    <header>
+        <style type="text/css">
+            div.rect {
+                width: 700px;
+                padding: 10px;
+                background-color: #d96a6a;
+                color:white;
+                text-align:right center;
+                border: 0;
+                margin: 0;
+            }
+        </style>
+    </header>
+   <body>
+   <div class "title">
+      <div class="font-weight-bold">
+         <h1 class="text-white">@Umbraco.Field("Headline")</h1>
+    </div>
+   </div>
+
+   <div class "content">
+     <div class="text-white">
+         <p>@Umbraco.Field("bodytextToVote")</p>
+     </div>
+       
+       @foreach (var project in projects)
+
+       {
+       <div class="rect">
+           <h4>@project.headline</h4>
+           <a href="@project.Url">@project.Url</a>
+       </div>
+       } 
+
+  </div>
+</body>

@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>Awards</summary>
-	[PublishedContentModel("awards")]
-	public partial class Awards : PublishedContentModel, IHeadlineBodytext, IMenu, IMeta
+	/// <summary>About HQ</summary>
+	[PublishedContentModel("aboutHQ")]
+	public partial class AboutHQ : PublishedContentModel, IHeadlineBodytext, IMenu, IMeta
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "awards";
+		public new const string ModelTypeAlias = "aboutHQ";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Awards(IPublishedContent content)
+		public AboutHQ(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,81 +40,27 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Awards, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AboutHQ, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// bodytextAfter
+		/// about_fullWidthImage
 		///</summary>
-		[ImplementPropertyType("bodytextAfter")]
-		public IHtmlString BodytextAfter
+		[ImplementPropertyType("about_fullWidthImage")]
+		public IPublishedContent About_fullWidthImage
 		{
-			get { return this.GetPropertyValue<IHtmlString>("bodytextAfter"); }
+			get { return this.GetPropertyValue<IPublishedContent>("about_fullWidthImage"); }
 		}
 
 		///<summary>
-		/// bodytextDuring
+		/// contact info
 		///</summary>
-		[ImplementPropertyType("bodytextDuring")]
-		public IHtmlString BodytextDuring
+		[ImplementPropertyType("contactInfo")]
+		public IHtmlString ContactInfo
 		{
-			get { return this.GetPropertyValue<IHtmlString>("bodytextDuring"); }
-		}
-
-		///<summary>
-		/// BodytextRules
-		///</summary>
-		[ImplementPropertyType("bodytextRules")]
-		public IHtmlString BodytextRules
-		{
-			get { return this.GetPropertyValue<IHtmlString>("bodytextRules"); }
-		}
-
-		///<summary>
-		/// BodytextSubmit
-		///</summary>
-		[ImplementPropertyType("bodytextSubmit")]
-		public IHtmlString BodytextSubmit
-		{
-			get { return this.GetPropertyValue<IHtmlString>("bodytextSubmit"); }
-		}
-
-		///<summary>
-		/// headlineAfter
-		///</summary>
-		[ImplementPropertyType("headlineAfter")]
-		public string HeadlineAfter
-		{
-			get { return this.GetPropertyValue<string>("headlineAfter"); }
-		}
-
-		///<summary>
-		/// headlineDuring
-		///</summary>
-		[ImplementPropertyType("headlineDuring")]
-		public string HeadlineDuring
-		{
-			get { return this.GetPropertyValue<string>("headlineDuring"); }
-		}
-
-		///<summary>
-		/// HeadlineRules
-		///</summary>
-		[ImplementPropertyType("headlineRules")]
-		public string HeadlineRules
-		{
-			get { return this.GetPropertyValue<string>("headlineRules"); }
-		}
-
-		///<summary>
-		/// HeadlineSubmit
-		///</summary>
-		[ImplementPropertyType("headlineSubmit")]
-		public string HeadlineSubmit
-		{
-			get { return this.GetPropertyValue<string>("headlineSubmit"); }
+			get { return this.GetPropertyValue<IHtmlString>("contactInfo"); }
 		}
 
 		///<summary>

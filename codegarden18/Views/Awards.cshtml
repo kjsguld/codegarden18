@@ -2,54 +2,50 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "SiteMaster.cshtml";
-    var awards = Model.Content.Site().Descendants<Award>();
+    var categories = Model.Content.Site().Descendants<Category>();
 }
 
+<div class="awards">
 
+    <div class "title">
+        <div class="font-weight-bold">
+            <h1 class="text-white">@Umbraco.Field("Headline")</h1>
+        </div>
 
-<div class "title">
-    <div class="font-weight-bold">
-    <h1 class="text-white">@Umbraco.Field("Headline")</h1>
     </div>
-   
-</div>
     <div class "content">
         <div class="text-white">
             <p>@Umbraco.Field("Bodytext")</p>
         </div>
     </div>
 
+    <br />
 
-<br /> 
-
-
-
-
-  <div class="row">
-      @foreach (var award in awards )
+    <div class="row">
+        @foreach (var category in categories)
         {
             <div class="col-md-4">
                 <font color="white">
-              <h4><strong>@award.HeadlineAward</strong></h4>
-                <p>@award.Description</p>
-                    </font>
+                    <h4><strong>@category.Headline</strong></h4>
+                    <p>@category.Bodytext</p>
+                </font>
             </div>
-         }
-  </div>
+        }
+    </div>
 
-<br />
-<hr color="white" /> 
-<br />
-<font color="white">
-<h4>@Model.Content.HeadlineRules</h4>
-<p>@Model.Content.BodytextRules</p>
+    <br />
+    <hr color="white" />
+    <br />
 
-<br />
-<h4>@Model.Content.HeadlineSubmit</h4>
-<p>@Model.Content.BodytextSubmit</p>
-   
+    <font color="white">
+        <h5><strong>@Model.Content.HeadlineRules</strong></h5>
+        <p>@Model.Content.BodytextRules</p>
+
+        <br />
+        <h5><strong>@Model.Content.HeadlineSubmit</strong></h5>
+        <p>@Model.Content.BodytextSubmit</p>
     </font>
-
+</div>
 
 
 
