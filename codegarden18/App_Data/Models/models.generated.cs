@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "5b083e25ab698f7b")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "198da4d08b5af572")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.6")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -224,7 +224,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Awards</summary>
 	[PublishedContentModel("awards")]
-	public partial class Awards : PublishedContentModel, IHeadlineBodytext, IMenu, IMeta
+	public partial class Awards : PublishedContentModel, IAward, IHeadlineBodytext, IMenu, IMeta
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "awards";
@@ -245,6 +245,24 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Awards, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Description
+		///</summary>
+		[ImplementPropertyType("description")]
+		public string Description
+		{
+			get { return Umbraco.Web.PublishedContentModels.Award.GetDescription(this); }
+		}
+
+		///<summary>
+		/// headlineAward
+		///</summary>
+		[ImplementPropertyType("headlineAward")]
+		public string HeadlineAward
+		{
+			get { return Umbraco.Web.PublishedContentModels.Award.GetHeadlineAward(this); }
 		}
 
 		///<summary>
@@ -693,6 +711,51 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Speaker pics
+		///</summary>
+		[ImplementPropertyType("speakerPics")]
+		public IEnumerable<IPublishedContent> SpeakerPics
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("speakerPics"); }
+		}
+
+		///<summary>
+		/// Stories body
+		///</summary>
+		[ImplementPropertyType("storiesBody")]
+		public IHtmlString StoriesBody
+		{
+			get { return this.GetPropertyValue<IHtmlString>("storiesBody"); }
+		}
+
+		///<summary>
+		/// Stories headline
+		///</summary>
+		[ImplementPropertyType("storiesHeadline")]
+		public string StoriesHeadline
+		{
+			get { return this.GetPropertyValue<string>("storiesHeadline"); }
+		}
+
+		///<summary>
+		/// Theme body
+		///</summary>
+		[ImplementPropertyType("themeBody")]
+		public IHtmlString ThemeBody
+		{
+			get { return this.GetPropertyValue<IHtmlString>("themeBody"); }
+		}
+
+		///<summary>
+		/// Theme headline
+		///</summary>
+		[ImplementPropertyType("themeHeadline")]
+		public string ThemeHeadline
+		{
+			get { return this.GetPropertyValue<string>("themeHeadline"); }
+		}
+
+		///<summary>
 		/// Bodytext
 		///</summary>
 		[ImplementPropertyType("bodytext")]
@@ -754,6 +817,67 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return Umbraco.Web.PublishedContentModels.Meta.GetMetaTitle(this); }
 		}
+	}
+
+	// Mixin content Type 1083 with alias "award"
+	/// <summary>Award</summary>
+	public partial interface IAward : IPublishedContent
+	{
+		/// <summary>Description</summary>
+		string Description { get; }
+
+		/// <summary>headlineAward</summary>
+		string HeadlineAward { get; }
+	}
+
+	/// <summary>Award</summary>
+	[PublishedContentModel("award")]
+	public partial class Award : PublishedContentModel, IAward
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "award";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Award(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Award, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Description
+		///</summary>
+		[ImplementPropertyType("description")]
+		public string Description
+		{
+			get { return GetDescription(this); }
+		}
+
+		/// <summary>Static getter for Description</summary>
+		public static string GetDescription(IAward that) { return that.GetPropertyValue<string>("description"); }
+
+		///<summary>
+		/// headlineAward
+		///</summary>
+		[ImplementPropertyType("headlineAward")]
+		public string HeadlineAward
+		{
+			get { return GetHeadlineAward(this); }
+		}
+
+		/// <summary>Static getter for headlineAward</summary>
+		public static string GetHeadlineAward(IAward that) { return that.GetPropertyValue<string>("headlineAward"); }
 	}
 
 	/// <summary>Folder</summary>
