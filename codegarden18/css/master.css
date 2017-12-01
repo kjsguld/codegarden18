@@ -3,18 +3,19 @@
 .nav {
   right: 5%;
   top: 5%;
+  left: 0;
+  top: -100vh;
   position: fixed;
-  right: -30%;
-  width: 30%;
+  width: 100%;
   height: 100vh;
   background-color: #413659;
-  top: 0;
   transition: all 0.45s ease;
   z-index: 50;
   overflow: hidden; }
 
 .topbar .nav.open {
   right: 0;
+  top: 0;
   z-index: 50;
   width: 100%;
   overflow: hidden; }
@@ -65,7 +66,7 @@
   top: 50%; }
 
 #nav-icon1.open {
-  margin-right: 10%; }
+  margin-right: 0%; }
 
 #nav-icon1.open span:nth-child(1) {
   top: 10px;
@@ -76,7 +77,8 @@
 
 #nav-icon1.open span:nth-child(2) {
   opacity: 0;
-  left: -60px; }
+  left: -60px;
+  display: none; }
 
 #nav-icon1.open span:nth-child(3) {
   top: 10px;
@@ -99,7 +101,55 @@
 /*
     Frontpage elements
 */
-.frontpageBlock1 {
+.downArrow {
+  position: absolute;
+  visibility: visible;
+  top: 185%;
+  z-index: 200;
+  padding: 0;
+  width: 90%;
+  text-align: center;
+  margin: 0; }
+  @media (max-height: 568px) {
+    .downArrow {
+      top: 160%; } }
+  .downArrow img {
+    width: 12%; }
+
+.logo-container {
+  margin: 0 auto;
+  width: 65%; }
+  .logo-container img {
+    padding-right: 5%; }
+  .logo-container .text-center p {
+    text-align: right; }
+  @media (max-width: 320px) {
+    .logo-container {
+      width: 80%; } }
+
+.countDown p span:nth-of-type(1) {
+  display: block;
+  margin-left: 0px; }
+
+.countDown p span:nth-of-type(2) {
+  display: block;
+  margin-left: 20px; }
+
+.countDown p span:nth-of-type(3) {
+  display: block;
+  margin-left: 40px; }
+
+.landingPage {
+  height: 100vh;
+  justify-content: center;
+  color: white;
+  width: 100%;
+  display: flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column; }
+
+.frontpageBlock {
   background-color: #04BFBF;
   display: flex;
   color: white;
@@ -115,6 +165,24 @@
   text-align: left;
   margin-left: 10%;
   width: 70%; }
+
+.full-width-image {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw; }
+
+.full-width-image img {
+  width: 100%; }
+
+.row {
+  color: white; }
+  .row .container {
+    display: flex;
+    padding: 5%; }
+
+.aboutborder {
+  border-top: 5px solid #F36F21; }
 
 .container {
   padding-right: 0;

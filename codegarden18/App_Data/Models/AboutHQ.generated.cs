@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>Frontpage</summary>
-	[PublishedContentModel("frontpage")]
-	public partial class Frontpage : PublishedContentModel, IHeadlineBodytext, IMenu, IMeta
+	/// <summary>About HQ</summary>
+	[PublishedContentModel("aboutHQ")]
+	public partial class AboutHQ : PublishedContentModel, IHeadlineBodytext, IMenu, IMeta
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "frontpage";
+		public new const string ModelTypeAlias = "aboutHQ";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Frontpage(IPublishedContent content)
+		public AboutHQ(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,45 +40,27 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Frontpage, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AboutHQ, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Body text 2
+		/// about_fullWidthImage
 		///</summary>
-		[ImplementPropertyType("bodyText2")]
-		public IHtmlString BodyText2
+		[ImplementPropertyType("about_fullWidthImage")]
+		public IPublishedContent About_fullWidthImage
 		{
-			get { return this.GetPropertyValue<IHtmlString>("bodyText2"); }
+			get { return this.GetPropertyValue<IPublishedContent>("about_fullWidthImage"); }
 		}
 
 		///<summary>
-		/// Company Name
+		/// contact info
 		///</summary>
-		[ImplementPropertyType("companyName")]
-		public string CompanyName
+		[ImplementPropertyType("contactInfo")]
+		public IHtmlString ContactInfo
 		{
-			get { return this.GetPropertyValue<string>("companyName"); }
-		}
-
-		///<summary>
-		/// Headline2
-		///</summary>
-		[ImplementPropertyType("headline2")]
-		public string Headline2
-		{
-			get { return this.GetPropertyValue<string>("headline2"); }
-		}
-
-		///<summary>
-		/// Logo image
-		///</summary>
-		[ImplementPropertyType("logoImage")]
-		public IPublishedContent LogoImage
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("logoImage"); }
+			get { return this.GetPropertyValue<IHtmlString>("contactInfo"); }
 		}
 
 		///<summary>

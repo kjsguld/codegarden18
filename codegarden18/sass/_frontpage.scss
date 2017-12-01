@@ -2,20 +2,106 @@
     Frontpage elements
 */
 
-.frontpageBlock1 { //TODO could be more scemantic
+
+.downArrow {
+    position: absolute;
+    visibility: visible;
+    top: 185%;
+    z-index: 200;
+    padding: 0;
+    width: 90%;
+    text-align: center;
+    margin: 0;
+
+    @media (max-height: 568px) {
+        top: 160%;
+    }
+
+    img {
+        width: 12%
+    }
+}
+
+
+
+.logo-container {
+    margin: 0 auto;
+    width: 65%;
+
+    img {
+        padding-right: 5%;
+    }
+
+    .text-center {
+        p {
+            text-align: right;
+        }
+    }
+
+    @media (max-width: 320px) {
+        width: 80%;
+    }
+}
+
+
+
+.countDown {
+
+    p {
+        span {
+            &:nth-of-type(1) {
+                display: block;
+                margin-left: 0px;
+            }
+
+            &:nth-of-type(2) {
+                display: block;
+                margin-left: 20px;
+            }
+
+            &:nth-of-type(3) {
+                display: block;
+                margin-left: 40px;
+            }
+        }
+    }
+}
+
+
+
+
+.landingPage {
+    height: 100vh;
+    justify-content: center;
+    color: white;
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+
+    .textUnderIdentity {
+    }
+}
+
+
+.frontpageBlock { 
     background-color: $cg-lightblue;
     display: flex;
     color: white;
     width: 100%;
 }
 
+
 .top-buffer {
     padding-top: 10%;
 }
 
+
 .buttom-buffer {
     padding-bottom: 10%;
 }
+
 
 
 
