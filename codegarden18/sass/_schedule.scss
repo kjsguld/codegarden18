@@ -1,4 +1,44 @@
-﻿
+﻿.hiddenBox {
+    display: none;
+}
+
+.timeBox {
+    background-color: #F36F21;
+    float: left;
+    width: 100%;
+    border-top: 3px solid #413659;
+}
+
+.timeBox h4 {
+    padding: .8rem .8rem 0 .8rem;
+    text-align: center;
+}
+
+.timeBox:nth-child(even) {
+    background-color: #FF9D56;
+}
+
+.roomBox {
+    padding: .8rem 2rem .8rem .8rem;
+    position: relative;
+}
+
+
+.roomBox:not(:last-child) {
+    padding-bottom: 20px;
+    border-bottom: 3px solid #413659;
+}
+
+.contextButton {
+    position: absolute;
+    top: calc(50% - 20px);
+    right: 0;
+}
+
+.contextButton i {
+    font-size: 2.5rem;
+}
+
 section {
     display: block;
 }
@@ -9,10 +49,6 @@ section {
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
-}
-
-.program-container {
-    background-color: #F36F21;
 }
 
 a {
@@ -102,8 +138,8 @@ h3 {
 }
 
 .headline {
+    text-align: center;
     display: block;
-    color: white;
 }
 
 p {
