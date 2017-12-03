@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "56de58a80822463")]
-
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "ccd8b0bb6bf8c89e")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 
 // FILE: models.generated.cs
@@ -1235,6 +1235,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Event Github Link
+		///</summary>
+		[ImplementPropertyType("eventGithubLink")]
+		public string EventGithubLink
+		{
+			get { return this.GetPropertyValue<string>("eventGithubLink"); }
+		}
+
+		///<summary>
 		/// Event Host: Input The host name(s) for the event
 		///</summary>
 		[ImplementPropertyType("eventHost")]
@@ -1250,6 +1259,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string EventTitle
 		{
 			get { return this.GetPropertyValue<string>("eventTitle"); }
+		}
+
+		///<summary>
+		/// Event Video Link
+		///</summary>
+		[ImplementPropertyType("eventVideoLink")]
+		public string EventVideoLink
+		{
+			get { return this.GetPropertyValue<string>("eventVideoLink"); }
 		}
 
 		///<summary>

@@ -6,12 +6,13 @@
     background-color: #F36F21;
     float: left;
     width: 100%;
-    border-top: 3px solid #413659;
+    border-top: 1px solid #413659;
 }
 
 .timeBox h4 {
     padding: .8rem .8rem 0 .8rem;
     text-align: center;
+    color: white;
 }
 
 .timeBox:nth-child(even) {
@@ -23,20 +24,20 @@
     position: relative;
 }
 
-
 .roomBox:not(:last-child) {
     padding-bottom: 20px;
-    border-bottom: 3px solid #413659;
+    border-bottom: 1px solid #413659;
 }
 
 .contextButton {
     position: absolute;
-    top: calc(50% - 20px);
+    top: 50%;
     right: 0;
 }
 
 .contextButton i {
     font-size: 2.5rem;
+    margin-top: -20px;
 }
 
 section {

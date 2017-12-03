@@ -28,18 +28,27 @@
                             var uid = System.Guid.NewGuid().ToString();
                             var MainId = "Main" + uid;
                             var MenuId = "Menu" + uid;
+                            var hasVideoLink = RoomBox.EventVideoLink != null && RoomBox.EventVideoLink != "";
+                            var hasGithubLink = RoomBox.EventGithubLink != null && RoomBox.EventGithubLink != "";
                             <div class="roomBox">
                                 <div id="@MainId">
                                     <h5 class="roomTitle">@RoomBox.RoomName</h5>
                                     <p>@RoomBox.EventTitle</p>
                                     <p>@RoomBox.EventHost</p>
-                                    <div class="contextButton" data-target="@MenuId" data-self="@MainId">
+                                    <div class="contextButton @(hasVideoLink || hasGithubLink ? "" : "hiddenBox")" data-target="@MenuId" data-self="@MainId">
                                         <i class="material-icons">keyboard_arrow_right</i>
                                     </div>
                                 </div>
                                 <div id="@MenuId" class="hiddenBox">
-                                    <div><a href="#">content</a></div>
-                                    <div><a href="#">content</a></div>
+                                    @if (hasVideoLink)
+                                    { 
+                                        <div><a href="@RoomBox.EventVideoLink"><i class="material-icons">play_circle_filled</i></a></div>
+                                    }
+                                    @if (hasGithubLink)
+                                    {
+                                        <div><a href="@RoomBox.EventGithubLink"><i class="material-icons">dvr</i></a></div>
+                                    }
+                                    
                                     <div><a href="#">content</a></div>
                                     <div class="contextButton" data-target="@MainId" data-self="@MenuId">
                                         <i class="material-icons">keyboard_arrow_left</i>
