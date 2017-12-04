@@ -2,87 +2,19 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "SiteMaster.cshtml";
-    var img = Model.Content.LogoImage;
-
 }
 
-
 <div class="container">
-    <div class="row">
-
-        <div class="landingPage">
-
-
-
-
-
-            <div class="col-md-12">
-                <div class="downArrow">
-                    <a href="#landingPageToHere"> <img src="~/img/down arrow white.png" /></a>
-                </div>
-
-
-
-
-
-                <div class="logo-container">
-                    <div class="countDown">
-
-                        @{
-                            var targetDate = Convert.ToDateTime("6/12/2018");
-                            var today = DateTime.Now;
-                            var daysToTarget = (targetDate - today).Days;
-
-                        }
-
-                        <p>
-                            <span> Hurrah! </span>
-                            <span> only @daysToTarget  days </span>
-                            <span>until the next </span>
-                        </p>
-
-
-
-                    </div>
-
-                    <div class="text-center">
-
-                        @{
-
-                            <img class="img-fluid text-center" src="@img.Url" />
-                        }
-                        <p class="mt-1"> But whats in it? </p>
-                    </div>
-                </div>
-
-            </div>
-
-
-
-        </div>
-
-
-
-
-    </div>
-
-
-
-</div>
-
-
-
-<div id="landingPageToHere" class="container">
     <div class="row ">
-       <div class="frontpageBlock"> 
+       <div class="firstbox"> 
 
-            <div class="firstboxcontent mt-3">
+            <div class="firstboxcontent top-buffer">
                    <h4> @Umbraco.Field("headline")</h4>
             </div>
         
         
     </div>
-        <div class="frontpageBlock">
+        <div class="firstbox">
 
             
             <div class="firstboxcontent">
@@ -95,12 +27,31 @@
 
 
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+        </div>
+    </div>
+</div>
+
+
+
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12 buttom-buffer">
+        <div class="col-md-12">
 
-            <div class="buttonsDiv mt-2">
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 paddigbox">
+
+            <div class="buttonsDiv">
                 <a class="button-red" href="~/Views/Feed.cshtml"> Feed </a>
             </div>
             <div class="buttonsDiv">
@@ -118,46 +69,3 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="row ">
-        <div class="frontpageBlock">
-
-            <div class="firstboxcontent mt-3">
-                <h4> @Umbraco.Field("headline2")</h4>
-            </div>
-
-
-        </div>
-        <div class="frontpageBlock">
-
-
-            <div class="firstboxcontent">
-                <p> @Umbraco.Field("bodyText2") </p>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 buttom-buffer">
-
-            <div class="buttonsDiv mt-2">
-                <a class="button-red" href="~/Views/Awards.cshtml"> Award </a>
-            </div>
-            <div class="buttonsDiv">
-                <a class="button-orange" href="~/Views/OdenseLife.cshtml"> Odense life </a>
-            </div>
-            <div class="buttonsDiv">
-                <a class="button-green" href="/about-hq"> About HQ </a> 
-            </div>
-
-
-
-        </div>
-
-
-    </div>
-</div>
