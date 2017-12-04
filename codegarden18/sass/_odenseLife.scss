@@ -1,0 +1,51 @@
+﻿.odenseMap{
+    width: 100%;
+    min-height: 420px;
+}
+
+.mapContainer{
+    width: 100%;
+}
+
+span {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+span input {
+    display: none;
+}
+
+label {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: all .2s ease-in 0s;
+
+    &:before {
+        position: absolute;
+        content: "";
+        height: 19px;
+        width: 19px;
+        right: 37px;
+        background-color: white;
+        transition: all .2s ease-in 0s;
+        border-radius: 50%;
+        bottom: 4px;
+    }
+
+    &.active {
+        background-color: red;
+
+        &:before {
+            right: 4px;
+        }
+    }
+}

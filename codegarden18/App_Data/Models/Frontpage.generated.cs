@@ -64,6 +64,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Countdown Date
+		///</summary>
+		[ImplementPropertyType("countdownDate")]
+		public DateTime CountdownDate
+		{
+			get { return this.GetPropertyValue<DateTime>("countdownDate"); }
+		}
+
+		///<summary>
 		/// Headline2
 		///</summary>
 		[ImplementPropertyType("headline2")]

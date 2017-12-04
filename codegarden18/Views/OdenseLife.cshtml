@@ -1,7 +1,128 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.OdenseLife>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
 	Layout = "SiteMaster.cshtml";
 }
 
 @* the fun starts here *@
 
+
+
+<div class="container">
+    <div class="row">
+        <div class="odenseLifeBlock1 mt-5">
+
+            <h1> @Umbraco.Field("headline")</h1>
+
+            @Umbraco.Field("bodyText")
+
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="mapContainer">
+
+                <span>
+                    <label class="active" for="umbraco"> </label>
+                    <input class="checkbox-onoff" type="checkbox" name="Umbraco HQ" id="umbraco" value="/JSON/umbraco.json" />
+                </span>
+
+                <span>
+                    <label class="active" for="Bars"> </label>
+                    <input class="checkbox-onoff" type="checkbox" name="Bars" id="Bars" value="/JSON/barsAndsRestaurants.json" />
+                </span>
+
+                <span>
+                    <label class="not-active" for="Restaurants"> </label>
+                    <input class="checkbox-onoff" type="checkbox" name="Restaurants" id="Restaurants" value="/JSON/barsAndsRestaurants.json" />
+                </span>
+
+                <span>
+                    <label class="not-active" for="Hotels"> </label>
+                    <input class="checkbox-onoff" type="checkbox" name="Hotels" id="Hotels" value="/JSON/barsAndsRestaurants.json" />
+                </span>
+
+                <span>
+                    <label class="not-active" for="Parks"> </label>
+                    <input class="checkbox-onoff" type="checkbox" name="Parks" id="Parks" value="/JSON/barsAndsRestaurants.json" />
+                </span>
+
+            <div id="map" class="odenseMap">
+
+
+               
+
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="container">
+<div class="row">
+    <div class="odenseLifeBlock2 mt-5">
+
+        <h1> @Umbraco.Field("headline2")</h1>
+
+        @Umbraco.Field("bodyText2")
+
+    </div>
+
+</div>
+</div>
+
+
+
+<script>
+      function initMap() {
+        var odense = { lat: 55.40635, lng: 10.38841 };
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 14,
+            center: odense
+        });
+
+        var infowindow = new google.maps.InfoWindow();
+
+        var marker, i;
+        var markers = [];
+
+        jQuery.getJSON("/JSON/umbraco.json", function (data) {
+            data.features.forEach(function (umbracoMarker) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(umbracoMarker.properties.lat, umbracoMarker.properties.lon),
+                    map: map
+                });
+
+                markers.push(marker);
+
+                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent(umbracoMarker.properties.name);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+
+            });
+        });
+
+        console.log(markers);
+
+        google.maps.event.addDomListener(jQuery(".checkbox-onoff").click(function (e) {
+
+            var cElement = jQuery(this);
+
+            cElement.siblings().toggleClass("active");
+            cElement.toggleClass("active");
+
+        }));
+
+      }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBH70JCRW14-_YaxNjqUoxwErWPaNKt3Q8&callback=initMap">
+</script>

@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Awards</summary>
 	[PublishedContentModel("awards")]
-	public partial class Awards : PublishedContentModel, IAward, IHeadlineBodytext, IMenu, IMeta
+	public partial class Awards : PublishedContentModel, IHeadlineBodytext, IMenu, IMeta
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "awards";
@@ -46,6 +46,24 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// bodytextAfter
+		///</summary>
+		[ImplementPropertyType("bodytextAfter")]
+		public IHtmlString BodytextAfter
+		{
+			get { return this.GetPropertyValue<IHtmlString>("bodytextAfter"); }
+		}
+
+		///<summary>
+		/// bodytextDuring
+		///</summary>
+		[ImplementPropertyType("bodytextDuring")]
+		public IHtmlString BodytextDuring
+		{
+			get { return this.GetPropertyValue<IHtmlString>("bodytextDuring"); }
+		}
+
+		///<summary>
 		/// BodytextRules
 		///</summary>
 		[ImplementPropertyType("bodytextRules")]
@@ -64,6 +82,24 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// headlineAfter
+		///</summary>
+		[ImplementPropertyType("headlineAfter")]
+		public string HeadlineAfter
+		{
+			get { return this.GetPropertyValue<string>("headlineAfter"); }
+		}
+
+		///<summary>
+		/// headlineDuring
+		///</summary>
+		[ImplementPropertyType("headlineDuring")]
+		public string HeadlineDuring
+		{
+			get { return this.GetPropertyValue<string>("headlineDuring"); }
+		}
+
+		///<summary>
 		/// HeadlineRules
 		///</summary>
 		[ImplementPropertyType("headlineRules")]
@@ -79,24 +115,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public string HeadlineSubmit
 		{
 			get { return this.GetPropertyValue<string>("headlineSubmit"); }
-		}
-
-		///<summary>
-		/// Description
-		///</summary>
-		[ImplementPropertyType("description")]
-		public string Description
-		{
-			get { return Umbraco.Web.PublishedContentModels.Award.GetDescription(this); }
-		}
-
-		///<summary>
-		/// headlineAward
-		///</summary>
-		[ImplementPropertyType("headlineAward")]
-		public string HeadlineAward
-		{
-			get { return Umbraco.Web.PublishedContentModels.Award.GetHeadlineAward(this); }
 		}
 
 		///<summary>

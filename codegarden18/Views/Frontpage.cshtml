@@ -13,23 +13,31 @@
         <div class="landingPage">
 
 
+           
+
 
 
 
             <div class="col-md-12">
-                <div class="downArrow">
-                    <a href="#landingPageToHere"> <img src="~/img/down arrow white.png" /></a>
+               
+                <div class="bublesFrontpage">
+                    <img class="topCircles" src="~/img/top-circles.svg" />
+
                 </div>
 
 
 
 
-
                 <div class="logo-container">
+
+
+                   
+
+
                     <div class="countDown">
 
                         @{
-                            var targetDate = Convert.ToDateTime("6/12/2018");
+                            var targetDate = Model.Content.CountdownDate;
                             var today = DateTime.Now;
                             var daysToTarget = (targetDate - today).Days;
 
@@ -52,15 +60,30 @@
                             <img class="img-fluid text-center" src="@img.Url" />
                         }
                         <p class="mt-1"> But whats in it? </p>
-                    </div>
-                </div>
 
+
+
+                        
+                    </div>
+
+                   
+
+                </div>
+                <div class="bublesFrontpage2">
+                    <img class="buttom-circles" src="~/img/bottom-circles.svg" />
+                </div>
             </div>
 
+
+           
+            <div class="downArrow">
+                <a href="#landingPageToHere"> <img src="~/img/down arrow white.png" /></a>
+            </div>
 
 
         </div>
 
+       
 
 
 
@@ -148,10 +171,10 @@
                 <a class="button-red" href="~/Views/Awards.cshtml"> Award </a>
             </div>
             <div class="buttonsDiv">
-                <a class="button-orange" href="~/Views/OdenseLife.cshtml"> Odense life </a>
+                <a class="button-orange" href="/odense"> Odense life </a>
             </div>
             <div class="buttonsDiv">
-                <a class="button-green" href="/about-hq"> About HQ </a> 
+                <a class="button-green" href="~/Views/aboutHQ.cshtml"> About HQ </a> 
             </div>
 
 
