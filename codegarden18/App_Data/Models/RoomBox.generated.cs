@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>Project</summary>
-	[PublishedContentModel("project")]
-	public partial class Project : PublishedContentModel
+	/// <summary>Room Box</summary>
+	[PublishedContentModel("roomBox")]
+	public partial class RoomBox : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "project";
+		public new const string ModelTypeAlias = "roomBox";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Project(IPublishedContent content)
+		public RoomBox(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,56 +40,54 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Project, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<RoomBox, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// bodytext
+		/// Event Github Link
 		///</summary>
-		[ImplementPropertyType("bodytext")]
-		public IHtmlString Bodytext
+		[ImplementPropertyType("eventGithubLink")]
+		public string EventGithubLink
 		{
-			get { return this.GetPropertyValue<IHtmlString>("bodytext"); }
+			get { return this.GetPropertyValue<string>("eventGithubLink"); }
 		}
 
 		///<summary>
-		/// Category
+		/// Event Host: Input The host name(s) for the event
 		///</summary>
-		[ImplementPropertyType("category")]
-		public IEnumerable<IPublishedContent> Category
+		[ImplementPropertyType("eventHost")]
+		public string EventHost
 		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("category"); }
+			get { return this.GetPropertyValue<string>("eventHost"); }
 		}
 
 		///<summary>
-		/// headline
+		/// Event Title: Input title of the event
 		///</summary>
-		[ImplementPropertyType("headline")]
-		public string Headline
+		[ImplementPropertyType("eventTitle")]
+		public string EventTitle
 		{
-			get { return this.GetPropertyValue<string>("headline"); }
+			get { return this.GetPropertyValue<string>("eventTitle"); }
 		}
 
 		///<summary>
-		/// http
+		/// Event Video Link
 		///</summary>
-		[ImplementPropertyType("http")]
-		public string Http
+		[ImplementPropertyType("eventVideoLink")]
+		public string EventVideoLink
 		{
-			get { return this.GetPropertyValue<string>("http"); }
+			get { return this.GetPropertyValue<string>("eventVideoLink"); }
 		}
 
 		///<summary>
-		/// picture
+		/// Room Name: Choose the event room
 		///</summary>
-		[ImplementPropertyType("picture")]
-		public IPublishedContent Picture
+		[ImplementPropertyType("roomName")]
+		public string RoomName
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("picture"); }
+			get { return this.GetPropertyValue<string>("roomName"); }
 		}
-        
-       
 	}
 }

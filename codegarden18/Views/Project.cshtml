@@ -1,5 +1,24 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Project>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = "SiteMaster.cshtml";
+    Layout = "SiteMaster.cshtml";
+    var projects = Model.Content.Site().Descendants<Project>();
+    var mediaId = Umbraco.Field("picture");
+    //Get the MediaType to Write the URL
+    var media = Umbraco.Media(mediaId.ToString());
+    //Salve the Path into the Image
+    var image = media.Url;
 }
+
+<div class="_project">
+    <h1>@Umbraco.Field("headline")</h1>
+    <p>@Umbraco.Field("creator")</p>
+    <img src=@image />
+    <p>@Umbraco.Field("bodytext")</p>
+
+    <form action="/action_page.php" id="vote">
+        <p><strong><u>validate your ticket number</u></strong></p>
+        <input type="text" name="vote">
+        <input type="submit">
+    </form>
+
