@@ -3,3 +3,66 @@
 @{
 	Layout = "SiteMaster.cshtml";
 }
+
+
+<div class="themeContainer">
+    <div class="row">
+        <div class="headBox top-buffer">
+
+            <div>
+                <h4> @Umbraco.Field("headline") </h4>
+            </div>
+
+        </div>
+        <div class="bodyBox">
+
+            <div>
+                <p> @Umbraco.Field("bodyText") </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Pictures here -->
+
+<img @Umbraco.Field("speakerPics") alt="#" />
+
+<div class="themeContainer">
+    <div class="row ">
+        <div class="headBox">
+
+            <div>
+                <h4> @Umbraco.Field("themeHeadline") </h4>
+            </div>
+
+        </div>
+        <div class="bodyBox">
+
+            <div>
+                <p> @Umbraco.Field("themeBody") </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="themeContainer">
+    <div class="row ">
+        <div class="headBox">
+
+            <div>
+                <h4> @Umbraco.Field("storiesHeadline") </h4>
+            </div>
+
+        </div>
+        <div class="bodyBox">
+
+            <div>
+                <p> @Umbraco.Field("storiesBody") </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
