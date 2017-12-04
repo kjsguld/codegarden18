@@ -1,11 +1,20 @@
 ﻿/* imports */
 @import '_variables.scss';
 @import '_navigation.scss';
+@import '_frontpage.scss';
+@import '_aboutHQ.scss';
 
 
-.full-w-box {
-    padding-left: 0;
+
+.container {
     padding-right: 0;
+    padding-left: 0; //TODO
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+
 }
 
 paddigbox {
@@ -20,26 +29,7 @@ paddigbox {
 
 
 /* content frontpage */
-.top-buffer {
-    padding-top: 10%;
-}
 
-.buttom-buffer {
-    padding-bottom: 10%;
-}
-
-.firstbox { //TODO could be more scemantic
-    background-color: $cg-lightblue;
-    display: flex;
-    color: white;
-    width: 100%;
-}
-
-.firstboxcontent {
-    text-align: left;
-    margin-left: 10%;
-    width: 70%;
-}
 
 /* Buttons and elements */
 .buttonsDiv {
@@ -73,3 +63,4 @@ paddigbox {
     @extend .button;
     background-color: $cg-green;
 }
+

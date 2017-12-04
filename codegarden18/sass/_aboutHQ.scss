@@ -1,0 +1,26 @@
+﻿.full-width-image {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+}
+
+.full-width-image img {
+    width: 100%;
+}
+
+
+.row {
+    color: white;
+
+    .container {
+        
+        display: flex;
+        
+        padding: 5%;
+    }
+}
+
+.aboutborder {
+    border-top: 5px solid $cg-orange;
+}
