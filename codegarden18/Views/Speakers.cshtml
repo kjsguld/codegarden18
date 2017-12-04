@@ -3,3 +3,75 @@
 @{
 	Layout = "SiteMaster.cshtml";
 }
+
+<div class="speakersContainer">
+
+    <div class="row ">
+        <div class="speakersHeadline">
+                <div class="col-md-12">
+                    <h4> @Umbraco.Field("headline") </h4>
+                </div>
+        </div>
+
+        <div class="speakersBody">
+            <div class="bodyBox">
+                <div class="col-md-12">
+                    <p> @Umbraco.Field("bodyText") </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@*<div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="@Model.Content.SpeakerPics.Url" alt="" class="img-fluid" />
+            </div>
+        </div>
+    </div>*@
+
+<div class="container">
+
+    <div class="row ">
+        <div class="speakersHeadline">
+            <div class="headlineBox">
+                <div class="col-md-12">
+                    <h4> @Umbraco.Field("ThemeHeadline") </h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="themeBody">
+            <div class="bodyBox">
+                <div class="col-md-12">
+                    <p> @Umbraco.Field("ThemeBody") </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+
+    <div class="row ">
+        <div class="speakersHeadline">
+            <div class="headlineBox">
+                <div class="col-md-12">
+                    <h4> @Umbraco.Field("storiesHeadline") </h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="storiesBody">
+            <div class="bodyBox">
+                <div class="col-md-12">
+                    <p> @Umbraco.Field("storiesBody") </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

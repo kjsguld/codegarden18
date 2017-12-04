@@ -98,6 +98,7 @@
   display: flex;
   justify-content: center; }
 
+<<<<<<< Updated upstream
 /*
     Frontpage elements
 */
@@ -130,6 +131,23 @@
 .countDown p span:nth-of-type(1) {
   display: block;
   margin-left: 0px; }
+=======
+/* speakers page*/
+.speakersContainer {
+  color: #fff; }
+
+.speakersHeadline {
+  color: #fff;
+  background-color: #F36F21; }
+
+.container {
+  padding-right: 0;
+  padding-left: 0; }
+
+paddigbox {
+  padding-top: 10%;
+  padding-bottom: 10%; }
+>>>>>>> Stashed changes
 
 .countDown p span:nth-of-type(2) {
   display: block;
