@@ -1,13 +1,23 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Speakers>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = "SiteMaster.cshtml";
+    Layout = "SiteMaster.cshtml";
+
+    var mediaId = Umbraco.Field("speakerPics");
+    //Get the MediaType to Write the URL
+    var media = Umbraco.Media(mediaId.ToString());
+    //Salve the Path into the Image
+    var image = media.Url;
 }
 
 
-<div class="themeContainer">
+<div class="speakerTopLine">
+
+</div>
+
+<div class="speakerContainer">
     <div class="row">
-        <div class="headBox top-buffer">
+        <div class="headBox">
 
             <div>
                 <h4> @Umbraco.Field("headline") </h4>
@@ -24,30 +34,35 @@
     </div>
 </div>
 
-<!-- Pictures here -->
+<!-- Pictures -->
 
-<img @Umbraco.Field("speakerPics") alt="#" />
+<div class="speakerPictureContainer">
+    <img class="speakerPicture img-fluid" src=@image alt="" />
+    <img class="speakerPicture img-fluid" src=@image alt="" />
+</div>
 
 <div class="themeContainer">
-    <div class="row ">
-        <div class="headBox">
+    <div class="speakerContainer">
+        <div class="row ">
+            <div class="headBox">
 
-            <div>
-                <h4> @Umbraco.Field("themeHeadline") </h4>
+                <div>
+                    <h4> @Umbraco.Field("themeHeadline") </h4>
+                </div>
+
             </div>
+            <div class="bodyBox">
 
-        </div>
-        <div class="bodyBox">
+                <div>
+                    <p> @Umbraco.Field("themeBody") </p>
+                </div>
 
-            <div>
-                <p> @Umbraco.Field("themeBody") </p>
             </div>
-
         </div>
     </div>
 </div>
 
-<div class="themeContainer">
+<div class="speakerContainer">
     <div class="row ">
         <div class="headBox">
 

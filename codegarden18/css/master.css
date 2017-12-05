@@ -96,11 +96,31 @@
   display: flex;
   justify-content: center; }
 
-.themeContainer {
+.speakerTopLine {
+  background-color: #4CAF50;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 10px; }
+
+.speakerContainer {
   color: #fff;
-  margin-left: 10%;
+  margin: 10% 0 0 10%;
+  padding: 2%;
   text-align: left;
   width: 80%; }
+
+.speakerPictureContainer {
+  width: 100%; }
+
+.speakerPicture {
+  border-radius: 50%; }
+
+.themeContainer {
+  background-color: #4CAF50;
+  padding: 1%; }
 
 .container {
   padding-right: 0;
