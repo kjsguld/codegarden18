@@ -21,23 +21,8 @@
 
         </div>
 
-
-
-@{
-	var selection = Model.Content.Site().Children()
-						.Where(x => x.IsVisible());
-}
-<ul>
-	@foreach(var item in selection){
-		<li>
-			<a href="@item.Url">@item.Name</a>
-		</li>
-	}
-</ul>
-
-
         <div class="footerColumn">
-            <a href=""> Buy Tickets</a>
+            <a href="#"> Buy Tickets</a>
         </div>
 
 
