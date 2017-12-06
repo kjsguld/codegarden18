@@ -1,51 +1,106 @@
-﻿.odenseMap{
-    width: 100%;
-    min-height: 420px;
-}
+﻿
+.OdenseLifePage {
 
-.mapContainer{
-    width: 100%;
-}
-
-span {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-}
-
-span input {
-    display: none;
-}
-
-label {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    border-radius: 34px;
-    transition: all .2s ease-in 0s;
-
-    &:before {
-        position: absolute;
-        content: "";
-        height: 19px;
-        width: 19px;
-        right: 37px;
-        background-color: white;
-        transition: all .2s ease-in 0s;
-        border-radius: 50%;
-        bottom: 4px;
+    p{
+        font-size: 14px;
     }
 
-    &.active {
-        background-color: red;
+
+    a {
+        width: 100%;
+        border: none;
+        color: white;
+        padding: 5% 5%;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 5%;
+        background-color: $cg-green;
+    }
+
+    .paddingBox {
+        padding: 5%
+    }
+
+    .odenseLifeBorder {
+        border-top: 5px solid $cg-green;
+    }
+
+
+    .odenseMap {
+        width: 100%;
+        min-height: 420px;
+        color: black;
+    }
+
+    .spansInline {
+        display: flex;
+        text-align: center;
+
+        p {
+            margin: 5px;
+        }
+    }
+
+    .spanContainerLeft {
+        width: 100%;
+        margin: 0px;
+    }
+
+    .spanContainerRight {
+        width: 100%;
+        margin: 0px;
+    }
+
+    .mr10 {
+        margin-right: 17%;
+    }
+
+    .mapContainer {
+        width: 100%;
+    }
+
+    span {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+
+    span input {
+        display: none;
+    }
+
+    label {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        border-radius: 34px;
+        transition: all .2s ease-in 0s;
 
         &:before {
-            right: 4px;
+            position: absolute;
+            content: "";
+            height: 19px;
+            width: 19px;
+            right: 37px;
+            background-color: white;
+            transition: all .2s ease-in 0s;
+            border-radius: 50%;
+            bottom: 4px;
+        }
+
+        &.active {
+            background-color: red;
+
+            &:before {
+                right: 4px;
+            }
         }
     }
 }

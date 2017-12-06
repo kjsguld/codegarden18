@@ -185,6 +185,10 @@
   text-align: left;
   margin-left: 10%;
   width: 70%; }
+  .firstboxcontent span {
+    width: 100%;
+    display: block;
+    height: auto; }
 
 .full-width-image {
   width: 100vw;
@@ -204,23 +208,62 @@
 .aboutborder {
   border-top: 5px solid #F36F21; }
 
-.odenseMap {
-  width: 100%;
-  min-height: 420px; }
+.OdenseLifePage p {
+  font-size: 14px; }
 
-.mapContainer {
+.OdenseLifePage a {
+  width: 100%;
+  border: none;
+  color: white;
+  padding: 5% 5%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 5%;
+  background-color: #4CAF50; }
+
+.OdenseLifePage .paddingBox {
+  padding: 5%; }
+
+.OdenseLifePage .odenseLifeBorder {
+  border-top: 5px solid #4CAF50; }
+
+.OdenseLifePage .odenseMap {
+  width: 100%;
+  min-height: 420px;
+  color: black; }
+
+.OdenseLifePage .spansInline {
+  display: flex;
+  text-align: center; }
+  .OdenseLifePage .spansInline p {
+    margin: 5px; }
+
+.OdenseLifePage .spanContainerLeft {
+  width: 100%;
+  margin: 0px; }
+
+.OdenseLifePage .spanContainerRight {
+  width: 100%;
+  margin: 0px; }
+
+.OdenseLifePage .mr10 {
+  margin-right: 17%; }
+
+.OdenseLifePage .mapContainer {
   width: 100%; }
 
-span {
+.OdenseLifePage span {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px; }
 
-span input {
+.OdenseLifePage span input {
   display: none; }
 
-label {
+.OdenseLifePage label {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -230,7 +273,7 @@ label {
   background-color: #ccc;
   border-radius: 34px;
   transition: all .2s ease-in 0s; }
-  label:before {
+  .OdenseLifePage label:before {
     position: absolute;
     content: "";
     height: 19px;
@@ -240,9 +283,9 @@ label {
     transition: all .2s ease-in 0s;
     border-radius: 50%;
     bottom: 4px; }
-  label.active {
+  .OdenseLifePage label.active {
     background-color: red; }
-    label.active:before {
+    .OdenseLifePage label.active:before {
       right: 4px; }
 
 .container {

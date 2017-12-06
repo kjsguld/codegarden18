@@ -6,74 +6,120 @@
 
 @* the fun starts here *@
 
+<div class="OdenseLifePage">
+    <div class="container odenseLifeBorder">
+        <div class="row">
+            <div class="odenseLifeBlock1 mt-5 paddingBox">
 
+                <h1 class="h4"> @Umbraco.Field("headline")</h1>
 
-<div class="container">
-    <div class="row">
-        <div class="odenseLifeBlock1 mt-5">
+                @Umbraco.Field("bodyText")
 
-            <h1> @Umbraco.Field("headline")</h1>
-
-            @Umbraco.Field("bodyText")
+            </div>
 
         </div>
-
     </div>
-</div>
 
-<div class="container">
-    <div class="row">
-        <div class="mapContainer">
+    <div class="container">
+        <div class="row">
+            <div class="mapContainer">
 
-                <span>
-                    <label class="active" for="umbraco"> </label>
-                    <input class="checkbox-onoff" type="checkbox" name="Umbraco HQ" id="umbraco" value="/JSON/umbraco.json" />
-                </span>
+                <div class="spansInline">
 
-                <span>
-                    <label class="active" for="Bars"> </label>
-                    <input class="checkbox-onoff" type="checkbox" name="Bars" id="Bars" value="/JSON/barsAndsRestaurants.json" />
-                </span>
+                    <div class="spanContainerLeft">
 
-                <span>
-                    <label class="not-active" for="Restaurants"> </label>
-                    <input class="checkbox-onoff" type="checkbox" name="Restaurants" id="Restaurants" value="/JSON/barsAndsRestaurants.json" />
-                </span>
+                        <p class="textAboveSwitch"> Umbraco HQ</p>
 
-                <span>
-                    <label class="not-active" for="Hotels"> </label>
-                    <input class="checkbox-onoff" type="checkbox" name="Hotels" id="Hotels" value="/JSON/barsAndsRestaurants.json" />
-                </span>
+                        <span class="">
 
-                <span>
-                    <label class="not-active" for="Parks"> </label>
-                    <input class="checkbox-onoff" type="checkbox" name="Parks" id="Parks" value="/JSON/barsAndsRestaurants.json" />
-                </span>
+                            <label class="active" for="umbraco"></label>
+                            <input class="checkbox-onoff" type="checkbox" name="Umbraco HQ" id="umbraco" value="/JSON/umbraco.json" />
+                        </span>
+
+
+                        <p class="textAboveSwitch"> Restaurants</p>
+
+
+                        <span class="">
+                            <label class="not-active" for="Restaurants"> </label>
+                            <input class="checkbox-onoff" type="checkbox" name="Restaurants" id="Restaurants" value="/JSON/barsAndsRestaurants.json" />
+                        </span>
+
+
+                        <p class="textAboveSwitch"> Parks</p>
+
+                        <span>
+                            <label class="not-active" for="Parks"> </label>
+                            <input class="checkbox-onoff" type="checkbox" name="Parks" id="Parks" value="/JSON/barsAndsRestaurants.json" />
+                        </span>
+
+
+                    </div>
+
+                    <div class="spanContainerRight">
+
+                        <p class="textAboveSwitch"> Bars</p>
+
+                        <span>
+                            <label class="not-active" for="Bars"> </label>
+                            <input class="checkbox-onoff" type="checkbox" name="Bars" id="Bars" value="/JSON/barsAndsRestaurants.json" />
+                        </span>
+
+                        <br />
+
+                        <p class="textAboveSwitch"> Hotels</p>
+
+                        <span>
+                            <label class="not-active" for="Hotels"> </label>
+                            <input class="checkbox-onoff" type="checkbox" name="Hotels" id="Hotels" value="/JSON/barsAndsRestaurants.json" />
+                        </span>
+
+                        <br />
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+            </div>
 
             <div id="map" class="odenseMap">
 
 
-               
+
+
 
             </div>
+
         </div>
-        
-    </div>
-</div>
-
-
-
-<div class="container">
-<div class="row">
-    <div class="odenseLifeBlock2 mt-5">
-
-        <h1> @Umbraco.Field("headline2")</h1>
-
-        @Umbraco.Field("bodyText2")
-
     </div>
 
-</div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="odenseLifeBlock2 mt-5 paddingBox">
+
+                <h4> @Umbraco.Field("headline2")</h4>
+
+                @Umbraco.Field("bodyText2")
+
+            </div>
+
+        </div>
+    </div>
+
 </div>
 
 
