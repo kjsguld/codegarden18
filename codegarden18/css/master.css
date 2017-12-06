@@ -288,6 +288,39 @@
     .OdenseLifePage label.active:before {
       right: 4px; }
 
+p {
+  font-family: 'Lato', sans-serif; }
+
+h1 {
+  font-family: 'Lato', sans-serif; }
+
+h2 {
+  font-family: 'Lato', sans-serif; }
+
+h3 {
+  font-family: 'Lato', sans-serif; }
+
+h4 {
+  font-family: 'Lato', sans-serif; }
+
+h5 {
+  font-family: 'Lato', sans-serif; }
+
+h6 {
+  font-family: 'Lato', sans-serif; }
+
+h7 {
+  font-family: 'Lato', sans-serif; }
+
+span {
+  font-family: 'Lato', sans-serif; }
+
+a {
+  font-family: 'Lato', sans-serif; }
+
+strong {
+  font-family: 'Lato', sans-serif; }
+
 .container {
   padding-right: 0;
   padding-left: 0; }
