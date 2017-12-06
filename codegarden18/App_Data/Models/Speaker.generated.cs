@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>Vote</summary>
-	[PublishedContentModel("vote")]
-	public partial class Vote : PublishedContentModel
+	/// <summary>Speaker</summary>
+	[PublishedContentModel("speaker")]
+	public partial class Speaker : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "vote";
+		public new const string ModelTypeAlias = "speaker";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Vote(IPublishedContent content)
+		public Speaker(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,36 +40,27 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Vote, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Speaker, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// ProjectID
+		/// Speaker description
 		///</summary>
-		[ImplementPropertyType("projectID")]
-		public int ProjectID
+		[ImplementPropertyType("speakerDescription")]
+		public IHtmlString SpeakerDescription
 		{
-			get { return this.GetPropertyValue<int>("projectID"); }
+			get { return this.GetPropertyValue<IHtmlString>("speakerDescription"); }
 		}
 
 		///<summary>
-		/// ticketID
+		/// Speaker pic
 		///</summary>
-		[ImplementPropertyType("ticketID")]
-		public int TicketID
+		[ImplementPropertyType("speakerPic")]
+		public IPublishedContent SpeakerPic
 		{
-			get { return this.GetPropertyValue<int>("ticketID"); }
-		}
-
-		///<summary>
-		/// VoteTime
-		///</summary>
-		[ImplementPropertyType("voteTime")]
-		public DateTime VoteTime
-		{
-			get { return this.GetPropertyValue<DateTime>("voteTime"); }
+			get { return this.GetPropertyValue<IPublishedContent>("speakerPic"); }
 		}
 	}
 }

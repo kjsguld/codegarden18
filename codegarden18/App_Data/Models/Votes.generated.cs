@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>Vote</summary>
-	[PublishedContentModel("vote")]
-	public partial class Vote : PublishedContentModel
+	/// <summary>Votes</summary>
+	[PublishedContentModel("votes")]
+	public partial class Votes : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "vote";
+		public new const string ModelTypeAlias = "votes";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Vote(IPublishedContent content)
+		public Votes(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,36 +40,9 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Vote, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Votes, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// ProjectID
-		///</summary>
-		[ImplementPropertyType("projectID")]
-		public int ProjectID
-		{
-			get { return this.GetPropertyValue<int>("projectID"); }
-		}
-
-		///<summary>
-		/// ticketID
-		///</summary>
-		[ImplementPropertyType("ticketID")]
-		public int TicketID
-		{
-			get { return this.GetPropertyValue<int>("ticketID"); }
-		}
-
-		///<summary>
-		/// VoteTime
-		///</summary>
-		[ImplementPropertyType("voteTime")]
-		public DateTime VoteTime
-		{
-			get { return this.GetPropertyValue<DateTime>("voteTime"); }
 		}
 	}
 }
