@@ -122,11 +122,13 @@
 }
 
 
+
 .frontpageBlock { 
     background-color: $cg-lightblue;
     display: flex;
     color: white;
     width: 100%;
+    flex-direction: column;
 }
 
 
@@ -150,5 +152,52 @@
         width: 100%;
         display: block;
         height: auto;
+    }
+}
+
+
+.callToActionFrontpage {
+    padding: 5%;
+    display: flex;
+
+    .textBeforeIcon {
+        width: 100%;
+        margin-top: 6%;
+        font-size: 25px;
+        text-align: right;
+
+        p {
+            margin-right: 12%;
+        }
+    }
+
+    .iconCallToAction {
+        width: 60%;
+
+        p {
+            font-size: 50px;
+            background-color: $cg-orange;
+            border-radius: 50%;
+            text-align: center;
+            width: 55%;
+            display: flex;
+            justify-content: center;
+            margin-right: 20%;
+
+            @media (max-width: 320px) {
+                width: 65%;
+            }
+
+            @media (max-width: 360px) {
+                width: 60%;
+            }
+        }
+    }
+
+    a {
+        color: white;
+    }
+
+    .iconArrow {
     }
 }

@@ -6,6 +6,16 @@
 @import '_odenseLife.scss';
 
 
+a {
+    transition: all .2s ease-in-out;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+    transform: scale(1.1);
+}
+
 
 p {
     font-family: 'Lato', sans-serif;
