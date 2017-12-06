@@ -10,7 +10,6 @@
 .speakerContainer {
     color: #fff;
     margin: 10% 0 0 10%;
-    padding: 2%;
     text-align: left;
     width: 80%;
 }
@@ -19,15 +18,22 @@
 }
 
 .bodyBox {
-
+    
 }
-.speakerPictureContainer{
-    width: 100%;
+.speakerPicContainer{
+    margin: 10%;
+    text-align: center;
 }
 .speakerPicture {
+    width: 125px;
+    height: 125px;
     border-radius: 50%;
 }
 .themeContainer {
     background-color: $cg-green;
     padding: 1%;
+}
+.speakerPicBox {
+    width: 38%;
+    margin-left: 2%;
 }

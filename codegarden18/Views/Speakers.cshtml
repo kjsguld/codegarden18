@@ -3,11 +3,14 @@
 @{
     Layout = "SiteMaster.cshtml";
 
-    var mediaId = Umbraco.Field("speakerPics");
+    var mediaId = Umbraco.Field("speakerPic");
     //Get the MediaType to Write the URL
     var media = Umbraco.Media(mediaId.ToString());
     //Salve the Path into the Image
     var image = media.Url;
+
+    var speakers = Model.Content.Children<Speaker>();
+
 }
 
 
@@ -34,12 +37,21 @@
     </div>
 </div>
 
-<!-- Pictures -->
 
-<div class="speakerPictureContainer">
-    <img class="speakerPicture img-fluid" src=@image alt="" />
-    <img class="speakerPicture img-fluid" src=@image alt="" />
+<div class="container speakerPicContainer">
+    <div class="row">
+    @foreach (var speaker in speakers)
+    {
+        <div class="speakerPicBox">
+            <a href="@speaker.Url">
+                <img src="@speaker.SpeakerPic.Url" class="speakerPicture" /><br />
+                <strong>@speaker.SpeakerDescription</strong>
+            </a>
+        </div>
+    }
+    </div>
 </div>
+
 
 <div class="themeContainer">
     <div class="speakerContainer">
