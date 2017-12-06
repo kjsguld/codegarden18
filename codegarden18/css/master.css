@@ -319,6 +319,22 @@
     .OdenseLifePage label.active:before {
       right: 4px; }
 
+.footerContainer {
+  display: flex;
+  background-color: #04BFBF;
+  width: 100%;
+  margin: 0%;
+  padding: 0%;
+  color: white; }
+  .footerContainer a {
+    color: white;
+    text-decoration: underline; }
+
+.footerColumn {
+  width: 100%;
+  padding: 5%;
+  text-align: center; }
+
 a {
   transition: all .2s ease-in-out; }
 

@@ -1,6 +1,10 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
 	Layout = null;
+    var frontpageContent = Model.Content.Site().Children("frontpage");
+
+
+
 }
 
 <!doctype html>
@@ -48,6 +52,36 @@
 
 
     </div>
+
+
+    <footer>
+        <div class="footerContainer">
+
+
+            <div class="footerColumn">
+                <p> footer  </p>
+            </div>
+
+
+
+            <div class="footerColumn">
+
+                <a href="/about-hq"> Contact </a>
+
+            </div>
+
+
+
+            <div class="footerColumn">
+                <a href="@Umbraco.Field("callToActionLink")"></a>
+            </div>
+
+
+
+
+        </div>
+
+    </footer>
 
     
             @* jQuery first, then Popper.js, then Bootstrap JS *@
