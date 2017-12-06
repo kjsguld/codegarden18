@@ -1,8 +1,10 @@
 ﻿/* imports */
 @import '_variables.scss';
 @import '_navigation.scss';
-@import '_awards.scss';
+@import '_category.scss';
 @import '_awardduring.scss';
+@import '_project.scss';
+@import '_awards.scss';
 
 
 .container {
@@ -75,3 +77,4 @@ paddigbox {
     @extend .button;
     background-color: $cg-orange;
 }
+

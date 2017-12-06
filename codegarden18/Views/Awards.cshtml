@@ -3,49 +3,37 @@
 @{
     Layout = "SiteMaster.cshtml";
     var categories = Model.Content.Site().Descendants<Category>();
-}
 
-<div class="awards">
 
-    <div class "title">
-        <div class="font-weight-bold">
-            <h1 class="text-white">@Umbraco.Field("Headline")</h1>
-        </div>
+        int day = DateTime.Now.Day;
+        int month = DateTime.Now.Month;
 
-    </div>
-    <div class "content">
-        <div class="text-white">
-            <p>@Umbraco.Field("Bodytext")</p>
-        </div>
-    </div>
-
-    <br />
-
-    <div class="row">
-        @foreach (var category in categories)
+        if (month == 5)
         {
-            <div class="col-md-4">
-                <font color="white">
-                    <h4><strong>@category.Headline</strong></h4>
-                    <p>@category.Bodytext</p>
-                </font>
-            </div>
+            if (day < 23)
+            {
+            @Html.Partial("awards_before")
+            }
+            else if (day >= 23 && day <= 25)
+            {
+            @Html.Partial("awards_during")
+            }
+            else
+            {
+            @Html.Partial("awards_after")
+            }
         }
-    </div>
+        else if (month < 5)
+        {
+            @Html.Partial("awards_before")
+        }
+        else
+        {
+            @Html.Partial("awards_after")
+        }
+ }
 
-    <br />
-    <hr color="white" />
-    <br />
 
-    <font color="white">
-        <h5><strong>@Model.Content.HeadlineRules</strong></h5>
-        <p>@Model.Content.BodytextRules</p>
-
-        <br />
-        <h5><strong>@Model.Content.HeadlineSubmit</strong></h5>
-        <p>@Model.Content.BodytextSubmit</p>
-    </font>
-</div>
 
 
 

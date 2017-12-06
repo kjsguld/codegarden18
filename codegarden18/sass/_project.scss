@@ -1,0 +1,36 @@
+﻿._project{
+    font-family:Lato;
+    h1, p{
+        color:white; 
+        position: relative;
+        left: 15px;
+        width: 320px;
+        text-align:justify;
+    }
+    img {
+        width:350px;
+        height:200px;
+        margin: 0px;
+        border: none;
+        padding: 0px;
+    }
+    .submit{
+        background-color: $cg-red;
+        border:none;
+        color:white;
+        position: relative; 
+        left:20px;
+        height:30px;
+        width:100px;
+    }
+    .box{
+        position:relative;
+        left:25px;
+        height:30px;
+        border:none;
+        width:200px;
+        color: lightgrey;
+        text-align: center;
+    }
+    
+}

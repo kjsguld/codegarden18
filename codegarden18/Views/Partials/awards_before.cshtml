@@ -1,0 +1,38 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    var categories = Model.Content.Site().Descendants<Category>();
+}
+<div class="_awards">
+    <div class="title">
+        <h1>@Umbraco.Field("Headline")</h1>
+    </div>
+    <div class="content">
+        <p>@Umbraco.Field("Bodytext")</p>
+    </div>
+
+    <br />
+
+    <div class="row">
+        @foreach (var category in categories)
+        {
+            <div class="col-md-4">
+                <h4><strong>@category.Headline</strong></h4>
+                <p>@category.Bodytext</p>
+
+            </div>
+        }
+    </div>
+
+    <br />
+    <hr color="white" />
+    <br />
+
+
+    <h5><strong>@Umbraco.Field("headlineRules")</strong></h5>
+    <p>@Umbraco.Field("bodytextRules")</p>
+
+    <br />
+    <h5><strong>@Umbraco.Field("headlineSubmit")</strong></h5>
+    <p>@Umbraco.Field("bodytextSubmit")</p>
+
+</div>

@@ -3,6 +3,7 @@
 @{
     Layout = "SiteMaster.cshtml";
     var projects = Model.Content.Site().Descendants<Project>();
+
     var mediaId = Umbraco.Field("picture");
     //Get the MediaType to Write the URL
     var media = Umbraco.Media(mediaId.ToString());
@@ -10,15 +11,20 @@
     var image = media.Url;
 }
 
-<div class="_project">
-    <h1>@Umbraco.Field("headline")</h1>
-    <p>@Umbraco.Field("creator")</p>
-    <img src=@image />
-    <p>@Umbraco.Field("bodytext")</p>
+    <div class="_project">
+        <div class="col-md-4">
+        <h1>@Umbraco.Field("headline")</h1>
+        <p>@Umbraco.Field("creator")</p>
+        <img src=@image />       
+        <p>@Umbraco.Field("bodytext")</p>
+        <br />
+        
 
-    <form action="/action_page.php" id="vote">
-        <p><strong><u>validate your ticket number</u></strong></p>
-        <input type="text" name="vote">
-        <input type="submit">
-    </form>
+        <form action="/umbraco/api/vote/commitvote" id="vote">
+           <input type="hidden" name="project-id" value="@Model.Content.Id" />
+            <input class="box" type="text" name="ticket-id" value="your ticket number">
+            <input class="submit" type="submit" value="Vote Now">
+        </form>
+        </div>
+     </div>
 

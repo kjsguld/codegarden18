@@ -1,21 +1,19 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Awards>
-@using ContentModels = Umbraco.Web.PublishedContentModels;
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
 @{
-    Layout = "SiteMaster.cshtml";
+    
     var projects = Model.Content.Site().Descendants<Project>();
 }
 
-<div class="awardsduring">
-    <div class "title">
+<div class="awardsafter">
+    <div class ="title">
         <div class="font-weight-bold">
             <h1 class="text-white">@Umbraco.Field("headlineAfter")</h1>
         </div>
-        <div class "content">
+        <div class = "content">
             <div class="text-white">
                 <p>@Umbraco.Field("bodytextAfter")</p>
             </div>
         </div>
-
-
-
-</div>
+ </div>
+    </div>
