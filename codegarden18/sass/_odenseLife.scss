@@ -96,7 +96,7 @@
         }
 
         &.active {
-            background-color: red;
+            background-color: $cg-green;
 
             &:before {
                 right: 4px;

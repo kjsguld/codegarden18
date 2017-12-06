@@ -315,7 +315,7 @@
     border-radius: 50%;
     bottom: 4px; }
   .OdenseLifePage label.active {
-    background-color: red; }
+    background-color: #4CAF50; }
     .OdenseLifePage label.active:before {
       right: 4px; }
 
