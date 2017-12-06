@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "ccd8b0bb6bf8c89e")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "d5c68ab2951f746f")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.8")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -516,6 +516,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Countdown Date
+		///</summary>
+		[ImplementPropertyType("countdownDate")]
+		public DateTime CountdownDate
+		{
+			get { return this.GetPropertyValue<DateTime>("countdownDate"); }
+		}
+
+		///<summary>
 		/// Headline2
 		///</summary>
 		[ImplementPropertyType("headline2")]
@@ -816,15 +825,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Speakers, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// Speaker pics
-		///</summary>
-		[ImplementPropertyType("speakerPics")]
-		public IEnumerable<IPublishedContent> SpeakerPics
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("speakerPics"); }
 		}
 
 		///<summary>
@@ -1131,6 +1131,24 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Category
+		///</summary>
+		[ImplementPropertyType("category")]
+		public IEnumerable<IPublishedContent> Category
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("category"); }
+		}
+
+		///<summary>
+		/// Creator
+		///</summary>
+		[ImplementPropertyType("creator")]
+		public string Creator
+		{
+			get { return this.GetPropertyValue<string>("creator"); }
+		}
+
+		///<summary>
 		/// headline
 		///</summary>
 		[ImplementPropertyType("headline")]
@@ -1296,6 +1314,129 @@ namespace Umbraco.Web.PublishedContentModels
 		public string Time
 		{
 			get { return this.GetPropertyValue<string>("time"); }
+		}
+	}
+
+	/// <summary>Vote</summary>
+	[PublishedContentModel("vote")]
+	public partial class Vote : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "vote";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Vote(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Vote, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// ProjectID
+		///</summary>
+		[ImplementPropertyType("projectID")]
+		public int ProjectID
+		{
+			get { return this.GetPropertyValue<int>("projectID"); }
+		}
+
+		///<summary>
+		/// ticketID
+		///</summary>
+		[ImplementPropertyType("ticketID")]
+		public int TicketID
+		{
+			get { return this.GetPropertyValue<int>("ticketID"); }
+		}
+
+		///<summary>
+		/// VoteTime
+		///</summary>
+		[ImplementPropertyType("voteTime")]
+		public DateTime VoteTime
+		{
+			get { return this.GetPropertyValue<DateTime>("voteTime"); }
+		}
+	}
+
+	/// <summary>Votes</summary>
+	[PublishedContentModel("votes")]
+	public partial class Votes : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "votes";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Votes(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Votes, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+	}
+
+	/// <summary>Speaker</summary>
+	[PublishedContentModel("speaker")]
+	public partial class Speaker : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "speaker";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Speaker(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Speaker, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Speaker description
+		///</summary>
+		[ImplementPropertyType("speakerDescription")]
+		public IHtmlString SpeakerDescription
+		{
+			get { return this.GetPropertyValue<IHtmlString>("speakerDescription"); }
+		}
+
+		///<summary>
+		/// Speaker pic
+		///</summary>
+		[ImplementPropertyType("speakerPic")]
+		public IPublishedContent SpeakerPic
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("speakerPic"); }
 		}
 	}
 

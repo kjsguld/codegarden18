@@ -9,7 +9,7 @@
     <div class="block">
         <div class="container">
             <h2 class="headline">@Model.Content.Headline</h2>
-            <p>@Model.Content.Bodytext</p>
+            <div class="bodyText">@Model.Content.Bodytext</div> 
 
             @foreach (var DateBox in dates)
             {
@@ -34,24 +34,25 @@
                                 <div id="@MainId">
                                     <h5 class="roomTitle">@RoomBox.RoomName</h5>
                                     <p>@RoomBox.EventTitle</p>
-                                    <p>@RoomBox.EventHost</p>
+                                    <small>@RoomBox.EventHost</small>
                                     <div class="contextButton @(hasVideoLink || hasGithubLink ? "" : "hiddenBox")" data-target="@MenuId" data-self="@MainId">
-                                        <i class="material-icons">keyboard_arrow_right</i>
+                                        <i class="material-icons">add</i>
                                     </div>
                                 </div>
                                 <div id="@MenuId" class="hiddenBox">
-                                    @if (hasVideoLink)
-                                    { 
-                                        <div><a href="@RoomBox.EventVideoLink"><i class="material-icons">play_circle_filled</i></a></div>
-                                    }
-                                    @if (hasGithubLink)
-                                    {
-                                        <div><a href="@RoomBox.EventGithubLink"><i class="material-icons">dvr</i></a></div>
-                                    }
-                                    
-                                    <div><a href="#">content</a></div>
+                                    <div class="hiddenContainer">
+                                        @if (hasVideoLink)
+                                        {
+                                            <div class="iconLink"><a href="@RoomBox.EventVideoLink"><i class="material-icons">play_circle_filled</i></a></div>
+                                        }
+                                        @if (hasGithubLink)
+                                        {
+                                            <div class="iconLink"><a href="@RoomBox.EventGithubLink"><i class="material-icons">dvr</i></a></div>
+                                        }
+                                        <div class="iconLink"><a href="#"><i class="material-icons">add_circle</i></a></div>
+                                    </div>
                                     <div class="contextButton" data-target="@MainId" data-self="@MenuId">
-                                        <i class="material-icons">keyboard_arrow_left</i>
+                                        <i class="material-icons">clear</i>
                                     </div>
                                 </div>
                             </div>
