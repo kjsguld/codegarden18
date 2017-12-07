@@ -46,6 +46,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Speaker pics
+		///</summary>
+		[ImplementPropertyType("speakerPics")]
+		public IEnumerable<IPublishedContent> SpeakerPics
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("speakerPics"); }
+		}
+
+		///<summary>
 		/// Stories body
 		///</summary>
 		[ImplementPropertyType("storiesBody")]
