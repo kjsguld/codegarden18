@@ -1,12 +1,43 @@
-﻿/* speakers page*/
-
-.speakersContainer{
-    color: $cg-font-color;
+﻿.speakerTopLine {
+    background-color: $cg-green;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
 }
-.speakersHeadline {
-    color: $cg-font-color;
-    background-color: $cg-orange;
+.speakerContainer {
+    color: #fff;
+    margin: 10% 0 0 10%;
+    text-align: left;
+    width: 80%;
 }
-.bodyBox{
+.headBox {
+    
+}
 
+.bodyBox {
+    
+}
+.speakerPicContainer{
+    margin: 10%;
+    text-align: center;
+}
+.speakerPicture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.themeContainer {
+    background-color: $cg-green;
+    padding-top: 1%;
+}
+.speakerPicBox {
+    width: 38%;
+    margin: 0 2% 0 1%;
+}
+.speakerName {
+    color: #fff;
+}
+.speakerDescription {
+    color: #fff;
 }

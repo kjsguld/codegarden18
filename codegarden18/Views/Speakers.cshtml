@@ -1,77 +1,94 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Speakers>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = "SiteMaster.cshtml";
+    Layout = "SiteMaster.cshtml";
+
+    var mediaId = Umbraco.Field("speakerPic");
+    //Get the MediaType to Write the URL
+    var media = Umbraco.Media(mediaId.ToString());
+    //Salve the Path into the Image
+    var image = media.Url;
+
+    var speakers = Model.Content.Children<Speaker>();
+
 }
 
-<div class="speakersContainer">
 
-    <div class="row ">
-        <div class="speakersHeadline">
-                <div class="col-md-12">
-                    <h4> @Umbraco.Field("headline") </h4>
-                </div>
-        </div>
-
-        <div class="speakersBody">
-            <div class="bodyBox">
-                <div class="col-md-12">
-                    <p> @Umbraco.Field("bodyText") </p>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="speakerTopLine">
 
 </div>
 
-@*<div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <img src="@Model.Content.SpeakerPics.Url" alt="" class="img-fluid" />
+<div class="speakerContainer top-buffer">
+    <div class="row">
+        <div class="headBox">
+
+            <div>
+                <h4> @Umbraco.Field("headline") </h4>
             </div>
+
         </div>
-    </div>*@
+        <div class="bodyBox">
 
-<div class="container">
+            <div>
+                <p> @Umbraco.Field("bodyText") </p>
+            </div>
 
-    <div class="row ">
-        <div class="speakersHeadline">
-            <div class="headlineBox">
-                <div class="col-md-12">
-                    <h4> @Umbraco.Field("ThemeHeadline") </h4>
+        </div>
+    </div>
+</div>
+
+
+<div class="container speakerPicContainer">
+    <div class="row">
+    @foreach (var speaker in speakers)
+    {
+        <div class="speakerPicBox">
+                <img src="@speaker.SpeakerPic.Url" class="speakerPicture" /><br />
+                <strong class="speakerName">@speaker.SpeakerName</strong>
+                <p class="speakerDescription">@speaker.SpeakerDescription</p>
+        </div>
+    }
+    </div>
+</div>
+
+
+<div class="themeContainer">
+    <div class="speakerContainer">
+        <div class="row ">
+            <div class="headBox">
+
+                <div>
+                    <h4> @Umbraco.Field("themeHeadline") </h4>
                 </div>
-            </div>
-        </div>
 
-        <div class="themeBody">
+            </div>
             <div class="bodyBox">
-                <div class="col-md-12">
-                    <p> @Umbraco.Field("ThemeBody") </p>
+
+                <div>
+                    <p> @Umbraco.Field("themeBody") </p>
                 </div>
+
             </div>
         </div>
     </div>
-
 </div>
 
-<div class="container">
-
+<div class="speakerContainer">
     <div class="row ">
-        <div class="speakersHeadline">
-            <div class="headlineBox">
-                <div class="col-md-12">
-                    <h4> @Umbraco.Field("storiesHeadline") </h4>
-                </div>
-            </div>
-        </div>
+        <div class="headBox">
 
-        <div class="storiesBody">
-            <div class="bodyBox">
-                <div class="col-md-12">
-                    <p> @Umbraco.Field("storiesBody") </p>
-                </div>
+            <div>
+                <h4> @Umbraco.Field("storiesHeadline") </h4>
             </div>
+
+        </div>
+        <div class="bodyBox">
+
+            <div>
+                <p> @Umbraco.Field("storiesBody") </p>
+            </div>
+
         </div>
     </div>
-
 </div>
+

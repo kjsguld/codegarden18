@@ -49,9 +49,18 @@ namespace Umbraco.Web.PublishedContentModels
 		/// Speaker description
 		///</summary>
 		[ImplementPropertyType("speakerDescription")]
-		public IHtmlString SpeakerDescription
+		public string SpeakerDescription
 		{
-			get { return this.GetPropertyValue<IHtmlString>("speakerDescription"); }
+			get { return this.GetPropertyValue<string>("speakerDescription"); }
+		}
+
+		///<summary>
+		/// Speaker name
+		///</summary>
+		[ImplementPropertyType("speakerName")]
+		public string SpeakerName
+		{
+			get { return this.GetPropertyValue<string>("speakerName"); }
 		}
 
 		///<summary>
