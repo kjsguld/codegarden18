@@ -46,12 +46,12 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// ProjectGuid
+		/// ProjectID
 		///</summary>
-		[ImplementPropertyType("projectGuid")]
-		public string ProjectGuid
+		[ImplementPropertyType("projectID")]
+		public int ProjectID
 		{
-			get { return this.GetPropertyValue<string>("projectGuid"); }
+			get { return this.GetPropertyValue<int>("projectID"); }
 		}
 
 		///<summary>

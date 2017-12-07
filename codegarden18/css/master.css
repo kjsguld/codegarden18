@@ -98,10 +98,8 @@
 
 .speakerTopLine {
   background-color: #4CAF50;
-  position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
   width: 100%;
   height: 10px; }
 
@@ -116,17 +114,20 @@
   text-align: center; }
 
 .speakerPicture {
-  width: 125px;
-  height: 125px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%; }
 
 .themeContainer {
   background-color: #4CAF50;
-  padding: 1%; }
+  padding-top: 1%; }
 
 .speakerPicBox {
   width: 38%;
-  margin-left: 2%; }
+  margin: 0 2% 0 1%; }
+
+.speakerName {
+  color: #fff; }
 
 .speakerDescription {
   color: #fff; }

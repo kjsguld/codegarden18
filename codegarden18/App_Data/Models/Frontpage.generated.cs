@@ -55,6 +55,24 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Call to action link: ADD LINK HERE
+		///</summary>
+		[ImplementPropertyType("callToActionLink")]
+		public string CallToActionLink
+		{
+			get { return this.GetPropertyValue<string>("callToActionLink"); }
+		}
+
+		///<summary>
+		/// Call to action text: Add link text Here!
+		///</summary>
+		[ImplementPropertyType("callToActionText")]
+		public string CallToActionText
+		{
+			get { return this.GetPropertyValue<string>("callToActionText"); }
+		}
+
+		///<summary>
 		/// Company Name
 		///</summary>
 		[ImplementPropertyType("companyName")]
