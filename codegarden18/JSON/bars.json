@@ -1,0 +1,60 @@
+{
+    "features": [       
+        {
+          "properties": {
+            "name": "Snik Snak",
+            "lat": 55.39681,
+            "lon": 10.38519,
+            "type": "bar"
+          }
+        },
+        {
+          "properties": {
+            "name": "Café Kræz",
+            "lat": 55.39631,
+            "lon": 10.38604,
+            "type": "bar"
+          }
+        },
+        {
+          "properties": {
+            "name": "Privaten",
+            "lat": 55.3963,
+            "lon": 10.38592,
+            "type": "bar"
+          }
+        },
+        {
+          "properties": {
+            "name": "Christian Firtal",
+            "lat": 55.39569,
+            "lon": 10.38353,
+            "type": "bar"
+          }
+        },
+        {
+          "properties": {
+            "name": "Mamma's pizzeria",
+            "lat": 55.38899,
+            "lon": 10.39656,
+            "type": "bar"
+          }
+        },
+        {
+          "properties": {
+            "name": "Ryan's Of Odense",
+            "lat": 55.39742,
+            "lon": 10.38877,
+            "type": "bar"
+          }
+        },
+        {
+          "properties": {
+            "name": "Nelle's Coffee & Wine",
+            "lat": 55.39557,
+            "lon": 10.37972,
+            "type": "bar"
+          }
+        }
+    ]
+}

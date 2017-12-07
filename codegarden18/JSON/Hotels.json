@@ -1,0 +1,29 @@
+{
+    "features": [
+        
+        {
+          "properties": {
+            "name": "Hotel Windsor, Milling Hotels",
+            "lat": 55.39828,
+            "lon": 10.38288,
+            "type": "hotel"
+          }
+        },
+        {
+          "properties": {
+            "name": "Hotel Ansgar, Milling Hotels",
+            "lat": 55.39976,
+            "lon": 10.3817,
+            "type": "hotel"
+          }
+        },
+        {
+          "properties": {
+            "name": "Hotel Plaza, Milling Hotels",
+            "lat": 55.40009,
+            "lon": 10.38276,
+            "type": "hotel"
+          }
+        }
+    ]
+}

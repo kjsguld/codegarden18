@@ -10,11 +10,12 @@
         },
         {
           "properties": {
-              "name": "CABINN Hotel Odense",
-              "lat": 55.40126,
-              "lon": 10.38903,
-              "type": "umbraco"
+            "name": "CABINN Hotel Odense",
+            "lat": 55.40126,
+            "lon": 10.38903,
+            "type": "umbraco"
           }
-        }
+        
+      }
     ]
 }

@@ -33,7 +33,7 @@
                         <span class="">
 
                             <label class="active" for="umbraco"></label>
-                            <input class="checkbox-onoff" type="checkbox" name="Umbraco HQ" id="umbraco" value="/JSON/umbraco.json" />
+                            <input class="checkbox-onoff active" type="checkbox" name="Umbraco HQ" id="umbraco" value="/JSON/umbraco.json" />
                         </span>
 
 
@@ -42,16 +42,10 @@
 
                         <span class="">
                             <label class="not-active" for="Restaurants"> </label>
-                            <input class="checkbox-onoff" type="checkbox" name="Restaurants" id="Restaurants" value="/JSON/barsAndsRestaurants.json" />
+                            <input class="checkbox-onoff" type="checkbox" name="Restaurants" id="Restaurants" value="/JSON/restaurants.json" />
                         </span>
 
 
-                        <p class="textAboveSwitch"> Parks</p>
-
-                        <span>
-                            <label class="not-active" for="Parks"> </label>
-                            <input class="checkbox-onoff" type="checkbox" name="Parks" id="Parks" value="/JSON/barsAndsRestaurants.json" />
-                        </span>
 
 
                     </div>
@@ -62,7 +56,7 @@
 
                         <span>
                             <label class="not-active" for="Bars"> </label>
-                            <input class="checkbox-onoff" type="checkbox" name="Bars" id="Bars" value="/JSON/barsAndsRestaurants.json" />
+                            <input class="checkbox-onoff" type="checkbox" name="Bars" id="Bars" value="/JSON/bars.json" />
                         </span>
 
                         <br />
@@ -71,7 +65,7 @@
 
                         <span>
                             <label class="not-active" for="Hotels"> </label>
-                            <input class="checkbox-onoff" type="checkbox" name="Hotels" id="Hotels" value="/JSON/barsAndsRestaurants.json" />
+                            <input class="checkbox-onoff" type="checkbox" name="Hotels" id="Hotels" value="/JSON/hotels.json" />
                         </span>
 
                         <br />
@@ -158,9 +152,62 @@
 
         console.log(markers);
 
+
         google.maps.event.addDomListener(jQuery(".checkbox-onoff").click(function (e) {
 
             var cElement = jQuery(this);
+
+
+            if ($(this).hasClass('active')) {
+
+
+                jQuery.getJSON(cElement.val(), function (data) {
+                    data.features.forEach(function (umbracoMarker) {
+                        
+
+                        var deleteMarker = new google.maps.Marker({
+                            position: new google.maps.LatLng(umbracoMarker.properties.lat, umbracoMarker.properties.lon)
+                        });
+
+                        markers.map(function (marker) {
+
+                            if (marker.getPosition().lat() == deleteMarker.getPosition().lat() && marker.getPosition().lng() == deleteMarker.getPosition().lng()) {
+                                marker.setMap(null);
+                                markers.splice($.inArray(marker, markers), 1);
+                            }
+                        });
+
+                    });
+                });
+
+
+            } else {
+
+                jQuery.getJSON(cElement.val(), function (data) {
+                    data.features.forEach(function (umbracoMarker) {
+                        marker = new google.maps.Marker({
+                            position: new google.maps.LatLng(umbracoMarker.properties.lat, umbracoMarker.properties.lon),
+                            map: map
+                        });
+
+                        markers.push(marker);
+
+                        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                            return function () {
+                                infowindow.setContent(umbracoMarker.properties.name);
+                                infowindow.open(map, marker);
+                            }
+                        })(marker, i));
+
+                    });
+                });
+            }
+
+
+
+
+
+           
 
             cElement.siblings().toggleClass("active");
             cElement.toggleClass("active");
