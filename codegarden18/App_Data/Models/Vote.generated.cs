@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>Project</summary>
-	[PublishedContentModel("project")]
-	public partial class Project : PublishedContentModel
+	/// <summary>Vote</summary>
+	[PublishedContentModel("vote")]
+	public partial class Vote : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "project";
+		public new const string ModelTypeAlias = "vote";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Project(IPublishedContent content)
+		public Vote(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,54 +40,36 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Project, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Vote, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// bodytext
+		/// ProjectID
 		///</summary>
-		[ImplementPropertyType("bodytext")]
-		public IHtmlString Bodytext
+		[ImplementPropertyType("projectID")]
+		public int ProjectID
 		{
-			get { return this.GetPropertyValue<IHtmlString>("bodytext"); }
+			get { return this.GetPropertyValue<int>("projectID"); }
 		}
 
 		///<summary>
-		/// Creator
+		/// ticketID
 		///</summary>
-		[ImplementPropertyType("creator")]
-		public string Creator
+		[ImplementPropertyType("ticketID")]
+		public int TicketID
 		{
-			get { return this.GetPropertyValue<string>("creator"); }
+			get { return this.GetPropertyValue<int>("ticketID"); }
 		}
 
 		///<summary>
-		/// headline
+		/// VoteTime
 		///</summary>
-		[ImplementPropertyType("headline")]
-		public string Headline
+		[ImplementPropertyType("voteTime")]
+		public DateTime VoteTime
 		{
-			get { return this.GetPropertyValue<string>("headline"); }
-		}
-
-		///<summary>
-		/// http
-		///</summary>
-		[ImplementPropertyType("http")]
-		public string Http
-		{
-			get { return this.GetPropertyValue<string>("http"); }
-		}
-
-		///<summary>
-		/// picture
-		///</summary>
-		[ImplementPropertyType("picture")]
-		public IPublishedContent Picture
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("picture"); }
+			get { return this.GetPropertyValue<DateTime>("voteTime"); }
 		}
 	}
 }

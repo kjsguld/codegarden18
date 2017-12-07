@@ -1,18 +1,69 @@
 ﻿/* imports */
 @import '_variables.scss';
 @import '_navigation.scss';
-<<<<<<< Updated upstream
 @import '_frontpage.scss';
 @import '_aboutHQ.scss';
+@import '_odenseLife.scss';
+@import '_footer.scss';
 
 
-=======
-@import '_speakers.scss';
->>>>>>> Stashed changes
+a {
+    transition: all .2s ease-in-out;
+}
 
+a:hover {
+    text-decoration: none;
+    color: white;
+    transform: scale(1.1);
+}
+
+
+p {
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    font-family: 'Lato', sans-serif;
+}
+
+h2 {
+    font-family: 'Lato', sans-serif;
+}
+
+h3 {
+    font-family: 'Lato', sans-serif;
+}
+
+h4 {
+    font-family: 'Lato', sans-serif;
+}
+
+h5 {
+    font-family: 'Lato', sans-serif;
+}
+
+h6 {
+    font-family: 'Lato', sans-serif;
+}
+
+h7 {
+    font-family: 'Lato', sans-serif;
+}
+
+span {
+    font-family: 'Lato', sans-serif;
+}
+
+a {
+    font-family: 'Lato', sans-serif;
+}
+
+strong {
+    font-family: 'Lato', sans-serif;
+}
 .container {
     padding-right: 0;
-    padding-left: 0; //TODO
+    padding-left: 0;
 }
 
 .row {
@@ -40,6 +91,7 @@ paddigbox {
     display: flex;
     justify-content: center;
 }
+
 
 .button {
     border: none;
