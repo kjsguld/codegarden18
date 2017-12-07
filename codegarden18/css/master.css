@@ -335,6 +335,16 @@
   padding: 5%;
   text-align: center; }
 
+.socialMedia {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center; }
+  .socialMedia h5 {
+    text-align: left;
+    margin-left: 10%; }
+
 a {
   transition: all .2s ease-in-out; }
 
