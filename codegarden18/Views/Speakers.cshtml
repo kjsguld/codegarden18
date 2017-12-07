@@ -43,10 +43,8 @@
     @foreach (var speaker in speakers)
     {
         <div class="speakerPicBox">
-            <a href="@speaker.Url">
                 <img src="@speaker.SpeakerPic.Url" class="speakerPicture" /><br />
-                <strong>@speaker.SpeakerDescription</strong>
-            </a>
+                <strong class="speakerDescription">@speaker.SpeakerDescription</strong>
         </div>
     }
     </div>
