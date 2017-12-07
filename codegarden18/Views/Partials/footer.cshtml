@@ -1,7 +1,9 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
 @{ 
-    
+    var contentFromFrontpage = Model.Content.Site();
+   
+
 }
 
 
@@ -10,7 +12,7 @@
 
 
         <div class="footerColumn">
-            <p> footer  </p>
+            
         </div>
 
 
@@ -22,7 +24,7 @@
         </div>
 
         <div class="footerColumn">
-            <a href="#"> Buy Tickets</a>
+            <a href="@contentFromFrontpage.GetPropertyValue("callToActionLink")"> Buy Tickets</a>
         </div>
 
 
