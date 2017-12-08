@@ -3,8 +3,11 @@
 @{
 	Layout = "SiteMaster.cshtml";
 }
+<div class="feedTopBorder">
 
-<div class="container feedTopBorder">
+
+</div>
+<div class="container mt-5">
     <div class="row">
         <div class="currentEvents">
 
@@ -23,20 +26,34 @@
 <div class="container">
     <div class="row">
         <div class="socialMedia">
-
-            <h4> Social Media </h4>
-
-            <div class="twitter">
+            <h4 class="socialHeadline"> Social <br /> Media </h4>
+            
+            <div class="twitter mt-3">
                 <div class="twitterHeadline">
                     <h5>Follow us on Twitter</h5>
                 </div>
+
+                <div class="twitterFeed">
+
+                    <a class="twitter-timeline" href="https://twitter.com/hashtag/codegarden" data-widget-id="938896045664342016">#codegarden Tweets</a>
+                    <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+
+                </div>
                 <a class="button-red" href="~/Views/Feed.cshtml"> #codegarden </a>
 
-            </div>
+            </div> 
 
             <div class="instagram">
 
                     <h5>Find us on Instagram</h5>
+
+                <div class="instagramProfiles">
+                    <div class="image">
+
+                    </div>
+                    <a href="https://www.instagram.com/umbraco/"> <p> Umbraco Profile </p></a>
+
+                </div>
                 
                 <a class="button-red" href="~/Views/Feed.cshtml"> (PlacePin) Codegarden </a>
             </div>

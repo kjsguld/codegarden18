@@ -340,10 +340,53 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center; }
+  text-align: center;
+  align-items: center; }
   .socialMedia h5 {
     text-align: left;
     margin-left: 10%; }
+
+.twitter, .facebook, .instagram {
+  width: 100%; }
+  .twitter a, .facebook a, .instagram a {
+    margin-top: 1%; }
+
+.feedTopBorder {
+  border-top: 5px solid #EF5E5E; }
+
+.twitterFeed {
+  width: 100%;
+  text-align: center;
+  padding: 2.5%; }
+
+.socialHeadline {
+  background-color: #413659;
+  width: 100%;
+  height: 50px;
+  position: relative; }
+  .socialHeadline:before {
+    content: '';
+    width: 30%;
+    display: inline-block;
+    height: 5px;
+    background-color: #ef5e5e;
+    position: absolute;
+    top: 55%;
+    left: 2.5%; }
+  .socialHeadline:after {
+    content: '';
+    width: 30%;
+    display: inline-block;
+    height: 5px;
+    background-color: #ef5e5e;
+    position: absolute;
+    top: 55%;
+    right: 2.5%; }
+
+.hrSocialMedia {
+  height: 5px;
+  width: 95%;
+  background-color: #EF5E5E; }
 
 a {
   transition: all .2s ease-in-out; }
