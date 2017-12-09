@@ -55,15 +55,6 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Category
-		///</summary>
-		[ImplementPropertyType("category")]
-		public IEnumerable<IPublishedContent> Category
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("category"); }
-		}
-
-		///<summary>
 		/// Creator
 		///</summary>
 		[ImplementPropertyType("creator")]

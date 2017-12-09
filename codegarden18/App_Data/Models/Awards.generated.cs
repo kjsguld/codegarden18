@@ -82,6 +82,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// finishDate
+		///</summary>
+		[ImplementPropertyType("finishDate")]
+		public DateTime FinishDate
+		{
+			get { return this.GetPropertyValue<DateTime>("finishDate"); }
+		}
+
+		///<summary>
 		/// headlineAfter
 		///</summary>
 		[ImplementPropertyType("headlineAfter")]
@@ -115,6 +124,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string HeadlineSubmit
 		{
 			get { return this.GetPropertyValue<string>("headlineSubmit"); }
+		}
+
+		///<summary>
+		/// startDate
+		///</summary>
+		[ImplementPropertyType("startDate")]
+		public DateTime StartDate
+		{
+			get { return this.GetPropertyValue<DateTime>("startDate"); }
 		}
 
 		///<summary>

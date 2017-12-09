@@ -7,6 +7,7 @@ using System.Web.Http;
 using Umbraco.Web.WebApi;
 using Umbraco.Core.Services;
 using Umbraco.Web.PublishedContentModels;
+using System.Globalization;
 
 namespace codegarden18.api
 {
@@ -28,8 +29,8 @@ namespace codegarden18.api
                     var vote = cs.CreateContent("vote api", 1215, "vote");
                     vote.Properties["ticketID"].Value = ticketID;
                     vote.Properties["ProjectID"].Value = projectID;
-                    vote.Properties["VoteTime"].Value = new DateTime();
 
+                    cs.Publish(vote);
                     cs.Save(vote);
                     return "success";
                 }
@@ -82,7 +83,7 @@ namespace codegarden18.api
                 {
                     TicketID = int.Parse(vote.Properties["ticketID"].Value.ToString()),
                     ProjectID = int.Parse(vote.Properties["projectID"].Value.ToString()),
-                    VoteTime = Convert.ToDateTime(vote.Properties["voteTime"].Value.ToString())
+                    VoteTime = vote.CreateDate
                 };
                 res.Add(v);
             }
