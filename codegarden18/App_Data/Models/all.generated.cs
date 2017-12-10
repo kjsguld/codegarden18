@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "d5c68ab2951f746f")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.8")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9abaa9a675ed5b94")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
 // FILE: models.generated.cs
@@ -300,6 +300,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// finishDate
+		///</summary>
+		[ImplementPropertyType("finishDate")]
+		public DateTime FinishDate
+		{
+			get { return this.GetPropertyValue<DateTime>("finishDate"); }
+		}
+
+		///<summary>
 		/// headlineAfter
 		///</summary>
 		[ImplementPropertyType("headlineAfter")]
@@ -333,6 +342,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string HeadlineSubmit
 		{
 			get { return this.GetPropertyValue<string>("headlineSubmit"); }
+		}
+
+		///<summary>
+		/// startDate
+		///</summary>
+		[ImplementPropertyType("startDate")]
+		public DateTime StartDate
+		{
+			get { return this.GetPropertyValue<DateTime>("startDate"); }
 		}
 
 		///<summary>
@@ -520,6 +538,24 @@ namespace Umbraco.Web.PublishedContentModels
 		public IHtmlString BodyText2
 		{
 			get { return this.GetPropertyValue<IHtmlString>("bodyText2"); }
+		}
+
+		///<summary>
+		/// Call to action link: ADD LINK HERE
+		///</summary>
+		[ImplementPropertyType("callToActionLink")]
+		public string CallToActionLink
+		{
+			get { return this.GetPropertyValue<string>("callToActionLink"); }
+		}
+
+		///<summary>
+		/// Call to action text: Add link text Here!
+		///</summary>
+		[ImplementPropertyType("callToActionText")]
+		public string CallToActionText
+		{
+			get { return this.GetPropertyValue<string>("callToActionText"); }
 		}
 
 		///<summary>
@@ -1144,15 +1180,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public IHtmlString Bodytext
 		{
 			get { return this.GetPropertyValue<IHtmlString>("bodytext"); }
-		}
-
-		///<summary>
-		/// Category
-		///</summary>
-		[ImplementPropertyType("category")]
-		public IEnumerable<IPublishedContent> Category
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("category"); }
 		}
 
 		///<summary>
