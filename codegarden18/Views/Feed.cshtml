@@ -3,6 +3,29 @@
 @{
 	Layout = "SiteMaster.cshtml";
 }
+
+
+<script> 
+
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '1537486793039270',
+            autoLogAppEvents: true,
+            xfbml: true,
+            version: 'v2.11'
+        });
+    };
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) { return; }
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+                </script>
+
+
 <div class="feedTopBorder">
 
 
@@ -10,7 +33,7 @@
 <div class="container mt-5">
     <div class="row">
         <div class="currentEvents">
-
+            <h5>Current events</h5>
         </div>
     </div>
 </div>
@@ -18,6 +41,8 @@
 <div class="container">
     <div class="row">
         <div class="upcommingEvents">
+
+            <h5> Upcomming events</h5>
 
         </div>
     </div>
@@ -37,28 +62,47 @@
 
                     <a class="twitter-timeline" href="https://twitter.com/hashtag/codegarden" data-widget-id="938896045664342016">#codegarden Tweets</a>
                     <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+            </div>
+               
+            </div>
 
-                </div>
-                <a class="button-red" href="~/Views/Feed.cshtml"> #codegarden </a>
-
-            </div> 
-
-            <div class="instagram">
+            <div class="instagram mt-5">
 
                     <h5>Find us on Instagram</h5>
 
                 <div class="instagramProfiles">
-                    <div class="image">
+                    <div class="profile1">
+
+                        <a href="https://www.instagram.com/umbraco/"> <img class="img-fluid" src="~/img/imageedit_3_5099274840.jpg" /> </a>
+
+                       
+
+                         <a href="https://www.instagram.com/umbraco/"> <strong>Umbraco Profile</strong>  </a>
+
 
                     </div>
-                    <a href="https://www.instagram.com/umbraco/"> <p> Umbraco Profile </p></a>
 
+
+                    <div class="profile1">
+
+                        <a href="https://www.instagram.com/umbraco/"> <img class="img-fluid" src="~/img/imageedit_3_5099274840.jpg" /> </a>
+
+
+
+                        <a href="https://www.instagram.com/umbraco/"> <strong>Umbraco Profile</strong>  </a>
+
+
+                    </div>
+
+                    
+                   
                 </div>
-                
-                <a class="button-red" href="~/Views/Feed.cshtml"> (PlacePin) Codegarden </a>
-            </div>
 
-            <div class="facebook">
+             </div>
+                
+
+
+            <div class="facebook mt-5 mb-5">
 
                     <h5> Like us on Facebook </h5>
 
@@ -75,4 +119,5 @@
 
     </div>
 </div>
+   
 

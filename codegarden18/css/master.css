@@ -342,9 +342,21 @@
   justify-content: center;
   text-align: center;
   align-items: center; }
+  .socialMedia .button-red {
+    width: 75%; }
   .socialMedia h5 {
     text-align: left;
-    margin-left: 10%; }
+    margin-left: 5%; }
+
+.currentEvents {
+  width: 100%; }
+  .currentEvents h5 {
+    margin-left: 5%; }
+
+.upcommingEvents {
+  width: 100%; }
+  .upcommingEvents h5 {
+    margin-left: 5%; }
 
 .twitter, .facebook, .instagram {
   width: 100%; }
@@ -354,10 +366,16 @@
 .feedTopBorder {
   border-top: 5px solid #EF5E5E; }
 
+.profile1 {
+  padding: 5%; }
+  .profile1 img {
+    border-radius: 50%; }
+
 .twitterFeed {
   width: 100%;
   text-align: center;
-  padding: 2.5%; }
+  padding-left: 5%;
+  padding-right: 5%; }
 
 .socialHeadline {
   background-color: #413659;
@@ -387,6 +405,19 @@
   height: 5px;
   width: 95%;
   background-color: #EF5E5E; }
+
+.instagramProfiles {
+  display: flex;
+  justify-content: center; }
+  .instagramProfiles .profile1 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; }
+    .instagramProfiles .profile1 a {
+      text-decoration: none;
+      color: white; }
 
 a {
   transition: all .2s ease-in-out; }
