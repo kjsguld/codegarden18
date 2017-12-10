@@ -26,7 +26,7 @@ namespace codegarden18.api
                 if (validates)
                 {
                     //create vote object
-                    var vote = cs.CreateContent("vote api", 1215, "vote");
+                    var vote = cs.CreateContent("api entry ticket: " + ticketID.ToString(), 1215, "vote");
                     vote.Properties["ticketID"].Value = ticketID;
                     vote.Properties["ProjectID"].Value = projectID;
 
@@ -50,23 +50,46 @@ namespace codegarden18.api
         private bool ValidateVote(int ticketID, int projectID)
         {
             var cs = Services.ContentService;
+            //lookup project
+            List<Project> projects = GetProjects();
+            //lookup ticket entry
+            List<Vote> votes = GetVotes();
+            bool isProject = false;
+            bool isOtherCategory = true;
+
             try
             {
-                //lookup project
-                List<Project> projects = GetProjects();
-                
-                
-                //lookup ticket entry
-                List<Vote> votes = GetVotes();
+                //check exsistance 
+                if (projects.Find(x => x.ID == projectID) != null)
+                {
+                    //store bool for evaluating return
+                    isProject = true;
+                    var currentCategoryID = projects.Find(x => x.ID == projectID).CategoryID;
 
-                
-                //validate that only one vote exsists in the catagory
-                return true;
+                    if (isProject)
+                    {
+                        //validate that only one vote exsists in the catagory
+                        var allProjectsInCategory = projects.FindAll(x => x.CategoryID == currentCategoryID);
+
+                        foreach (var projInCat in allProjectsInCategory)
+                        {
+                            // if vote exists, then set false
+                            if (votes.Exists(x => x.ProjectID == projInCat.ID && x.TicketID == ticketID))
+                                isOtherCategory = false;
+                        }
+                    }
+                }
+
+                if(isProject && isOtherCategory)
+                {
+                    return true;
+                }
             }
             catch (Exception)
             {
                 
             }
+
             return false;
         }
 
