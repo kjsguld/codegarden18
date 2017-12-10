@@ -96,17 +96,21 @@
   display: flex;
   justify-content: center; }
 
+._category .firstBox {
+  padding: 5%; }
+
 ._category .rect {
-  width: 700px;
+  width: 100%;
   background-color: #EF5E5E;
   color: white;
   text-align: right center;
   border: 0;
-  margin: 20px;
+  margin: 0;
   padding: 0;
   z-index: 100;
   font-family: Lato; }
-  ._category .rect a {
+  ._category .rect:nth-of-type(2) {
+    background-color: #f27e7e;
     color: white; }
 
 ._category div.rect .dots-container {
@@ -122,18 +126,19 @@
   height: 10px;
   border: none;
   position: relative;
-  left: 685px;
-  top: 2px;
+  left: 342px;
+  top: 6px;
   margin-bottom: 3px;
   margin-top: 2px;
   color: white; }
 
-._category .vota {
+._category a.vote {
   float: right;
-  right: 5px;
+  right: 3px;
   color: white;
   font-style: italic;
-  margin: 2px; }
+  margin: 2px;
+  left: 2px; }
 
 ._category div.content {
   margin-left: 15px;
@@ -141,46 +146,49 @@
   margin-top: 10px;
   position: relative;
   bottom: 30px; }
+  ._category div.content a {
+    color: white; }
 
-._category h1, ._category p {
+._category h4, ._category p {
   color: white;
   font-family: Lato; }
 
 ._awardsduring {
   font-family: Lato;
   color: white; }
+  ._awardsduring .firstBox {
+    padding: 5%; }
   ._awardsduring .rect {
     background-color: #EF5E5E;
-    width: 700px;
+    width: 100%;
     height: 300px;
     border-color: #EF5E5E;
     margin-bottom: 15px;
     position: relative;
-    left: 20px;
-    margin: 0 auto;
+    margin: 0;
     color: white; }
+    ._awardsduring .rect img {
+      width: 100px;
+      height: 100px;
+      -moz-border-radius: 180px;
+      -webkit-border-radius: 180px;
+      border-radius: 180px;
+      float: left;
+      margin-top: 25%;
+      margin-left: 15px; }
   ._awardsduring .content {
     margin: 0;
     position: absolute;
-    left: 50%;
-    top: 50%;
+    left: 60%;
+    top: 40%;
     margin-left: -100px;
     margin-top: -100px; }
     ._awardsduring .content h3 {
       text-align: center;
-      margin-right: 20px; }
+      margin-right: 5px; }
     ._awardsduring .content p {
       text-align: justify;
-      margin-right: 20px; }
-  ._awardsduring img {
-    width: 180px;
-    height: 180px;
-    -moz-border-radius: 180px;
-    -webkit-border-radius: 180px;
-    border-radius: 180px;
-    float: left;
-    margin-top: 60px;
-    margin-left: 15px; }
+      margin-right: 5px; }
 
 ._project {
   font-family: Lato; }
@@ -213,9 +221,11 @@
     color: lightgrey;
     text-align: center; }
 
-._awards .title, ._awards .content, ._awards .row, ._awards h5, ._awards p {
+._awardsbefore {
   font-family: Lato;
   color: white; }
+  ._awardsbefore .box {
+    padding: 5%; }
 
 .container {
   padding-right: 0;
@@ -228,7 +238,7 @@ paddigbox {
 /* body */
 .baseBody {
   background-color: #413659;
-  width: 100; }
+  width: 100%; }
 
 /* content frontpage */
 .top-buffer {

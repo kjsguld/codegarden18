@@ -1,19 +1,23 @@
 ﻿._category {
+    .firstBox{
+        padding: 5%;
+    }
 
     .rect {
-        width: 700px;
+        width: 100%;
         background-color: $cg-red;
         color: white;
         text-align: right center;
         border: 0;
-        margin: 20px;
+        margin: 0;
         padding: 0;
         z-index: 100;
-        font-family:Lato;
-       a{
-           color:white;
-       }
+        font-family: Lato;
 
+        &:nth-of-type(2) {
+            background-color: $cg-lightred;
+            color: white;
+        }
     }
 
     div.rect .dots-container {
@@ -30,19 +34,20 @@
         height: 10px;
         border: none;
         position: relative;
-        left: 685px;
-        top: 2px;
+        left: 342px;
+        top: 6px;
         margin-bottom: 3px;
         margin-top: 2px;
         color: white;
     }
-   
-    .vota {
+
+    a.vote {
         float: right;
-        right: 5px;
+        right: 3px;
         color: white;
         font-style: italic;
         margin: 2px;
+        left:2px;
     }
 
     div.content {
@@ -51,9 +56,12 @@
         margin-top: 10px;
         position: relative;
         bottom: 30px;
+        a{
+            color:white;
+        }
     }
 
-    h1, p {
+    h4, p {
         color: white;
         font-family: Lato;
     }

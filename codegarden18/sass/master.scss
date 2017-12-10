@@ -4,7 +4,8 @@
 @import '_category.scss';
 @import '_awardduring.scss';
 @import '_project.scss';
-@import '_awards.scss';
+@import '_awardsbefore.scss';
+@import '_awardsafter.scss';
 
 
 .container {
@@ -19,7 +20,7 @@ paddigbox {
 /* body */
 .baseBody {
     background-color: $cg-violet;
-    width: 100; //TODO
+    width: 100%; //TODO
 }
 
 

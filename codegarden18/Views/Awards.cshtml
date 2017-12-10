@@ -2,42 +2,38 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "SiteMaster.cshtml";
-    var categories = Model.Content.Site().Descendants<Category>();
 
 
-        int day = DateTime.Now.Day;
-        int month = DateTime.Now.Month;
-
-        if (month == 5)
-        {
-            if (day < 23)
-            {
-            @Html.Partial("awards_before")
-            }
-            else if (day >= 23 && day <= 25)
-            {
-            @Html.Partial("awards_during")
-            }
-            else
-            {
-            @Html.Partial("awards_after")
-            }
-        }
-        else if (month < 5)
-        {
-            @Html.Partial("awards_before")
-        }
-        else
-        {
-            @Html.Partial("awards_after")
-        }
- }
+    int day = DateTime.Now.Day;
+    int month = DateTime.Now.Month;
 
 
+    string stringStartday = CurrentPage.startDate.ToString("dd");
+    int startDay = stringStartday.AsInt();
+
+    string stringFinishtday = CurrentPage.finishDate.ToString("dd");
+    int finishDay = stringFinishtday.AsInt();
 
 
+    string stringStartmonth = CurrentPage.startDate.ToString("MM");
+    int startMonth = stringStartmonth.AsInt();
+
+    string stringFinishmonth = CurrentPage.startDate.ToString("MM");
+    int finishMonth = stringFinishmonth.AsInt();
 
 
+    if (month == startMonth)
+    {
+
+    }
+    else if ()
+    {
+
+    }
+    else
+    {
+
+    }
 
 
 
