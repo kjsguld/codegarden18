@@ -62,14 +62,5 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return this.GetPropertyValue<int>("ticketID"); }
 		}
-
-		///<summary>
-		/// VoteTime
-		///</summary>
-		[ImplementPropertyType("voteTime")]
-		public DateTime VoteTime
-		{
-			get { return this.GetPropertyValue<DateTime>("voteTime"); }
-		}
 	}
 }

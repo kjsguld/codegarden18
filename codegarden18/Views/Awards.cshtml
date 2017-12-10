@@ -22,17 +22,29 @@
     int finishMonth = stringFinishmonth.AsInt();
 
 
-    if (month == startMonth)
+    if (month < startMonth)
     {
-
+        @Html.Partial("awards_before")
     }
-    else if ()
+    else if (month >= startMonth && month<= finishMonth)
     {
-
+        if (day < startDay)
+        {
+            @Html.Partial("awards_before")
+        }
+        else if (startDay <= day && day <= finishDay)
+        {
+            @Html.Partial("awards_during")
+        }
+        else
+        {
+            @Html.Partial("awards_after")
+        }
     }
     else
     {
-
+        @Html.Partial("awards_after")
+        }
     }
 
 
