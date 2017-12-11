@@ -119,6 +119,8 @@
 
 
 <script>
+
+    /// calls map, so its visible, and creates the viewwindow and how zoomed it is //
       function initMap() {
         var odense = { lat: 55.40635, lng: 10.38841 };
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -128,9 +130,13 @@
 
         var infowindow = new google.maps.InfoWindow();
 
+
+        ///Creates the markers. Markers= an array, that contains all the markers shown on the map 
         var marker, i;
         var markers = [];
 
+
+          //creates the umbraco markers from json file "umbraco.json"
         jQuery.getJSON("/JSON/umbraco.json", function (data) {
             data.features.forEach(function (umbracoMarker) {
                 marker = new google.maps.Marker({
@@ -150,8 +156,12 @@
             });
         });
 
+          //shows the array of markers in console 
+
         console.log(markers);
 
+
+        //this checks if the checkbox is active or not, if active is sets map markers at null, and if not (else) it pushes the markers from the value into the map array.
 
         google.maps.event.addDomListener(jQuery(".checkbox-onoff").click(function (e) {
 
@@ -208,7 +218,7 @@
 
 
            
-
+            //toggles active on class if clicked
             cElement.siblings().toggleClass("active");
             cElement.toggleClass("active");
 

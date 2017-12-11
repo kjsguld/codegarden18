@@ -1,21 +1,29 @@
 {
-    "features": [
-        {
-          "properties": {
-              "name": "Umbraco venue",
-              "lat": 55.4096646,
-              "lon": 10.3811261,
-              "type": "umbraco"
-          }
-        },
-        {
-          "properties": {
-            "name": "CABINN Hotel Odense",
-            "lat": 55.40126,
-            "lon": 10.38903,
-            "type": "umbraco"
-          }
-        
+  "features": [
+    {
+      "properties": {
+        "name": "<h5>Umbraco HQ </h5> <br> <a href='https://www.google.com/maps/place/Umbraco+HQ,+Haubergsvej+1,+5000+Odense+C/'> Naviagte to </a>",
+        "lat": 55.4063512,
+        "lon": 10.3884148,
+        "type": "umbraco"
       }
-    ]
+    },
+    {
+      "properties": {
+        "name": "<h5>DOK500</h5> <br> <a href='https://www.google.com/maps/place/DOK5000,+Havnegade+20,+5000+Odense+C/'> Naviagte to </a>",
+        "lat": 55.4107979,
+        "lon": 10.3828392,
+        "type": "umbraco"
+      }
+    },
+    {
+      "properties": {
+        "name": "<h5> CABINN Hotel Odense</h5> <br> <a href='https://www.google.com/maps/place/CABINN+Hotel+Odense,+Østre+Stationsvej,+Odense+C/'> Naviagte to </a>",
+        "lat": 55.4012684,
+        "lon": 10.3890305,
+        "type": "umbraco"
+      }
+
+    }
+  ]
 }

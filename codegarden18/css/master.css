@@ -463,37 +463,7 @@ a:hover {
   color: white;
   transform: scale(1.1); }
 
-p {
-  font-family: 'Lato', sans-serif; }
-
-h1 {
-  font-family: 'Lato', sans-serif; }
-
-h2 {
-  font-family: 'Lato', sans-serif; }
-
-h3 {
-  font-family: 'Lato', sans-serif; }
-
-h4 {
-  font-family: 'Lato', sans-serif; }
-
-h5 {
-  font-family: 'Lato', sans-serif; }
-
-h6 {
-  font-family: 'Lato', sans-serif; }
-
-h7 {
-  font-family: 'Lato', sans-serif; }
-
-span {
-  font-family: 'Lato', sans-serif; }
-
-a {
-  font-family: 'Lato', sans-serif; }
-
-strong {
+p, h1, h2, h3, h4, h5, h6, a, span, strong {
   font-family: 'Lato', sans-serif; }
 
 .container {
