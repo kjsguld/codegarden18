@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>About HQ</summary>
 	[PublishedContentModel("aboutHQ")]
-	public partial class AboutHQ : PublishedContentModel, IHeadlineBodytext
+	public partial class AboutHQ : PublishedContentModel, IHeadlineBodytext, IMenu, IMeta
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "aboutHQ";
@@ -79,6 +79,51 @@ namespace Umbraco.Web.PublishedContentModels
 		public string Headline
 		{
 			get { return Umbraco.Web.PublishedContentModels.HeadlineBodytext.GetHeadline(this); }
+		}
+
+		///<summary>
+		/// Hide in Navigation
+		///</summary>
+		[ImplementPropertyType("hideInNav")]
+		public bool HideInNav
+		{
+			get { return Umbraco.Web.PublishedContentModels.Menu.GetHideInNav(this); }
+		}
+
+		///<summary>
+		/// Menudesription
+		///</summary>
+		[ImplementPropertyType("menudesription")]
+		public string Menudesription
+		{
+			get { return Umbraco.Web.PublishedContentModels.Menu.GetMenudesription(this); }
+		}
+
+		///<summary>
+		/// Menu title
+		///</summary>
+		[ImplementPropertyType("menuTitle")]
+		public string MenuTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.Menu.GetMenuTitle(this); }
+		}
+
+		///<summary>
+		/// Meta description
+		///</summary>
+		[ImplementPropertyType("metaDescription")]
+		public string MetaDescription
+		{
+			get { return Umbraco.Web.PublishedContentModels.Meta.GetMetaDescription(this); }
+		}
+
+		///<summary>
+		/// Meta title
+		///</summary>
+		[ImplementPropertyType("metaTitle")]
+		public string MetaTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.Meta.GetMetaTitle(this); }
 		}
 	}
 }

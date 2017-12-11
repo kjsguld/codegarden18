@@ -46,6 +46,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// speaker time
+		///</summary>
+		[ImplementPropertyType("speakerTime")]
+		public DateTime SpeakerTime
+		{
+			get { return this.GetPropertyValue<DateTime>("speakerTime"); }
+		}
+
+		///<summary>
 		/// Time: Input start time of the event (24 hr format separated by : semicolon)
 		///</summary>
 		[ImplementPropertyType("time")]
