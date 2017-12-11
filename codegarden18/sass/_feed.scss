@@ -1,0 +1,121 @@
+﻿.socialMedia {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+    .button-red{
+        width: 75%;
+    }
+
+    h5 {
+        text-align: left;
+        margin-left: 5%;
+    }
+}
+
+
+.currentEvents{
+    width: 100%;
+
+    h5{
+        margin-left: 5%;
+    }
+
+}
+
+
+.upcommingEvents {
+    width: 100%;
+    h5{
+        margin-left: 5%;
+    }
+}
+
+
+.twitter, .facebook, .instagram {
+    width: 100%;
+
+    a {
+        margin-top: 1%
+    }
+}
+
+.feedTopBorder {
+    border-top: 5px solid $cg-red;
+}
+
+
+.profile1 {
+    padding: 5%;
+
+    img {
+        border-radius: 50%;
+    }
+}
+
+.twitterFeed {
+    width: 100%;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.socialHeadline {
+    background-color: $cg-violet;
+    width: 100%;
+    height: 50px;
+    position: relative;
+
+    &:before {
+        content: '';
+        width: 30%;
+        display: inline-block;
+        height: 5px;
+        background-color: #ef5e5e;
+        position: absolute;
+        top: 55%;
+        left: 2.5%
+    }
+
+    &:after {
+        content: '';
+        width: 30%;
+        display: inline-block;
+        height: 5px;
+        background-color: #ef5e5e;
+        position: absolute;
+        top: 55%;
+        right: 2.5%
+    }
+}
+
+.hrSocialMedia{
+    height: 5px;
+    width: 95%;
+    
+    background-color: $cg-red;
+
+}
+
+.instagramProfiles {
+    display: flex;
+    justify-content: center;
+
+    .profile1 {
+        width: 50%;
+        display: flex;
+    
+        flex-direction: column;
+        align-items: center;
+      
+        text-align: center;
+
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
