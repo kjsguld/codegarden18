@@ -2,7 +2,7 @@
     "features": [       
         {
           "properties": {
-            "name": "Snik Snak",
+            "name": "<h5> Snik Snak </h5> <a href='https://www.google.com/maps/dir/55.403651,10.3799655/Snik+Snak,+Jernbanegade,+Odense+C/'> Navigate to </a>",
             "lat": 55.39681,
             "lon": 10.38519,
             "type": "bar"
@@ -10,7 +10,7 @@
         },
         {
           "properties": {
-            "name": "Café Kræz",
+            "name": "<h5> Café Kræz </h5> <br> <a href='https://www.google.com/maps/dir/55.403651,10.3799655/Café+Kræz,+Gråbrødre+Plads,+Odense+C/'> Navigate to </a>",
             "lat": 55.39631,
             "lon": 10.38604,
             "type": "bar"
@@ -18,7 +18,7 @@
         },
         {
           "properties": {
-            "name": "Privaten",
+            "name": "<h5> Privaten </h5> <br> <a href='https://www.google.com/maps/dir/55.403651,10.3799655/Privaten,+Ove+Sprogøes+Plads,+Odense+C/'> Navigate to </a>",
             "lat": 55.3963,
             "lon": 10.38592,
             "type": "bar"
@@ -26,7 +26,7 @@
         },
         {
           "properties": {
-            "name": "Christian Firtal",
+            "name": " <h5> Christian Firtal</h5> <br> <a href='https://www.google.com/maps/dir/55.403651,10.3799655/Christian+Firtal,+Vintapperstræde+31,+5000+Odense+C/'> Navigate to </a>",
             "lat": 55.39569,
             "lon": 10.38353,
             "type": "bar"
@@ -34,7 +34,7 @@
         },
         {
           "properties": {
-            "name": "Mamma's pizzeria",
+            "name": "<h5> Mamma's pizzeria</h5> <br> <a href='https://www.google.com/maps/dir/55.403651,10.3799655/Mamma's+pizzeria,+Hjallesevej,+Odense+C/'> Navigate to </a>",
             "lat": 55.38899,
             "lon": 10.39656,
             "type": "bar"
@@ -42,7 +42,7 @@
         },
         {
           "properties": {
-            "name": "Ryan's Of Odense",
+            "name": "<h5> Ryan's Of Odense </h5> <br> <a href='https://www.google.com/maps/dir/55.403651,10.3799655/Ryan's+of+Odense,+Fisketorvet,+Odense+C/'> Navigate to </a>",
             "lat": 55.39742,
             "lon": 10.38877,
             "type": "bar"
@@ -50,7 +50,7 @@
         },
         {
           "properties": {
-            "name": "Nelle's Coffee & Wine",
+            "name": "<h5> Nelle's Coffee & Wine</h5> <br> <a href='https://www.google.com/maps/place/Nelle's+Coffee+%26+Wine+-+Overgade/'> Navigate to </a> ",
             "lat": 55.39557,
             "lon": 10.37972,
             "type": "bar"
