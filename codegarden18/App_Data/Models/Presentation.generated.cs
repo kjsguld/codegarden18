@@ -55,6 +55,24 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Event github link
+		///</summary>
+		[ImplementPropertyType("eventGithubLink")]
+		public string EventGithubLink
+		{
+			get { return this.GetPropertyValue<string>("eventGithubLink"); }
+		}
+
+		///<summary>
+		/// Event video link
+		///</summary>
+		[ImplementPropertyType("eventVideoLink")]
+		public string EventVideoLink
+		{
+			get { return this.GetPropertyValue<string>("eventVideoLink"); }
+		}
+
+		///<summary>
 		/// Is Workshop
 		///</summary>
 		[ImplementPropertyType("isWorkshop")]

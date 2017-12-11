@@ -26,6 +26,8 @@
                     var uid = System.Guid.NewGuid().ToString();
                     var MainId = "Main-" + uid;
                     var MenuId = "Menu-" + uid;
+                    var hasVideoLink = presentation.EventVideoLink != null && presentation.EventVideoLink != "";
+                    var hasGithubLink = presentation.EventGithubLink != null && presentation.EventGithubLink != "";
                 }
                 <div class="roomBox">
                     <div id="@MainId">
@@ -35,13 +37,10 @@
                             //print out speakers
                             foreach (var item in presentation.Speaker)
                             {
-                                <small></small>
+                                <small>item.headline</small>
                             }
-                            presentation.Speaker
 
                         }
-                        <small></small>
-                        <small>@RoomBox.EventHost</small>
                         <div class="contextButton @(hasVideoLink || hasGithubLink ? "" : "hiddenBox")" data-target="@MenuId" data-self="@MainId">
                             <i class="material-icons">add</i>
                         </div>
@@ -50,11 +49,11 @@
                         <div class="hiddenContainer">
                             @if (hasVideoLink)
                             {
-                                <div class="iconLink"><a href="@RoomBox.EventVideoLink"><i class="material-icons">play_circle_filled</i></a></div>
+                                <div class="iconLink"><a href="@presentation.EventVideoLink"><i class="material-icons">play_circle_filled</i></a></div>
                             }
                             @if (hasGithubLink)
                             {
-                                <div class="iconLink"><a href="@RoomBox.EventGithubLink"><i class="material-icons">dvr</i></a></div>
+                                <div class="iconLink"><a href="@presentation.EventGithubLink"><i class="material-icons">dvr</i></a></div>
                             }
                             <div class="iconLink"><a href="#"><i class="material-icons">add_circle</i></a></div>
                         </div>
