@@ -1,0 +1,256 @@
+﻿.bodyText {
+    color: white;
+}
+
+.hiddenBox {
+    display: none;
+}
+
+.hiddenContainer {
+    padding: 10px 0 10px 0;
+    text-align: center;
+}
+
+.iconLink {
+    display: inline-block;
+    width: 56px;
+}
+
+.iconLink i {
+    font-size: 3.5rem;
+}
+
+.iconLink:nth-child(even) {
+    margin: 0 30px 0 30px;
+}
+
+.timeBox {
+    background-color: white;
+    float: left;
+    width: 100%;
+    border-top: 1px solid #413659;
+}
+
+.timeBox h4 {
+    padding: .8rem .8rem 0 .8rem;
+    text-align: center;
+}
+
+.timeBox:nth-child(even) {
+    background-color: #EFEFEF;
+}
+
+.roomTitle {
+    font-size: 1.2rem;
+    display: block;
+    font-weight: 600;
+    color: #ff9e30;
+}
+
+.roomBox {
+    padding: .8rem;
+    position: relative;
+}
+
+.roomBox p {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.roomBox small {
+    font-size: .9rem;
+    line-height: 1.5;
+    opacity: .9;
+}
+
+.roomBox:not(:last-child) {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #413659;
+}
+
+.contextButton {
+    position: absolute;
+    top: -42px;
+    right: 5px;
+    height: 40px;
+    background-color: #ff9e30;
+    border-radius: 10px;
+}
+
+.contextButton i {
+    font-size: 2.5rem;
+}
+
+section {
+    display: block;
+}
+
+.block {
+    max-width: 1600px;
+    padding: 60px 15px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+a {
+    background-color: transparent;
+}
+
+a:active, a:hover {
+    outline: 0;
+}
+
+strong {
+    font-weight: bold;
+}
+
+small {
+    font-size: 80%;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+@media (min-width: 992px) {
+    .block {
+        padding: 60px;
+    }
+}
+
+a, a:visited, a:hover {
+    text-decoration: none;
+}
+
+h2, h3 {
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #ff9e30;
+}
+
+@media (min-width: 992px) {
+    h2 {
+        font-size: 3rem;
+    }
+}
+
+h3 {
+    font-size: 0.6rem;
+    margin: 0 0 10px 0;
+}
+
+/* headlines with lines */
+.decorated {
+    overflow: hidden;
+    text-align: center;
+}
+
+.decorated > span {
+    position: relative;
+    display: inline-block;
+}
+
+.decorated > span:before, .decorated > span:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    border-bottom: 2px solid #F36F21;
+    width: 592px; /* half of limiter */
+    margin: 0 20px;
+}
+
+.decorated > span:before {
+    right: 100%;
+}
+
+.decorated > span:after {
+    left: 100%;
+}
+
+@media (min-width: 992px) {
+    h3 {
+        font-size: 2.2rem;
+    }
+}
+
+.headline {
+    text-align: center;
+    display: block;
+}
+
+p {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    margin: 5px 0;
+}
+
+@media (min-width: 992px) {
+    p {
+        font-size: 1.6rem;
+    }
+}
+
+small {
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: .6;
+}
+
+@media (min-width: 992px) {
+    small {
+        font-size: 1.3rem;
+    }
+}
+
+.day {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    transition: all .2s ease;
+}
+
+.day a, .day a:visited {
+    color: #ff9e30;
+    display: inline-block;
+}
+
+.day a:hover, .day a:visited:hover {
+    text-decoration: underline;
+    color: #EF5E5E;
+}
+
+.day h3 {
+    text-align: center;
+    padding: 1rem;
+    margin: 0;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-style: italic;
+    color: #ff9e30;
+}
+
+.day .program {
+    overflow: hidden;
+}
+
+.day .program-row {
+    float: left;
+    width: 100%;
+    border-bottom: 5px solid #413659;
+    padding: .8rem .5rem;
+    transition: border-color .2s ease;
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v31/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
+}

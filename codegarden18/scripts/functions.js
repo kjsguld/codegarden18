@@ -5,8 +5,14 @@ jQuery(document).ready(function ($) {
             $(this).toggleClass('open');
             $(".nav").toggleClass('open');
         });
+        $('.contextButton').click(function () {
+            var target = $(this).attr('data-target');
+            var self = $(this).attr('data-self');
+            target = $('#' + target);
+            self = $('#' + self);
+            self.addClass('hiddenBox');
+            target.removeClass('hiddenBox');
+        });
     });
-
-
 });
                 

@@ -1,6 +1,6 @@
 ﻿[
   {
-    "inputFile": "sass/master.scss",
-    "outputFile": "css/master.css"
+    "outputFile": "css/master.css",
+    "inputFile": "sass/master.scss"
   }
 ]

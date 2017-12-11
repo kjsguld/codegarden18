@@ -3,12 +3,12 @@
 .nav {
     right: 5%;
     top: 5%;
-    left: 0;
-    top: -100vh;
     position: fixed;
-    width: 100%;
+    right: -30%;
+    width: 30%;
     height: 100vh;
     background-color: $cg-violet;
+    top: 0;
     transition: all 0.45s ease;
     z-index: 50;
     overflow: hidden;
@@ -16,7 +16,6 @@
 
 .topbar .nav.open {
     right: 0;
-    top: 0;
     z-index: 50;
     width: 100%;
     overflow: hidden;
@@ -73,7 +72,7 @@
 }
 
 #nav-icon1.open {
-    margin-right: 0%;
+    margin-right: 10%;
 }
 
 #nav-icon1.open span:nth-child(1) {
@@ -87,7 +86,6 @@
 #nav-icon1.open span:nth-child(2) {
     opacity: 0;
     left: -60px;
-    display: none;
 }
 
 #nav-icon1.open span:nth-child(3) {

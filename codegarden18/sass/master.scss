@@ -6,6 +6,7 @@
 @import '_odenseLife.scss';
 @import '_footer.scss';
 @import '_feed.scss';
+@import '_schedule.scss';
 
 a {
     transition: all .2s ease-in-out;
@@ -28,12 +29,6 @@ p, h1, h2, h3, h4, h5, h6, a, span, strong{
     padding-left: 0;
 }
 
-.row {
-    margin-left: 0;
-    margin-right: 0;
-
-}
-
 paddigbox {
     padding-top: 10%;
     padding-bottom: 10%;
@@ -41,11 +36,8 @@ paddigbox {
 /* body */
 .baseBody {
     background-color: $cg-violet;
-    width: 100%; 
+    width: 100; //TODO
 }
-
-
-/* content frontpage */
 
 
 /* Buttons and elements */
@@ -53,7 +45,6 @@ paddigbox {
     display: flex;
     justify-content: center;
 }
-
 
 .button {
     border: none;
