@@ -2,7 +2,7 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "SiteMaster.cshtml";
-    var dates = Model.Content.Site().Descendants<DateBox>();
+    var presentations = Model.Content.Site().Descendants<Presentation>();
 }
 
 <section id="schedule" class="schedule">
@@ -11,56 +11,67 @@
             <h2 class="headline">@Model.Content.Headline</h2>
             <div class="bodyText">@Model.Content.Bodytext</div> 
 
-            @foreach (var DateBox in dates)
-            {
-                <div class="day">
-                    <h3>@DateBox.Date.ToString("dddd, MMMM d")</h3>
                 
 
-                @foreach (var TimeBox in DateBox.Descendants<TimeBox>())
-                {
-                    <div class="timeBox">
-                        <h4>@TimeBox.Time</h4>
 
-                        @foreach (var RoomBox in TimeBox.Descendants<RoomBox>())
-                        {
+    @foreach (var presentation in presentations)
+    {
+        @* Start day *@
+        <div class="day">
+            <h3>@presentation.StartTime.ToString("dddd, MMMM d")</h3>
 
-                            var uid = System.Guid.NewGuid().ToString();
-                            var MainId = "Main" + uid;
-                            var MenuId = "Menu" + uid;
-                            var hasVideoLink = RoomBox.EventVideoLink != null && RoomBox.EventVideoLink != "";
-                            var hasGithubLink = RoomBox.EventGithubLink != null && RoomBox.EventGithubLink != "";
-                            <div class="roomBox">
-                                <div id="@MainId">
-                                    <h5 class="roomTitle">@RoomBox.RoomName</h5>
-                                    <p>@RoomBox.EventTitle</p>
-                                    <small>@RoomBox.EventHost</small>
-                                    <div class="contextButton @(hasVideoLink || hasGithubLink ? "" : "hiddenBox")" data-target="@MenuId" data-self="@MainId">
-                                        <i class="material-icons">add</i>
-                                    </div>
-                                </div>
-                                <div id="@MenuId" class="hiddenBox">
-                                    <div class="hiddenContainer">
-                                        @if (hasVideoLink)
-                                        {
-                                            <div class="iconLink"><a href="@RoomBox.EventVideoLink"><i class="material-icons">play_circle_filled</i></a></div>
-                                        }
-                                        @if (hasGithubLink)
-                                        {
-                                            <div class="iconLink"><a href="@RoomBox.EventGithubLink"><i class="material-icons">dvr</i></a></div>
-                                        }
-                                        <div class="iconLink"><a href="#"><i class="material-icons">add_circle</i></a></div>
-                                    </div>
-                                    <div class="contextButton" data-target="@MainId" data-self="@MenuId">
-                                        <i class="material-icons">clear</i>
-                                    </div>
-                                </div>
-                            </div>
-                        }
-                    </div>
+            <div class="timeBox">
+                <h4>@presentation.StartTime.Hour</h4>
+                @{ 
+                    var uid = System.Guid.NewGuid().ToString();
+                    var MainId = "Main-" + uid;
+                    var MenuId = "Menu-" + uid;
                 }
+                <div class="roomBox">
+                    <div id="@MainId">
+                        <h5 class="roomTitle">@presentation.Name</h5>
+                        <p>@presentation.Headline</p>
+                        @{ 
+                            //print out speakers
+                            foreach (var item in presentation.Speaker)
+                            {
+                                <small></small>
+                            }
+                            presentation.Speaker
+
+                        }
+                        <small></small>
+                        <small>@RoomBox.EventHost</small>
+                        <div class="contextButton @(hasVideoLink || hasGithubLink ? "" : "hiddenBox")" data-target="@MenuId" data-self="@MainId">
+                            <i class="material-icons">add</i>
+                        </div>
+                    </div>
+                    <div id="@MenuId" class="hiddenBox">
+                        <div class="hiddenContainer">
+                            @if (hasVideoLink)
+                            {
+                                <div class="iconLink"><a href="@RoomBox.EventVideoLink"><i class="material-icons">play_circle_filled</i></a></div>
+                            }
+                            @if (hasGithubLink)
+                            {
+                                <div class="iconLink"><a href="@RoomBox.EventGithubLink"><i class="material-icons">dvr</i></a></div>
+                            }
+                            <div class="iconLink"><a href="#"><i class="material-icons">add_circle</i></a></div>
+                        </div>
+                        <div class="contextButton" data-target="@MainId" data-self="@MenuId">
+                            <i class="material-icons">clear</i>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            }
+
+        </div>
+                @* End day *@
+    }
+
+            
+            
         </div>
     </div>
 </section>
