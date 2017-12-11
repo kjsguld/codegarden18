@@ -1,0 +1,42 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Category>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "SiteMaster.cshtml";
+   
+    var projects = Model.Content.Children<Project>();
+}
+ 
+<div class="_category">
+    <div class="firstBox">
+        <h4><strong>@Umbraco.Field("Headline")</strong></h4>
+        <p>@Umbraco.Field("bodytextToVote")</p>
+
+    </div>
+    @foreach (var project in projects)
+    {
+         <div class="rect">
+            <div class="box123">
+                 <div class="dots-container">
+                     <a href="#" class="dots"></a>
+                     <a href="#" class="dots"></a>
+                     <a href="#" class="dots"></a>
+                     <a class="vote" id="demo" href="@project.Url"></a>
+                 </div>
+                 <div class="content">
+                     <div class="contentInfo"></div>
+                     <h3>@project.Headline </h3>
+                     <p> watch it: </p>
+                     <a href="@project.Http">@project.Http</a>
+                 </div>
+             </div>
+        </div>
+    }
+ 
+    <script>
+        $(".dots").click(function () {
+            console.log("test");
+            $(".vote").html("VOTE");
+        });
+   </script>
+</div>
+

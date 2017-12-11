@@ -1,0 +1,68 @@
+﻿._category {
+    .firstBox{
+        padding: 5%;
+    }
+
+    .rect {
+        width: 100%;
+        background-color: $cg-red;
+        color: white;
+        text-align: right center;
+        border: 0;
+        margin: 0;
+        padding: 0;
+        z-index: 100;
+        font-family: Lato;
+
+        &:nth-of-type(2) {
+            background-color: $cg-lightred;
+            color: white;
+        }
+    }
+
+    div.rect .dots-container {
+        position: relative;
+        z-index: 15;
+    }
+
+    .dots {
+        display: flex;
+        flex-direction: column;
+        background-color: $cg-violet;
+        border-radius: 1000px;
+        width: 10px;
+        height: 10px;
+        border: none;
+        position: relative;
+        left: 342px;
+        top: 6px;
+        margin-bottom: 3px;
+        margin-top: 2px;
+        color: white;
+    }
+
+    a.vote {
+        float: right;
+        right: 3px;
+        color: white;
+        font-style: italic;
+        margin: 2px;
+        left:2px;
+    }
+
+    div.content {
+        margin-left: 15px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        position: relative;
+        bottom: 30px;
+        a{
+            color:white;
+        }
+    }
+
+    h4, p {
+        color: white;
+        font-family: Lato;
+    }
+}

@@ -1,0 +1,19 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+    
+    var projects = Model.Content.Site().Descendants<Project>();
+}
+
+<div class="awardsafter">
+    <div class ="title">
+        <div class="font-weight-bold">
+            <h1 class="text-white">@Umbraco.Field("headlineAfter")</h1>
+        </div>
+        <div class = "content">
+            <div class="text-white">
+                <p>@Umbraco.Field("bodytextAfter")</p>
+            </div>
+        </div>
+ </div>
+    </div>
