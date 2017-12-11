@@ -3,7 +3,7 @@
         
         {
           "properties": {
-            "name": "Hotel Windsor, Milling Hotels",
+            "name": " <h5> Hotel Windsor, Milling Hotels </h5> <br> <a href='https://www.google.com/maps/place/Hotel+Windsor,+Milling+Hotels,+Vindegade+45,+5000+Odense+C/'> Navigate to </a>",
             "lat": 55.39828,
             "lon": 10.38288,
             "type": "hotel"
@@ -11,7 +11,7 @@
         },
         {
           "properties": {
-            "name": "Hotel Ansgar, Milling Hotels",
+            "name": "<h5> Hotel Ansgar, Milling Hotels </h5> <br> <a href='https://www.google.com/maps/place/Hotel+Ansgar,+Milling+Hotels,+Østre+Stationsvej+32,+5000+Odense+C/'> Navigate to </a>",
             "lat": 55.39976,
             "lon": 10.3817,
             "type": "hotel"
@@ -19,7 +19,7 @@
         },
         {
           "properties": {
-            "name": "Hotel Plaza, Milling Hotels",
+            "name": "<h5> Hotel Plaza, Milling Hotels </h5> <br> <a href='https://www.google.com/maps/place/Hotel+Plaza,+Milling+Hotels,+Østre+Stationsvej+24,+5000+Odense+C/'> Navigate to </a>",
             "lat": 55.40009,
             "lon": 10.38276,
             "type": "hotel"
