@@ -2,7 +2,7 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "SiteMaster.cshtml";
-    var presentations = Model.Content.Site().Descendants<Presentation>();
+    var presentations = Model.Content.Site().Descendants<Presentation>().OrderBy(x => x.StartTime);
 }
 
 <section id="schedule" class="schedule">
@@ -11,66 +11,86 @@
             <h2 class="headline">@Model.Content.Headline</h2>
             <div class="bodyText">@Model.Content.Bodytext</div> 
 
-                
-
+    @{ 
+        bool newday = true;
+        DateTime yesterday = new DateTime();
+    }
 
     @foreach (var presentation in presentations)
     {
-        @* Start day *@
-        <div class="day">
-            <h3>@presentation.StartTime.ToString("dddd, MMMM d")</h3>
+        //evaluate newday
+        newday = yesterday.DayOfYear != presentation.StartTime.DayOfYear ? true : false;
 
-            <div class="timeBox">
-                <h4>@presentation.StartTime.Hour</h4>
-                @{ 
-                    var uid = System.Guid.NewGuid().ToString();
-                    var MainId = "Main-" + uid;
-                    var MenuId = "Menu-" + uid;
-                    var hasVideoLink = presentation.EventVideoLink != null && presentation.EventVideoLink != "";
-                    var hasGithubLink = presentation.EventGithubLink != null && presentation.EventGithubLink != "";
-                }
-                <div class="roomBox">
-                    <div id="@MainId">
-                        <h5 class="roomTitle">@presentation.Name</h5>
-                        <p>@presentation.Headline</p>
-                        @{ 
-                            //print out speakers
-                            foreach (var item in presentation.Speaker)
-                            {
-                                <small>item.headline</small>
-                            }
+        if (newday) // first case
+        {
+        @:<div class="day">
+            @:<h3>@presentation.StartTime.ToString("dddd, MMMM d")</h3>
+        
+        }
+        else if (newday && yesterday.Year > 1) //fix nullable yesterday workaround
+        {
+        @:</div>
+        @:<div class="day">
+            @:<h3>@presentation.StartTime.ToString("dddd, MMMM d")</h3>
 
-                        }
-                        <div class="contextButton @(hasVideoLink || hasGithubLink ? "" : "hiddenBox")" data-target="@MenuId" data-self="@MainId">
-                            <i class="material-icons">add</i>
-                        </div>
-                    </div>
-                    <div id="@MenuId" class="hiddenBox">
-                        <div class="hiddenContainer">
-                            @if (hasVideoLink)
-                            {
-                                <div class="iconLink"><a href="@presentation.EventVideoLink"><i class="material-icons">play_circle_filled</i></a></div>
-                            }
-                            @if (hasGithubLink)
-                            {
-                                <div class="iconLink"><a href="@presentation.EventGithubLink"><i class="material-icons">dvr</i></a></div>
-                            }
-                            <div class="iconLink"><a href="#"><i class="material-icons">add_circle</i></a></div>
-                        </div>
-                        <div class="contextButton" data-target="@MainId" data-self="@MenuId">
-                            <i class="material-icons">clear</i>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
-
-        </div>
-                @* End day *@
     }
 
-            
-            
+
+    <div class="timeBox">
+        <h4>@presentation.StartTime.ToString("H:mm")</h4>
+        @{
+            var uid = System.Guid.NewGuid().ToString();
+            var MainId = "Main-" + uid;
+            var MenuId = "Menu-" + uid;
+            var hasVideoLink = presentation.EventVideoLink != null && presentation.EventVideoLink != "";
+            var hasGithubLink = presentation.EventGithubLink != null && presentation.EventGithubLink != "";
+        }
+        <div class="roomBox">
+            <div id="@MainId">
+                @{
+                    //print out room
+                    foreach (var item in presentation.Room)
+                    {
+                        <h5 class="roomTitle">@item.Name</h5>
+                    }
+                }
+
+                <p>@presentation.Headline</p>
+                @{
+                    //print out speakers
+                    foreach (var item in presentation.Speaker)
+                    {
+                        <small>@item.Name</small>
+                    }
+                }
+                <div class="contextButton @(hasVideoLink || hasGithubLink ? "" : "hiddenBox")" data-target="@MenuId" data-self="@MainId">
+                    <i class="material-icons">add</i>
+                </div>
+            </div>
+            <div id="@MenuId" class="hiddenBox">
+                <div class="hiddenContainer">
+                    @if (hasVideoLink)
+                    {
+                        <div class="iconLink"><a href="@presentation.EventVideoLink"><i class="material-icons">play_circle_filled</i></a></div>
+                    }
+                    @if (hasGithubLink)
+                    {
+                        <div class="iconLink"><a href="@presentation.EventGithubLink"><i class="material-icons">dvr</i></a></div>
+                    }
+                    <div class="iconLink"><a href="#"><i class="material-icons">add_circle</i></a></div>
+                </div>
+                <div class="contextButton" data-target="@MainId" data-self="@MenuId">
+                    <i class="material-icons">clear</i>
+                </div>
+            </div>
         </div>
+
     </div>
+    
+        yesterday = presentation.StartTime;
+    }
+
+</div>
+</div>
 </section>
