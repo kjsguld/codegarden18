@@ -13,13 +13,13 @@
 
     @{ 
         bool newday = true;
-        DateTime yesterday = new DateTime();
+        DateTime lastStartTime = new DateTime();
     }
 
     @foreach (var presentation in presentations)
     {
         //evaluate newday
-        newday = yesterday.DayOfYear != presentation.StartTime.DayOfYear ? true : false;
+        newday = lastStartTime.DayOfYear != presentation.StartTime.DayOfYear ? true : false;
 
         if (newday) // first case
         {
@@ -27,7 +27,7 @@
             @:<h3>@presentation.StartTime.ToString("dddd, MMMM d")</h3>
         
         }
-        else if (newday && yesterday.Year > 1) //fix nullable yesterday workaround
+        else if (newday && lastStartTime.Year > 1) //fix nullable yesterday workaround
         {
         @:</div>
         @:<div class="day">
@@ -38,13 +38,22 @@
 
 
     <div class="timeBox">
-        <h4>@presentation.StartTime.ToString("H:mm")</h4>
         @{
             var uid = System.Guid.NewGuid().ToString();
             var MainId = "Main-" + uid;
             var MenuId = "Menu-" + uid;
             var hasVideoLink = presentation.EventVideoLink != null && presentation.EventVideoLink != "";
             var hasGithubLink = presentation.EventGithubLink != null && presentation.EventGithubLink != "";
+
+            if (lastStartTime.Hour == presentation.StartTime.Hour && lastStartTime.Minute == presentation.StartTime.Minute)
+            {
+
+            }
+            else
+            {
+                <h4>@presentation.StartTime.ToString("H:mm")</h4>
+            }
+
         }
         <div class="roomBox">
             <div id="@MainId">
@@ -88,7 +97,7 @@
 
     </div>
     
-        yesterday = presentation.StartTime;
+        lastStartTime = presentation.StartTime;
     }
 
 </div>
