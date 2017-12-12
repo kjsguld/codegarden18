@@ -1,36 +1,41 @@
-﻿._project{
-    font-family:Lato;
-    h1, p{
-        color:white; 
-        position: relative;
-        left: 15px;
-        width: 320px;
-        text-align:justify;
+﻿._project {
+    font-family: Lato;
+
+    div.firstBox {
+        padding: 5%; 
+        }
+    div.secondBox{
+        padding: 5%;
     }
-    img {
-        width:350px;
-        height:200px;
-        margin: 0px;
-        border: none;
-        padding: 0px;
+
+        h4, p {
+            color: white;
+            text-align: justify;
+        }
+
+        img {
+            width: 100%;
+            height: 200px;
+        }
+
+        .submit {
+            background-color: $cg-red;
+            border: none;
+            color: white;
+            position: relative;
+            left: 20px;
+            bottom: 0.5px;
+            height: 30px;
+            width: 100px;
+        }
+       
+         input.box {
+            position: relative;
+            left: 25px;
+            height: 30px;
+            border: none;
+            width: 200px;
+            color: black;
+            text-align: center;
+       }
     }
-    .submit{
-        background-color: $cg-red;
-        border:none;
-        color:white;
-        position: relative; 
-        left:20px;
-        height:30px;
-        width:100px;
-    }
-    .box{
-        position:relative;
-        left:25px;
-        height:30px;
-        border:none;
-        width:200px;
-        color: lightgrey;
-        text-align: center;
-    }
-    
-}

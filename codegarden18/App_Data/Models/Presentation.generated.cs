@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>Awards</summary>
-	[PublishedContentModel("awards")]
-	public partial class Awards : PublishedContentModel, IHeadlineBodytext, IMenu, IMeta
+	/// <summary>Presentation</summary>
+	[PublishedContentModel("presentation")]
+	public partial class Presentation : PublishedContentModel, IHeadlineBodytext, IMenu, IMeta
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "awards";
+		public new const string ModelTypeAlias = "presentation";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Awards(IPublishedContent content)
+		public Presentation(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,108 +40,72 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Awards, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Presentation, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// awards startdate
+		/// EndTime
 		///</summary>
-		[ImplementPropertyType("awards_Startdate")]
-		public DateTime Awards_Startdate
+		[ImplementPropertyType("endTime")]
+		public DateTime EndTime
 		{
-			get { return this.GetPropertyValue<DateTime>("awards_Startdate"); }
+			get { return this.GetPropertyValue<DateTime>("endTime"); }
 		}
 
 		///<summary>
-		/// bodytextAfter
+		/// Event github link
 		///</summary>
-		[ImplementPropertyType("bodytextAfter")]
-		public IHtmlString BodytextAfter
+		[ImplementPropertyType("eventGithubLink")]
+		public string EventGithubLink
 		{
-			get { return this.GetPropertyValue<IHtmlString>("bodytextAfter"); }
+			get { return this.GetPropertyValue<string>("eventGithubLink"); }
 		}
 
 		///<summary>
-		/// bodytextDuring
+		/// Event video link
 		///</summary>
-		[ImplementPropertyType("bodytextDuring")]
-		public IHtmlString BodytextDuring
+		[ImplementPropertyType("eventVideoLink")]
+		public string EventVideoLink
 		{
-			get { return this.GetPropertyValue<IHtmlString>("bodytextDuring"); }
+			get { return this.GetPropertyValue<string>("eventVideoLink"); }
 		}
 
 		///<summary>
-		/// BodytextRules
+		/// Is Workshop
 		///</summary>
-		[ImplementPropertyType("bodytextRules")]
-		public IHtmlString BodytextRules
+		[ImplementPropertyType("isWorkshop")]
+		public bool IsWorkshop
 		{
-			get { return this.GetPropertyValue<IHtmlString>("bodytextRules"); }
+			get { return this.GetPropertyValue<bool>("isWorkshop"); }
 		}
 
 		///<summary>
-		/// BodytextSubmit
+		/// Room
 		///</summary>
-		[ImplementPropertyType("bodytextSubmit")]
-		public IHtmlString BodytextSubmit
+		[ImplementPropertyType("room")]
+		public IEnumerable<IPublishedContent> Room
 		{
-			get { return this.GetPropertyValue<IHtmlString>("bodytextSubmit"); }
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("room"); }
 		}
 
 		///<summary>
-		/// finishDate
+		/// Speaker
 		///</summary>
-		[ImplementPropertyType("finishDate")]
-		public DateTime FinishDate
+		[ImplementPropertyType("speaker")]
+		public IEnumerable<IPublishedContent> Speaker
 		{
-			get { return this.GetPropertyValue<DateTime>("finishDate"); }
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("speaker"); }
 		}
 
 		///<summary>
-		/// headlineAfter
+		/// StartTime
 		///</summary>
-		[ImplementPropertyType("headlineAfter")]
-		public string HeadlineAfter
+		[ImplementPropertyType("startTime")]
+		public DateTime StartTime
 		{
-			get { return this.GetPropertyValue<string>("headlineAfter"); }
-		}
-
-		///<summary>
-		/// headlineDuring
-		///</summary>
-		[ImplementPropertyType("headlineDuring")]
-		public string HeadlineDuring
-		{
-			get { return this.GetPropertyValue<string>("headlineDuring"); }
-		}
-
-		///<summary>
-		/// HeadlineRules
-		///</summary>
-		[ImplementPropertyType("headlineRules")]
-		public string HeadlineRules
-		{
-			get { return this.GetPropertyValue<string>("headlineRules"); }
-		}
-
-		///<summary>
-		/// HeadlineSubmit
-		///</summary>
-		[ImplementPropertyType("headlineSubmit")]
-		public string HeadlineSubmit
-		{
-			get { return this.GetPropertyValue<string>("headlineSubmit"); }
-		}
-
-		///<summary>
-		/// startDate
-		///</summary>
-		[ImplementPropertyType("startDate")]
-		public DateTime StartDate
-		{
-			get { return this.GetPropertyValue<DateTime>("startDate"); }
+			get { return this.GetPropertyValue<DateTime>("startTime"); }
 		}
 
 		///<summary>

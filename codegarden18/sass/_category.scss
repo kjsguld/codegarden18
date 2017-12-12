@@ -1,5 +1,5 @@
 ﻿._category {
-    .firstBox{
+    .firstBox {
         padding: 5%;
     }
 
@@ -13,8 +13,11 @@
         padding: 0;
         z-index: 100;
         font-family: Lato;
+        position: relative;
+        bottom: 11px;
+        height: 130px;
 
-        &:nth-of-type(2) {
+        &:nth-of-type(3) {
             background-color: $cg-lightred;
             color: white;
         }
@@ -34,20 +37,25 @@
         height: 10px;
         border: none;
         position: relative;
-        left: 342px;
+        left: 325px;
         top: 6px;
         margin-bottom: 3px;
         margin-top: 2px;
         color: white;
+        top: 10px;
     }
 
     a.vote {
+        background-color: $cg-violet;
         float: right;
-        right: 3px;
+        position: relative;
         color: white;
         font-style: italic;
-        margin: 2px;
-        left:2px;
+        right: 6px;
+        bottom: 20px;
+        font-size: small;
+        padding-right: 7px;
+        padding-left: 4px;
     }
 
     div.content {
@@ -56,8 +64,9 @@
         margin-top: 10px;
         position: relative;
         bottom: 30px;
-        a{
-            color:white;
+
+        a {
+            color: white;
         }
     }
 

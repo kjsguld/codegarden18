@@ -12,19 +12,22 @@
 }
 
     <div class="_project">
-        <div class="col-md-4">
-        <h1>@Umbraco.Field("headline")</h1>
+       
+        <div class="firstBox">
+        <h4>@Umbraco.Field("headline")</h4>
         <p>@Umbraco.Field("creator")</p>
-        <img src=@image />       
+         </div>
+        <img src=@image /> 
+            <div class="secondBox">
         <p>@Umbraco.Field("bodytext")</p>
-        <br />
+        </div>
         
 
         <form action="/umbraco/api/vote/commitvote" id="vote">
            <input type="hidden" name="project-id" value="@Model.Content.Id" />
-            <input class="box" type="text" name="ticket-id" value="your ticket number">
+            <input class="box" type="text" name="ticket-id" placeholder="your ticket number">
             <input class="submit" type="submit" value="Vote Now">
         </form>
-        </div>
-     </div>
+    </div>
+     
 

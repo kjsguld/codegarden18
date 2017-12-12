@@ -20,7 +20,7 @@
                      <a href="#" class="dots"></a>
                      <a href="#" class="dots"></a>
                      <a href="#" class="dots"></a>
-                     <a class="vote" id="demo" href="@project.Url"></a>
+                     <a class="vote" id="demo" href="@project.Url"></a>     
                  </div>
                  <div class="content">
                      <div class="contentInfo"></div>
@@ -34,8 +34,8 @@
  
     <script>
         $(".dots").click(function () {
-            console.log("test");
-            $(".vote").html("VOTE");
+            $(".dots").animate({ left : '280px' });
+            $(".vote").html(" VOTE ");
         });
    </script>
 </div>
