@@ -653,7 +653,8 @@ small {
   flex-direction: column;
   align-items: center;
   background-color: #413659;
-  margin-top: 2%; }
+  margin-top: 2%;
+  color: white; }
 
 a {
   transition: all .2s ease-in-out; }
