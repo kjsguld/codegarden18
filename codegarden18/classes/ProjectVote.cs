@@ -9,6 +9,6 @@ namespace codegarden18.classes
     {
         public int ProjectId { get; set; }
         public int Votes { get; set; }
-        public int ParentId { get; set; }
+        public int CategoryId { get; set; }
     }
 }
