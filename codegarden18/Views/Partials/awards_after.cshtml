@@ -1,13 +1,33 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using codegarden18.classes
 @{
     // get all votes
-    var votes = Model.Content.Site().Descendants<Vote>().GroupBy(x => x.ProjectID);
+    var votes = Model.Content.Site().Descendants<Vote>();
+    //var votes = Umbraco.TypedContent(1215).Children().Where(x => x.IsVisible());
 
     // create abstract list of projects 
-    //List<ProjectVotes> list = new List<ProjectVotes>();
-    // create class???
-    
+    List<ProjectVote> list = new List<ProjectVote>();
+
     // assign votes to projects
+    foreach(var vote in votes)
+    {
+        var thisItem = new ProjectVote();
+
+
+        //var addableItem = list.Find(x => x.ProjectId == vote.ProjectID);
+        //if (addableItem != null)
+        //{
+        //    thisItem.ProjectId = vote.ProjectID;
+        //    thisItem.Votes = 1;
+        //    list.Add(thisItem);
+        //}
+        //else
+        //{
+        //    thisItem.ProjectId = vote.ProjectID;
+        //    thisItem.Votes = 1;
+        //    list.Add(thisItem);
+        //}
+    }
 
     // sort ids based on the higest number of votes
 
@@ -15,7 +35,18 @@
     var projects = Model.Content.Site().Descendants<Project>();
 }
 
+
 <div class="awardsafter">
+@foreach (var vote in votes)
+{
+    @vote.GetPropertyValue("projectID")
+    <br />
+}
+@foreach (var item in list)
+{
+    @item.ProjectId
+    <div>TEST!</div>
+}
     <div class ="title row">
         <div class="col-sm-12">
             <h1 class="text-white">@Umbraco.Field("headlineAfter")</h1>
