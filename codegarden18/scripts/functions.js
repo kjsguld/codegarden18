@@ -15,4 +15,15 @@ jQuery(document).ready(function ($) {
         });
     });
 });
+
+
+jQuery(document).ready(function ($) {
+
+    $(document).ready(function () {
+        $('#popUp').click(function () {
+            $(this).toggleClass('open');
+            $(".schedulePopUp").toggleClass('open');
+        });
+    });
+});
                 

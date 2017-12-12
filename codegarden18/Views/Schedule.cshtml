@@ -18,7 +18,8 @@
 
     @foreach (var presentation in presentations)
     {
-        //evaluate newday
+
+        // evaluate newday
         newday = lastStartTime.DayOfYear != presentation.StartTime.DayOfYear ? true : false;
 
         if (newday) // first case
@@ -27,12 +28,12 @@
             @:<h3>@presentation.StartTime.ToString("dddd, MMMM d")</h3>
         
         }
-        else if (newday && lastStartTime.Year > 1) //fix nullable yesterday workaround
+        else if (newday && lastStartTime.Year > 1) // fix nullable yesterday workaround
         {
         @:</div>
         @:<div class="day">
             @:<h3>@presentation.StartTime.ToString("dddd, MMMM d")</h3>
-
+        
 
     }
 
@@ -102,4 +103,20 @@
 
 </div>
 </div>
+
+        <div class="container">
+            <div class="schedulePopUp">
+                <a id="popUp" href="#"> Open your schedule </a>
+                <div class="timeBox">
+
+                </div>
+
+            </div>
+        </div>
+
 </section>
+
+
+
+
+
