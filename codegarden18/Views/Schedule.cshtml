@@ -24,20 +24,24 @@
 
         if (newday) // first case
         {
+        @:</div>
         @:<div class="day">
             @:<h3>@presentation.StartTime.ToString("dddd, MMMM d")</h3>
         
         }
         else if (newday && lastStartTime.Year > 1) // fix nullable yesterday workaround
         {
-        @:</div>
         @:<div class="day">
             @:<h3>@presentation.StartTime.ToString("dddd, MMMM d")</h3>
+<<<<<<< HEAD
         @:</div>
         
 
     }
 
+=======
+        }
+>>>>>>> cf795ec6d68efc2ac2f90f8178030c825854d01f
 
     <div class="timeBox">
         @{
@@ -98,9 +102,10 @@
         </div>
 
     </div>
-    
-        lastStartTime = presentation.StartTime;
-    }
+
+                        
+                        lastStartTime = presentation.StartTime;
+                    }
 
 </div>
 </div>
