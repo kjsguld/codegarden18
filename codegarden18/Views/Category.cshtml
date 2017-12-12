@@ -15,7 +15,6 @@
     @foreach (var project in projects)
     {
          <div class="rect">
-            <div class="box123">
                  <div class="dots-container">
                      <a href="#" class="dots"></a>
                      <a href="#" class="dots"></a>
@@ -24,19 +23,19 @@
                  </div>
                  <div class="content">
                      <div class="contentInfo"></div>
-                     <h3>@project.Headline </h3>
+                     <h5>@project.Headline </h5>
                      <p> watch it: </p>
                      <a href="@project.Http">@project.Http</a>
                  </div>
-             </div>
         </div>
+    
     }
- 
     <script>
-        $(".dots").click(function () {
-            $(".dots").animate({ left : '280px' });
-            $(".vote").html(" VOTE ");
-        });
-   </script>
+         $(".dots").click(function () {
+             $(".dots").animate({ left: '280px' });
+             $(".vote").html(" VOTE ");
+         });
+    </script>
+    
 </div>
 

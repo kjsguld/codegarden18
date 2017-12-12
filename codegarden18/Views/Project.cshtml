@@ -11,7 +11,7 @@
     var image = media.Url;
 }
 
-    <div class="_project">
+    <div class="_project row">
        
         <div class="firstBox">
         <h4>@Umbraco.Field("headline")</h4>
@@ -23,7 +23,7 @@
         </div>
         
 
-        <form action="/umbraco/api/vote/commitvote" id="vote">
+        <form action="/umbraco/api/vote/commitvote" class="vote">
            <input type="hidden" name="project-id" value="@Model.Content.Id" />
             <input class="box" type="text" name="ticket-id" placeholder="your ticket number">
             <input class="submit" type="submit" value="Vote Now">

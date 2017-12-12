@@ -8,20 +8,24 @@
         <h1><strong>@Umbraco.Field("headlineDuring")</strong></h1>
         <p>@Umbraco.Field("bodytextDuring")</p>
     </div>
-
+    
         @foreach (var category in categories)
         {
-        <a href="@category.Url">
-            <div class="rect">
-                <img src="@category.Picture.Url" title="@category.Headline" />
-                <div class="content">
-                    <h5><strong>@category.Headline</strong></h5>
-                    <p>@category.Bodytext</p>
+            <a href="@category.Url">
+                <div class="rect">
+
+                    <img src="@category.Picture.Url" title="@category.Headline" />
+                    <div class="content">
+                        <h6><strong>@category.Headline</strong></h6>
+                        <p>@category.Bodytext</p>
+                    </div>
+
+                    <br />
                 </div>
-            </div>
-            <br />
-        </a>
+                </a>
+            
         }
+    
         
 
 </div>
