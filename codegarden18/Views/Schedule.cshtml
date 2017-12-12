@@ -67,12 +67,12 @@
                     }
                 }
 
-                <p>@presentation.Headline</p>
+                <p id="presentationHeadline">@presentation.Headline</p>
                 @{
                     //print out speakers
                     foreach (var item in presentation.Speaker)
                     {
-                        <small>@item.Name</small>
+                        <small id="speakerName">@item.Name</small>
                     }
                 }
                 <div class="contextButton @(hasVideoLink || hasGithubLink ? "" : "hiddenBox")" data-target="@MenuId" data-self="@MainId">
@@ -89,7 +89,7 @@
                     {
                         <div class="iconLink"><a href="@presentation.EventGithubLink"><i class="material-icons">dvr</i></a></div>
                     }
-                    <div class="iconLink"><a href="#"><i class="material-icons">add_circle</i></a></div>
+                    <div class="iconLink"><a class="addSession" href="#"><i class="material-icons">add_circle</i></a></div>
                 </div>
                 <div class="contextButton" data-target="@MainId" data-self="@MenuId">
                     <i class="material-icons">clear</i>
@@ -108,9 +108,10 @@
         <div class="container">
             <div class="schedulePopUp">
                 <a id="popUp" href="#"> Open your schedule </a>
-                <div class="timeBox">
+                <div class="col-md-10 createYourOwnContent" id="createYourOwnContent">
 
                 </div>
+                <a class="button-green downloadYourSchedule" href="">Download your schedule</a>
 
             </div>
         </div>
