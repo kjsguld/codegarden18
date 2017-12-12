@@ -47,9 +47,9 @@
                 <h5>Current events</h5>
                 @foreach (var item in currentEvents)
                 {
-                    <div>
+                    <div class="col-sm-12">
                         @item.Headline
-                        @item.StartTime
+                        @item.StartTime.ToString("H:mm")
                     </div>
                 }
             </div>
@@ -63,9 +63,9 @@
             <h5> Upcomming events</h5>
             @foreach (var item in nextEvents)
             {
-                <div>
+                <div class="col-sm-12">
                     @item.Headline
-                    @item.StartTime
+                    @item.StartTime.ToString("H:mm")
                 </div>
             }
         </div>
