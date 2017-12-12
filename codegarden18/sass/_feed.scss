@@ -16,21 +16,25 @@
     }
 }
 
-
-.currentEvents{
-    width: 100%;
-
-    h5{
+.currentEvents, .upcommingEvents {
+    h5 {
         margin-left: 5%;
     }
-
+    .event {
+        padding: .5em;
+        margin-bottom: .7em;
+    }
 }
 
+.currentEvents {
+    .event {
+        background-color: $cg-orange;
+    }
+}
 
 .upcommingEvents {
-    width: 100%;
-    h5{
-        margin-left: 5%;
+    .event {
+        background-color: $cg-green;
     }
 }
 

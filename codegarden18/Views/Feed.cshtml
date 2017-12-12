@@ -43,13 +43,20 @@
 {
     <div class="container mt-5">
         <div class="row">
-            <div class="currentEvents">
+            <div class="currentEvents col-sm-12">
                 <h5>Current events</h5>
                 @foreach (var item in currentEvents)
                 {
-                    <div class="col-sm-12">
-                        @item.Headline
-                        @item.StartTime.ToString("H:mm")
+                    <div class="event">
+                        @try
+                        {
+                            var speaker = item.Speaker.First();
+                            @speaker.GetPropertyValue("speakerName");
+
+                        }
+                        catch (Exception) { }
+                        <p>@item.Headline</p>
+                        <p>@item.StartTime.ToString("H:mm")</p>
                     </div>
                 }
             </div>
@@ -59,13 +66,20 @@
 
 <div class="container @if(!currentEvents.Any()){ @Html.Raw("mt-5")} ">
     <div class="row">
-        <div class="upcommingEvents">
+        <div class="upcommingEvents col-sm-12">
             <h5> Upcomming events</h5>
             @foreach (var item in nextEvents)
             {
-                <div class="col-sm-12">
-                    @item.Headline
-                    @item.StartTime.ToString("H:mm")
+                <div class="event">
+                    @try
+                    {
+                    var speaker = item.Speaker.First();
+                    @speaker.GetPropertyValue("speakerName");
+
+                    }
+                    catch (Exception){ }
+                    <p>@item.Headline</p>
+                    <p>@item.StartTime.ToString("H:mm")</p>
                 </div>
             }
         </div>

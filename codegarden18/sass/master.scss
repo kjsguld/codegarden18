@@ -19,7 +19,7 @@ a:hover {
 }
 
 
-p, h1, h2, h3, h4, h5, h6, a, span, strong{
+p, h1, h2, h3, h4, h5, h6, a, span, strong, small{
     font-family: 'Lato', sans-serif;
 }
 
@@ -28,11 +28,11 @@ paddigbox {
     padding-bottom: 10%;
 }
 /* body */
-.baseBody {
+body.baseBody {
+    color: $cg-font;
     background-color: $cg-violet;
-    width: 100%; 
+    width: 100%;
 }
-
 
 /* Buttons and elements */
 .buttonsDiv {
