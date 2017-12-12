@@ -34,6 +34,10 @@ namespace codegarden18.api
                     cs.Save(vote);
                     return "success";
                 }
+                if(!validates)
+                {
+                    return "The vote is invalid";
+                }
 
                 //do vote on Guid
                 // add time to vote
@@ -44,7 +48,7 @@ namespace codegarden18.api
 
                 throw;
             }
-            return "failed";
+            return "failed to vote";
         }
 
         private bool ValidateVote(int ticketID, int projectID)
@@ -68,14 +72,16 @@ namespace codegarden18.api
 
                     if (isProject)
                     {
-                        //validate that only one vote exsists in the catagory
+                        //validate that only one vote exsists in the given catagory!
                         var allProjectsInCategory = projects.FindAll(x => x.CategoryID == currentCategoryID);
 
                         foreach (var projInCat in allProjectsInCategory)
                         {
                             // if vote exists, then set false
                             if (votes.Exists(x => x.ProjectID == projInCat.ID && x.TicketID == ticketID))
+                            {
                                 isOtherCategory = false;
+                            }
                         }
                     }
                 }

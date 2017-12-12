@@ -2,8 +2,8 @@
 @using codegarden18.classes
 @{
     // get all votes
-    var votes = Model.Content.Site().Descendants<Vote>();
-    //var votes = Umbraco.TypedContent(1215).Children().Where(x => x.IsVisible());
+    //var votes = Model.Content.Site().Descendants<Vote>();
+    var votes = Umbraco.TypedContent(1215).Descendants<Vote>();
 
     // create abstract list of projects 
     List<ProjectVote> list = new List<ProjectVote>();
@@ -13,21 +13,29 @@
     {
         var thisItem = new ProjectVote();
 
+        // find item if it exists in list
+        var addableItem = list.Find(x => x.ProjectId == vote.ProjectID);
+        if (addableItem != null)
+        {
+            addableItem.Votes++;
+        }
+        else
+        {
+            // creation of new entry in list 
+            thisItem.ProjectId = vote.ProjectID;
+            thisItem.Votes = 1;
 
-        //var addableItem = list.Find(x => x.ProjectId == vote.ProjectID);
-        //if (addableItem != null)
-        //{
-        //    thisItem.ProjectId = vote.ProjectID;
-        //    thisItem.Votes = 1;
-        //    list.Add(thisItem);
-        //}
-        //else
-        //{
-        //    thisItem.ProjectId = vote.ProjectID;
-        //    thisItem.Votes = 1;
-        //    list.Add(thisItem);
-        //}
+            var project = Model.Content.Descendants<Project>().Where(x => x.Id == vote.ProjectID);
+            var parentCategory = Model.Content.Site().Descendants<Category>().Where(x => x.Id == project.First().Parent.Id);
+
+            //thisItem.ParentId = project.First().Id;
+            thisItem.ParentId = parentCategory.First().Id;
+
+            list.Add(thisItem);
+        }
     }
+
+    List<ProjectVote> winners = list.OrderBy(x => x.Votes).Take(3).ToList();
 
     // sort ids based on the higest number of votes
 
@@ -39,13 +47,15 @@
 <div class="awardsafter">
 @foreach (var vote in votes)
 {
-    @vote.GetPropertyValue("projectID")
+    @vote.ProjectID
     <br />
 }
+
 @foreach (var item in list)
 {
-    @item.ProjectId
-    <div>TEST!</div>
+    @Html.Raw(item.ProjectId + " - " + item.Votes + " - " + item.ParentId);
+    
+    <br />
 }
     <div class ="title row">
         <div class="col-sm-12">
@@ -56,10 +66,10 @@
                 </div>
             </div>
         </div>
-        @foreach (var item in projects)
+        @foreach (var project in projects)
         {
             <div class="col-sm-12">
-
+                @project.Id
             </div>
         }
         

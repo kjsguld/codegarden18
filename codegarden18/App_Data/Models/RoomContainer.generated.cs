@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>Time Box</summary>
-	[PublishedContentModel("timeBox")]
-	public partial class TimeBox : PublishedContentModel
+	/// <summary>rooms</summary>
+	[PublishedContentModel("roomContainer")]
+	public partial class RoomContainer : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "timeBox";
+		public new const string ModelTypeAlias = "roomContainer";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public TimeBox(IPublishedContent content)
+		public RoomContainer(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,27 +40,9 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<TimeBox, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<RoomContainer, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// speaker time
-		///</summary>
-		[ImplementPropertyType("speakerTime")]
-		public DateTime SpeakerTime
-		{
-			get { return this.GetPropertyValue<DateTime>("speakerTime"); }
-		}
-
-		///<summary>
-		/// Time: Input start time of the event (24 hr format separated by : semicolon)
-		///</summary>
-		[ImplementPropertyType("time")]
-		public string Time
-		{
-			get { return this.GetPropertyValue<string>("time"); }
 		}
 	}
 }
