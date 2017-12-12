@@ -1,19 +1,36 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-
 @{
+    // get all votes
+    var votes = Model.Content.Site().Descendants<Vote>().GroupBy(x => x.ProjectID);
+
+    // create abstract list of projects 
+    //List<ProjectVotes> list = new List<ProjectVotes>();
+    // create class???
     
+    // assign votes to projects
+
+    // sort ids based on the higest number of votes
+
+    // query by id
     var projects = Model.Content.Site().Descendants<Project>();
 }
 
 <div class="awardsafter">
-    <div class ="title">
-        <div class="font-weight-bold">
+    <div class ="title row">
+        <div class="col-sm-12">
             <h1 class="text-white">@Umbraco.Field("headlineAfter")</h1>
-        </div>
-        <div class = "content">
-            <div class="text-white">
-                <p>@Umbraco.Field("bodytextAfter")</p>
+            <div class="content">
+                <div class="text-white">
+                    <p>@Umbraco.Field("bodytextAfter")</p>
+                </div>
             </div>
         </div>
- </div>
+        @foreach (var item in projects)
+        {
+            <div class="col-sm-12">
+
+            </div>
+        }
+        
     </div>
+</div>
