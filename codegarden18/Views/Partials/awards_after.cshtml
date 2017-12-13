@@ -52,23 +52,11 @@
     }
 
     // query by id
-    var projects = Model.Content.Site().Descendants<Project>();
+    var projects = Model.Content.Site().Descendants<Project>().Where(x => idList.Contains(x.Id));
 }
 
 
 <div class="awardsafter">
-@foreach (var id in idList)
-{
-    @id
-    <br />
-}
-
-@foreach (var item in winners)
-{
-    @Html.Raw(item.ProjectId + " - " + item.Votes + " - " + item.CategoryId);
-    
-    <br />
-}
     <div class ="title row">
         <div class="col-sm-12">
             <h1 class="text-white">@Umbraco.Field("headlineAfter")</h1>
@@ -81,7 +69,9 @@
         @foreach (var project in projects)
         {
             <div class="col-sm-12">
-                @project.Id
+                <img class="img-fluid" src="@project.Picture.Url" alt="@project.Headline"/>
+                <h3>@project.Headline</h3>
+                <div>@project.Bodytext</div>
             </div>
         }
         
