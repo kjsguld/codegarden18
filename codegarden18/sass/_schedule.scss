@@ -1,5 +1,5 @@
 ﻿.bodyText {
-    color: white;
+    color: $cg-font-color;
 }
 
 .hiddenBox {
@@ -25,10 +25,10 @@
 }
 
 .timeBox {
-    background-color: white;
+    background-color: $cg-font-color;
     float: left;
     width: 100%;
-    border-top: 1px solid #413659;
+    border-top: 1px solid $cg-orange;
     color: black;
 }
 
@@ -45,7 +45,7 @@
     font-size: 1.2rem;
     display: block;
     font-weight: 600;
-    color: #ff9e30;
+    color: $cg-orange;
 }
 
 .roomBox {
@@ -66,7 +66,7 @@
 
 .roomBox:not(:last-child) {
     padding-bottom: 20px;
-    border-bottom: 1px solid #413659;
+    border-bottom: 1px solid $cg-violet;
 }
 
 .contextButton {
@@ -74,7 +74,7 @@
     top: -42px;
     right: 5px;
     height: 40px;
-    background-color: #ff9e30;
+    background-color: $cg-orange;
     border-radius: 10px;
 }
 
@@ -132,7 +132,7 @@ h2 {
     font-size: 2rem;
     margin-bottom: 15px;
     font-weight: 700;
-    color: #ff9e30;
+    color: $cg-orange;
 }
 
 @media (min-width: 992px) {
@@ -161,7 +161,7 @@ h3 {
     content: '';
     position: absolute;
     top: 50%;
-    border-bottom: 2px solid #F36F21;
+    border-bottom: 2px solid $cg-orange;
     width: 592px; /* half of limiter */
     margin: 0 20px;
 }
@@ -217,14 +217,19 @@ small {
 }
 
 .day a, .day a:visited {
-    color: #ff9e30;
+    color: $cg-orange;
     display: inline-block;
+
+    &:hover {
+        text-decoration: underline;
+        color: $cg-red;
+    }
+
+    i{
+        color: $cg-orange;
+    }
 }
 
-.day a:hover, .day a:visited:hover {
-    text-decoration: underline;
-    color: #EF5E5E;
-}
 
 .day h3 {
     text-align: center;

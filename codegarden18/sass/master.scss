@@ -3,19 +3,19 @@
 @import '_functions.scss';
 @import '_animations.scss';
 
-// --- partial imports 
-@import '_navigation.scss';
-@import '_category.scss';
+// --- partial imports
+@import '_aboutHQ.scss';
 @import '_awardduring.scss';
 @import '_awardsbefore.scss';
 @import '_awardsafter.scss';
-@import '_project.scss';
-@import '_menu.scss';
-@import '_frontpage.scss';
-@import '_aboutHQ.scss';
-@import '_odenseLife.scss';
-@import '_footer.scss';
+@import '_category.scss';
 @import '_feed.scss';
+@import '_footer.scss';
+@import '_frontpage.scss';
+@import '_menu.scss';
+@import '_navigation.scss';
+@import '_odenseLife.scss';
+@import '_project.scss';
 @import '_schedule.scss';
 
 a {
@@ -44,7 +44,7 @@ paddigbox {
 }
 /* body */
 body.baseBody {
-    color: $cg-font;
+    color: $cg-font-color;
     background-color: $cg-violet;
     width: 100%; 
 }

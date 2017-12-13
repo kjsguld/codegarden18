@@ -46,15 +46,6 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// awards startdate
-		///</summary>
-		[ImplementPropertyType("awards_Startdate")]
-		public DateTime Awards_Startdate
-		{
-			get { return this.GetPropertyValue<DateTime>("awards_Startdate"); }
-		}
-
-		///<summary>
 		/// bodytextAfter
 		///</summary>
 		[ImplementPropertyType("bodytextAfter")]
