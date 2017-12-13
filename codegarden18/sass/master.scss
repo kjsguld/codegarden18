@@ -1,12 +1,23 @@
-﻿/* imports */
+﻿// --- base imports 
 @import '_variables.scss';
-@import '_navigation.scss';
-@import '_speakers.scss';
-@import '_frontpage.scss';
+@import '_functions.scss';
+@import '_animations.scss';
+
+// --- partial imports
 @import '_aboutHQ.scss';
-@import '_odenseLife.scss';
-@import '_footer.scss';
+@import '_awardduring.scss';
+@import '_awardsbefore.scss';
+@import '_awardsafter.scss';
+@import '_category.scss';
 @import '_feed.scss';
+@import '_footer.scss';
+@import '_frontpage.scss';
+@import '_menu.scss';
+@import '_navigation.scss';
+@import '_odenseLife.scss';
+@import '_project.scss';
+@import '_schedule.scss';
+@import '_speakers.scss';
 
 a {
     transition: all .2s ease-in-out;
@@ -18,21 +29,14 @@ a:hover {
     transform: scale(1.1);
 }
 
-
-p, h1, h2, h3, h4, h5, h6, a, span, strong{
-    font-family: 'Lato', sans-serif;
-}
-
-
-.container {
-    padding-right: 0;
+.full-w-box {
     padding-left: 0;
+    padding-right: 0;
 }
 
-.row {
-    margin-left: 0;
-    margin-right: 0;
 
+p, h1, h2, h3, h4, h5, h6, a, span, strong, small{
+    font-family: 'Lato', sans-serif;
 }
 
 paddigbox {
@@ -40,21 +44,37 @@ paddigbox {
     padding-bottom: 10%;
 }
 /* body */
-.baseBody {
+body.baseBody {
+    color: $cg-font-color;
     background-color: $cg-violet;
     width: 100%; 
 }
 
+i{
+    color: $cg-font-color;
+}
 
 /* content frontpage */
+.top-buffer {
+    padding-top: 10%;
+}
 
+.buttom-buffer {
+    padding-bottom: 10%;
+}
+
+.firstbox { //TODO could be more scemantic
+    background-color: $cg-lightblue;
+    display: flex;
+    color: white;
+    width: 100%;
+}
 
 /* Buttons and elements */
 .buttonsDiv {
     display: flex;
     justify-content: center;
 }
-
 
 .button {
     border: none;
@@ -82,4 +102,3 @@ paddigbox {
     @extend .button;
     background-color: $cg-green;
 }
-

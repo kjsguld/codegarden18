@@ -1,5 +1,52 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Awards>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = "SiteMaster.cshtml";
-}
+    Layout = "SiteMaster.cshtml";
+
+
+    int day = DateTime.Now.Day;
+    int month = DateTime.Now.Month;
+
+
+    string stringStartday = CurrentPage.startDate.ToString("dd");
+    int startDay = stringStartday.AsInt();
+
+    string stringFinishtday = CurrentPage.finishDate.ToString("dd");
+    int finishDay = stringFinishtday.AsInt();
+
+
+    string stringStartmonth = CurrentPage.startDate.ToString("MM");
+    int startMonth = stringStartmonth.AsInt();
+
+    string stringFinishmonth = CurrentPage.startDate.ToString("MM");
+    int finishMonth = stringFinishmonth.AsInt();
+
+
+    if (month < startMonth)
+    {
+        @Html.Partial("awards_before")
+    }
+    else if (month >= startMonth && month<= finishMonth)
+    {
+        if (day < startDay)
+        {
+            @Html.Partial("awards_before")
+        }
+        else if (startDay <= day && day <= finishDay)
+        {
+            @Html.Partial("awards_during")
+        }
+        else
+        {
+            @Html.Partial("awards_after")
+        }
+    }
+    else
+    {
+        @Html.Partial("awards_after")
+        }
+    }
+
+
+
+

@@ -1,25 +1,24 @@
 ﻿
 /* Navigation */
 .nav {
-    right: 5%;
-    top: 5%;
-    left: 0;
-    top: -100vh;
+   
     position: fixed;
     width: 100%;
     height: 100vh;
     background-color: $cg-violet;
+    top: -100vh;
     transition: all 0.45s ease;
     z-index: 50;
     overflow: hidden;
+    left:0;
 }
 
 .topbar .nav.open {
     right: 0;
-    top: 0;
     z-index: 50;
     width: 100%;
     overflow: hidden;
+    top: 0;
 }
 
 /* Icon 1 */
@@ -39,7 +38,7 @@
     transition: .3s ease-in-out;
     cursor: pointer;
     z-index: 999;
-}
+} 
 
 #nav-icon1 span, #nav-icon3 span, #nav-icon4 span {
     display: block;
@@ -73,7 +72,7 @@
 }
 
 #nav-icon1.open {
-    margin-right: 0%;
+   
 }
 
 #nav-icon1.open span:nth-child(1) {
@@ -86,7 +85,6 @@
 
 #nav-icon1.open span:nth-child(2) {
     opacity: 0;
-    left: -60px;
     display: none;
 }
 

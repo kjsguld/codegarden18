@@ -1,7 +1,18 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Feed>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = "SiteMaster.cshtml";
+    Layout = "SiteMaster.cshtml";
+    var currentEvents = Model.Content.Site()
+        .Descendants<Presentation>()
+        .Where(x => x.StartTime < DateTime.Now && x.EndTime > DateTime.Now)
+        .OrderBy(x => x.StartTime)
+        .Take(3);
+
+    var nextEvents = Model.Content.Site()
+        .Descendants<Presentation>()
+        .Where(x => x.StartTime > DateTime.Now)
+        .OrderBy(x => x.StartTime)
+        .Take(3);
 }
 
 
@@ -26,24 +37,51 @@
                 </script>
 
 
-<div class="feedTopBorder">
+<div class="feedTopBorder"></div>
 
+@if (currentEvents.Any())
+{
+    <div class="container mt-5">
+        <div class="row">
+            <div class="currentEvents col-sm-12">
+                <h5>Current events</h5>
+                @foreach (var item in currentEvents)
+                {
+                    <div class="event">
+                        @try
+                        {
+                            var speaker = item.Speaker.First();
+                            @speaker.GetPropertyValue("speakerName");
 
-</div>
-<div class="container mt-5">
-    <div class="row">
-        <div class="currentEvents">
-            <h5>Current events</h5>
+                        }
+                        catch (Exception) { }
+                        <p>@item.Headline</p>
+                        <p>@item.StartTime.ToString("H:mm")</p>
+                    </div>
+                }
+            </div>
         </div>
     </div>
-</div>
+}
 
-<div class="container">
+<div class="container @if(!currentEvents.Any()){ @Html.Raw("mt-5")} ">
     <div class="row">
-        <div class="upcommingEvents">
-
+        <div class="upcommingEvents col-sm-12">
             <h5> Upcomming events</h5>
+            @foreach (var item in nextEvents)
+            {
+                <div class="event">
+                    @try
+                    {
+                    var speaker = item.Speaker.First();
+                    @speaker.GetPropertyValue("speakerName");
 
+                    }
+                    catch (Exception){ }
+                    <p>@item.Headline</p>
+                    <p>@item.StartTime.ToString("H:mm")</p>
+                </div>
+            }
         </div>
     </div>
 </div>
