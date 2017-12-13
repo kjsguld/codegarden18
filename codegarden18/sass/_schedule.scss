@@ -274,11 +274,25 @@ small {
     border-radius: 1%;
     text-align: right;
     overflow-y: auto;
+    text-align: center;
+
+    .removeIcon {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1;
+        color: #000;
+        text-shadow: 0 1px 0 #fff;
+        opacity: .5;
+        float: none;
+    }
 
     a {
-        margin-right: 5%;
+        transition: all 0s ease-in-out;
         text-decoration: none;
     }
+
+    
 }
 
 .schedulePopUp.open {
@@ -294,14 +308,49 @@ small {
     }
 }
 
-
-
-.createdScheduleBox {
-    padding: 2%;
+.createYourOwnContent {
+    position: relative;
+    height: auto;
+    float: left;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: $cg-violet;
-    margin-top: 2%;
-    color: white;
+    flex-flow: wrap;
+
+    .createdScheduleBox {
+        width: 45%;
+        margin: 2%;
+        padding: 2%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: $cg-violet;
+        margin-top: 2%;
+        color: white;
+        position: relative;
+
+        .removeContent {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        &:hover {
+            .removeContent {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
 }
+
+
+
+
