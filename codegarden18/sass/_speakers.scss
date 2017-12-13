@@ -6,10 +6,9 @@
     height: 10px;
 }
 .speakerContainer {
-    color: #fff;
-    margin: 10% 0 0 10%;
-    text-align: left;
-    width: 80%;
+    p{
+        word-break: break-word;
+    }
 }
 .headBox {
     
@@ -23,9 +22,7 @@
     text-align: center;
 }
 .speakerPicture {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    border-radius: 100%;
 }
 .themeContainer {
     background-color: $cg-green;

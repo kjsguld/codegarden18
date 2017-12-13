@@ -18,16 +18,16 @@
 
 </div>
 
-<div class="speakerContainer top-buffer">
+<div class="container speakerContainer top-buffer">
     <div class="row">
-        <div class="headBox">
+        <div class="headBox col-sm-12">
 
             <div>
                 <h4> @Umbraco.Field("headline") </h4>
             </div>
 
         </div>
-        <div class="bodyBox">
+        <div class="bodyBox col-sm-12 mb-3">
 
             <div>
                 <p> @Umbraco.Field("bodyText") </p>
@@ -38,12 +38,12 @@
 </div>
 
 
-<div class="container speakerPicContainer">
-    <div class="row">
+<div class="container speakerContainer">
+    <div class="row mb-3">
     @foreach (var speaker in speakers)
     {
-        <div class="speakerPicBox">
-                <img src="@speaker.SpeakerPic.Url" class="speakerPicture" /><br />
+        <div class="col-6 mt-3">
+                <img src="@speaker.SpeakerPic.Url" class="img-fluid speakerPicture mb-2" /><br />
                 <strong class="speakerName">@speaker.SpeakerName</strong>
                 <p class="speakerDescription">@speaker.SpeakerDescription</p>
         </div>
@@ -53,16 +53,16 @@
 
 
 <div class="themeContainer">
-    <div class="speakerContainer">
+    <div class="container speakerContainer">
         <div class="row ">
-            <div class="headBox">
+            <div class="headBox col-sm-12 mt-3">
 
                 <div>
                     <h4> @Umbraco.Field("themeHeadline") </h4>
                 </div>
 
             </div>
-            <div class="bodyBox">
+            <div class="bodyBox col-sm-12 mb-3">
 
                 <div>
                     <p> @Umbraco.Field("themeBody") </p>
@@ -73,16 +73,16 @@
     </div>
 </div>
 
-<div class="speakerContainer">
+<div class="container speakerContainer">
     <div class="row ">
-        <div class="headBox">
+        <div class="headBox col-sm-12 mt-3">
 
             <div>
                 <h4> @Umbraco.Field("storiesHeadline") </h4>
             </div>
 
         </div>
-        <div class="bodyBox">
+        <div class="bodyBox col-sm-12 mb-3">
 
             <div>
                 <p> @Umbraco.Field("storiesBody") </p>

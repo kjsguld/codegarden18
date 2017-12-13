@@ -945,20 +945,15 @@ small {
   width: 100%;
   height: 10px; }
 
-.speakerContainer {
-  color: #fff;
-  margin: 10% 0 0 10%;
-  text-align: left;
-  width: 80%; }
+.speakerContainer p {
+  word-break: break-word; }
 
 .speakerPicContainer {
   margin: 10%;
   text-align: center; }
 
 .speakerPicture {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%; }
+  border-radius: 100%; }
 
 .themeContainer {
   background-color: #4CAF50;
