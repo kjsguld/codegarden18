@@ -1,0 +1,81 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Project>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "SiteMaster.cshtml";
+    var projects = Model.Content.Site().Descendants<Project>();
+
+    var mediaId = Umbraco.Field("picture");
+    //Get the MediaType to Write the URL
+    var media = Umbraco.Media(mediaId.ToString());
+    //Salve the Path into the Image
+    var image = media.Url;
+}
+
+    <div class="project row">
+       
+        <div class="firstBox col-sm-12">
+        <h4>@Umbraco.Field("headline")</h4>
+        <p>@Umbraco.Field("creator")</p>
+         </div>
+        <img src=@image alt="@Umbraco.Field("headline")"/> 
+        <div class="secondBox col-sm-12">
+            @Umbraco.Field("bodytext")
+        </div>
+        
+        <div class="col-sm-12 text-center mt-4">
+            <form class="vote" method="post">
+                <input type="hidden" name="project-id" value="@Model.Content.Id" />
+                <input type="text" name="ticket-id" placeholder="your ticket number">
+                <input type="submit" value="Vote Now" onclick="return vote();">
+            </form>
+        </div>
+        <div class="col-sm-12 text-center mt-2 status-icons">
+            <i id="rotating-icon" class="material-icons rotating">refresh</i>
+            <i id="success-icon" class="material-icons">check</i>
+            <i id="error-icon" class="material-icons">close</i>
+        </div>
+        <div id="vote-message" class="col-sm-12 mt-2 text-center">
+
+        </div>
+    </div>
+    
+    <script>
+        function vote() {
+            var pid = $('input[name=project-id]').val();
+            var tid = $('input[name=ticket-id]').val();
+
+            $('#success-icon').removeClass('active');
+            $('#error-icon').removeClass('active');
+
+            $('#rotating-icon').addClass('active');
+
+            $.ajax({
+                url: "/umbraco/api/vote/commitVote?ticketID=" + tid + "&projectID=" + pid,
+                context: document.body,
+                type: "GET",
+                dataType: "json",
+                success: function (result) {
+                    $('#rotating-icon').removeClass('active');
+                    if (result == "success") {
+                        $('#success-icon').addClass('active');
+                        $('#vote-message').html("Thanks for your vote.");
+
+                    } else {
+                        $('#vote-message').html("vote is invalid.");
+                    }
+                },
+                statusCode: {
+                    400: function () {
+                        $('#rotating-icon').removeClass('active');
+                        $('#error-icon').addClass('active');
+
+                        $('#vote-message').html("Please specify ticket ID.");
+                    }
+                }
+            })
+            return false;
+        }
+
+
+
+    </script>

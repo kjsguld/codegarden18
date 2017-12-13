@@ -1,0 +1,53 @@
+﻿.project {
+    font-family: Lato;
+
+    div.firstBox, div.secondBox {
+        padding-top: 5%;
+    }
+
+    h4, p {
+        color: white;
+        text-align: justify;
+    }
+
+    img {
+        width: 100%;
+        height: 200px;
+    }
+
+    form.vote {
+        input[type=submit] {
+            background-color: $cg-red;
+            border: none;
+            color: white;
+            position: relative;
+            height: 30px;
+            width: 100px;
+            margin-left: -.2em;
+        }
+
+        input[type=text] {
+            height: 30px;
+            border: none;
+            width: 200px;
+            color: black;
+            padding-left: 1em;
+        }
+    }
+
+    div.status-icons {
+        
+        i.material-icons{
+            font-size: 2.2rem;
+            display: none;
+        }
+
+        i.active{
+            display: block;
+        }
+    }
+
+    #vote-message{
+        color: $cg-font-color;
+    }
+}

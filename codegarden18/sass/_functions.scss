@@ -1,0 +1,11 @@
+﻿@function list-remove($list, $index) {
+    $newList: ();
+
+    @for $i from 1 through length($list) {
+        @if $i != $index {
+            $newList: append($newList, nth($list,$i), 'space');
+        }
+    }
+
+    @return $newList;
+}

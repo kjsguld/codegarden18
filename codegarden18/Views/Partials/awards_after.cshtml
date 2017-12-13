@@ -1,0 +1,79 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using codegarden18.classes
+@{
+    // get all votes
+    //var votes = Model.Content.Site().Descendants<Vote>();
+    var votes = Umbraco.TypedContent(1215).Descendants<Vote>();
+
+    // create abstract list of projects 
+    List<ProjectVote> list = new List<ProjectVote>();
+
+    // assign votes to projects
+    foreach(var vote in votes)
+    {
+        var thisItem = new ProjectVote();
+
+        // find item if it exists in list
+        var addableItem = list.Find(x => x.ProjectId == vote.ProjectID);
+        if (addableItem != null)
+        {
+            addableItem.Votes++;
+        }
+        else
+        {
+            // creation of new entry in list 
+            thisItem.ProjectId = vote.ProjectID;
+            thisItem.Votes = 1;
+
+            //get the id of parent catagory by knowing id and current project
+            var project = Model.Content.Descendants<Project>().Where(x => x.Id == vote.ProjectID);
+            var parentCategory = Model.Content.Site().Descendants<Category>().Where(x => x.Id == project.First().Parent.Id);
+
+            thisItem.CategoryId = parentCategory.First().Id;
+
+            list.Add(thisItem);
+        }
+    }
+
+    // sort ids based on the higest number of votes
+    List<ProjectVote> winners = list.OrderBy(x => x.CategoryId).ThenByDescending(x => x.Votes).ToList();
+
+    // create array of ids
+    List<int> idList = new List<int>();
+    int? lastCategoryId = null;
+
+    foreach(var sortedProject in winners)
+    {
+        if(sortedProject.CategoryId != lastCategoryId)
+        {
+            idList.Add(sortedProject.ProjectId);
+        }
+        lastCategoryId = sortedProject.CategoryId;
+    }
+
+    // query by id
+    var projects = Model.Content.Site().Descendants<Project>().Where(x => idList.Contains(x.Id));
+}
+
+
+<div class="awardsafter">
+    <div class ="title row">
+        <div class="col-sm-12">
+            <h1 class="text-white">@Umbraco.Field("headlineAfter")</h1>
+            <div class="content">
+                <div class="text-white">
+                    <p>@Umbraco.Field("bodytextAfter")</p>
+                </div>
+            </div>
+        </div>
+        @foreach (var project in projects)
+        {
+            <div class="col-sm-12">
+                <img class="img-fluid" src="@project.Picture.Url" alt="@project.Headline"/>
+                <h3>@project.Headline</h3>
+                <div>@project.Bodytext</div>
+            </div>
+        }
+        
+    </div>
+</div>

@@ -259,4 +259,6 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
-/codegarden18/Media/created-packages
+
+# umbraco packages
+/codegarden18/Media/created-packages/
