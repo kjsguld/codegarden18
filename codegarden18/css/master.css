@@ -1,4 +1,25 @@
-﻿/* Navigation */
+﻿@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+.rotating {
+  -webkit-animation: rotating 1.5s linear infinite;
+  -moz-animation: rotating 1.5s linear infinite;
+  -ms-animation: rotating 1.5s linear infinite;
+  -o-animation: rotating 1.5s linear infinite;
+  animation: rotating 1.5s linear infinite; }
+
+/* Navigation */
 .nav {
   right: 5%;
   top: 5%;
@@ -213,38 +234,37 @@
       bottom: 10px;
       position: relative; }
 
-._project {
+.project {
   font-family: Lato; }
-  ._project div.firstBox {
-    padding: 5%; }
-  ._project div.secondBox {
-    padding: 5%; }
-  ._project form.vote {
-    position: relative;
-    left: 15px; }
-  ._project h4, ._project p {
+  .project div.firstBox, .project div.secondBox {
+    padding-top: 5%; }
+  .project h4, .project p {
     color: white;
     text-align: justify; }
-  ._project img {
+  .project img {
     width: 100%;
     height: 200px; }
-  ._project .submit {
+  .project form.vote input[type=submit] {
     background-color: #EF5E5E;
     border: none;
     color: white;
     position: relative;
-    left: 20px;
-    bottom: 0.5px;
     height: 30px;
-    width: 100px; }
-  ._project input.box {
-    position: relative;
-    left: 25px;
+    width: 100px;
+    margin-left: -.2em; }
+  .project form.vote input[type=text] {
     height: 30px;
     border: none;
     width: 200px;
     color: black;
-    text-align: center; }
+    padding-left: 1em; }
+  .project div.status-icons i.material-icons {
+    font-size: 2.2rem;
+    display: none; }
+  .project div.status-icons i.active {
+    display: block; }
+  .project #vote-message {
+    color: #fff; }
 
 ._awardsbefore {
   font-family: Lato;
@@ -327,6 +347,9 @@ paddigbox {
 .baseBody {
   background-color: #413659;
   width: 100%; }
+
+i {
+  color: #fff; }
 
 /* content frontpage */
 .top-buffer {

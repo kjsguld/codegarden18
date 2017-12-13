@@ -1,6 +1,7 @@
 ﻿// --- base imports 
 @import '_variables.scss';
 @import '_functions.scss';
+@import '_animations.scss';
 
 // --- partial imports 
 @import '_navigation.scss';
@@ -26,6 +27,9 @@ paddigbox {
     width: 100%; 
 }
 
+i{
+    color: $cg-font-color;
+}
 
 /* content frontpage */
 .top-buffer {
