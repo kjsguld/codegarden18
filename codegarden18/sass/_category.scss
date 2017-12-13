@@ -43,14 +43,14 @@
         height: 10px;
         border: none;
         position: relative;
-        left: 325px;
+        left: 95%;
         top: 6px;
         margin-bottom: 3px;
         margin-top: 2px;
         color: white;
         top: 10px;
     }
-
+   
     a.vote {
         background-color: $cg-violet;
         float: right;
@@ -61,6 +61,7 @@
         font-size: small;
         padding-right: 7px;
         padding-left: 4px;
+        right:-10%;
     }
 
     div.content {
