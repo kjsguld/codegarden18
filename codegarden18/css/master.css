@@ -366,20 +366,20 @@
       margin-right: 12%; }
   .callToActionFrontpage .iconCallToAction {
     width: 60%; }
-    .callToActionFrontpage .iconCallToAction p {
+    .callToActionFrontpage .iconCallToAction i {
+      transform: rotate(-90deg);
       font-size: 50px;
-      background-color: #F36F21;
+      color: #F36F21;
       border-radius: 50%;
       text-align: center;
       width: 55%;
       display: flex;
-      justify-content: center;
       margin-right: 20%; }
       @media (max-width: 320px) {
-        .callToActionFrontpage .iconCallToAction p {
+        .callToActionFrontpage .iconCallToAction i {
           width: 65%; } }
       @media (max-width: 360px) {
-        .callToActionFrontpage .iconCallToAction p {
+        .callToActionFrontpage .iconCallToAction i {
           width: 60%; } }
   .callToActionFrontpage a {
     color: white; }
@@ -393,33 +393,37 @@ nav {
     width: 80%; }
     nav ul li.nav-item-top:nth-child(1)::before {
       width: 1rem;
-      height: 1rem; }
+      height: 1rem;
+      left: -0.5rem; }
     nav ul li.nav-item-top:nth-child(2)::before {
-      width: 1.25rem;
-      height: 1.25rem; }
+      width: 1.33333rem;
+      height: 1.33333rem;
+      left: -0.66667rem; }
     nav ul li.nav-item-top:nth-child(3)::before {
-      width: 1.5rem;
-      height: 1.5rem; }
+      width: 1.66667rem;
+      height: 1.66667rem;
+      left: -0.83333rem; }
     nav ul li.nav-item-top:nth-child(4)::before {
-      width: 1.75rem;
-      height: 1.75rem; }
-    nav ul li.nav-item-top:nth-child(5)::before {
       width: 1.5rem;
-      height: 1.5rem; }
+      height: 1.5rem;
+      left: -0.75rem; }
+    nav ul li.nav-item-top:nth-child(5)::before {
+      width: 1.16667rem;
+      height: 1.16667rem;
+      left: -0.58333rem; }
     nav ul li.nav-item-top:nth-child(6)::before {
-      width: 1.25rem;
-      height: 1.25rem; }
+      width: 0.83333rem;
+      height: 0.83333rem;
+      left: -0.41667rem; }
     nav ul li.nav-item-top:nth-child(7)::before {
-      width: 1rem;
-      height: 1rem; }
-    nav ul li.nav-item-top:nth-child(8)::before {
-      width: 0.75rem;
-      height: 0.75rem; }
+      width: 0.5rem;
+      height: 0.5rem;
+      left: -0.25rem; }
     nav ul li.nav-item-top {
       position: relative;
       list-style: none;
-      padding-left: 1.5rem;
-      line-height: 2rem;
+      padding-left: 2.4rem;
+      line-height: 2.4rem;
       margin-top: 0.25rem;
       margin-bottom: 0.25rem; }
       nav ul li.nav-item-top a {

@@ -12,10 +12,9 @@ nav {
     ul {
         width: 80%;
 
-        $divider: 4;
+        $divider: 3;
         $start: 1;
-        $end: 8; // even numbers gives an even spread after splitpoint
-
+        $end: 7; // even numbers gives an even spread after splitpoint
         @for $i from $start through $end {
             li.nav-item-top:nth-child(#{$i})::before {
                 @if $i <= $end/2 {
@@ -23,6 +22,7 @@ nav {
 
                     width: $size;
                     height: $size;
+                    left: -#{$size/2};
                 }
                 @else {
                     $size: $nav-before-width * (1 + ($end/2) / $divider);
@@ -31,6 +31,7 @@ nav {
 
                     width: $smaller-size;
                     height: $smaller-size;
+                    left: -#{$smaller-size/2};
                 }
             }
         }
@@ -39,8 +40,8 @@ nav {
         li.nav-item-top {
             position: relative;
             list-style: none;
-            padding-left: $nav-before-width * 1.5;
-            line-height: $nav-before-width * 2;
+            padding-left: $nav-before-width * 2.4;
+            line-height: $nav-before-width * 2.4;
             margin-top: $nav-before-width * .25;
             margin-bottom: $nav-before-width * .25;
 
@@ -68,6 +69,7 @@ nav {
             $bg-color-pos: index($cg-colors, $cg-violet);
             $new-colors: list-remove($cg-colors, $bg-color-pos);
 
+            // assign colors to :nth
             @each $current-color in $new-colors {
                 $i: index($new-colors, $current-color);
 

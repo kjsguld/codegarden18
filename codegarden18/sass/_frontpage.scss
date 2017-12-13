@@ -174,14 +174,14 @@
     .iconCallToAction {
         width: 60%;
 
-        p {
+        i {
+            transform: rotate(-90deg);
             font-size: 50px;
-            background-color: $cg-orange;
+            color: $cg-orange;
             border-radius: 50%;
             text-align: center;
             width: 55%;
             display: flex;
-            justify-content: center;
             margin-right: 20%;
 
             @media (max-width: 320px) {
