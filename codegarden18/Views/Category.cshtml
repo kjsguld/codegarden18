@@ -5,7 +5,8 @@
 
     var projects = Model.Content.Children<Project>();
 }
- 
+
+<div class="awardsTopBorder"></div>
 <div class="_category">
     <div class="firstBox">
         <h4><strong>@Umbraco.Field("Headline")</strong></h4>
@@ -14,40 +15,27 @@
     </div>
     @{
         int i = 1;
-    foreach (var project in projects)
-    {
+        foreach (var project in projects)
+        {
 
-         <div class="rect">
-                 <div id="dots-@i" class="dots-container">
-                     <a href="#" class="dots"></a>
-                     <a href="#" class="dots"></a>
-                     <a href="#" class="dots" ></a>
-                     <a class="vote" id="demo" href="@project.Url"></a>     
-                 </div>
-                 <div class="content">
-                     <div class="contentInfo"></div>
-                     <h5>@project.Headline </h5>
-                     <p> watch it: </p>
-                     <a href="@project.Http">@project.Http</a>
-                 </div>
-        </div>
-        i++;
+             <div class="rect">
+                     <div id="dots-@i" class="dots-container">
+                         <a href="#" class="dots"></a>
+                         <a href="#" class="dots"></a>
+                         <a href="#" class="dots" ></a>
+                         <a class="vote" id="demo" href="@project.Url"></a>     
+                     </div>
+                     <div class="content">
+                         <div class="contentInfo"></div>
+                         <h5>@project.Headline </h5>
+                         <p> watch it: </p>
+                         <a href="@project.Http">@project.Http</a>
+                     </div>
+            </div>
+            i++;
 
+        }
     }
-    }
-    <script>
-        $('.dots-container').click(function () {
-            $(this).attr('id');
-            console.log("test");
-            $(this).animate({ right: '10%' });
-            $(this).find(".vote").html("vote");
-           
-            
-        });
-
-
-       
-    </script>
     
 </div>
 

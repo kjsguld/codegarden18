@@ -77,6 +77,9 @@
   ._awardsbefore .box {
     padding: 5%; }
 
+.awardsTopBorder {
+  border-top: 5px solid #EF5E5E; }
+
 ._category .firstBox {
   padding: 5%; }
   ._category .firstBox p {
@@ -87,7 +90,7 @@
   background-color: #EF5E5E;
   color: white;
   text-align: right center;
-  z-index: 100;
+  z-index: 10;
   font-family: Lato;
   position: relative;
   bottom: 15px;

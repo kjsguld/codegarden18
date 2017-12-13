@@ -1,4 +1,7 @@
 $(document).ready(function () {
+
+    // ------ Navigation ------ //
+    
     $('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function () {
         $(this).toggleClass('open');
         $(".nav").toggleClass('open');
@@ -11,6 +14,24 @@ $(document).ready(function () {
         self.addClass('hiddenBox');
         target.removeClass('hiddenBox');
     });
+
+    // ------ Category (vote) ------ //
+
+    $('.dots-container').click(function () {
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+            $(this).animate({ right: '0' });
+            $(this).find(".vote").empty();
+        } else {
+            $(this).addClass('active');
+            $(this).animate({ right: '10%' });
+            $(this).find(".vote").html("vote");
+        }
+        
+        
+    });
+
+    // ------ Schedule ------ //
 
     $('#popUp').click(function () {
         $(this).toggleClass('open');
