@@ -76,21 +76,12 @@ $(document).ready(function () {
     });
 
 
-    //function of download your schedule, 
-
+    //function of download your schedule, creates a variable for a new javascript pdf. canvas2html creates from the variable "image" an canvas(an image) and then makes it to an html image that javascript can copy into the pdf file
+    // the variable width and heights tells the size of the image it tranfers to the jsPDF.
     function downloadYourOwnSchedule() {
 
         var doc = new jsPDF();
-        var specialElementHandlers = {
-            '#editor': function (element, renderer) {
-                return true;
-            }
-        };
-
-        var scrollWidth = $('#createYourOwnContent').prop('scrollWidth'); //document.getElementById("primary").style.width;
-        var scrollHeight = $('#screateYourOwnContent').prop('scrollHeight'); //document.getElementById("primary").style.height;
-        var width = $('#createYourOwnContent').width();
-        var height = $('#createYourOwnContent').height();
+        
 
         html2canvas(document.getElementById("createYourOwnContent"), { logging: true }).then(function (canvas) {
 
@@ -99,10 +90,14 @@ $(document).ready(function () {
             var width = $("#createYourOwnContent").width() / 3.5;
             var height = $("#createYourOwnContent").height() / 4 ;
             doc.addImage(image, 'JPEG', 50, 30, width, height);
+
+            //saves document 
             doc.save('Your-Awesome-Schedule.pdf');
         });
     
     }
+
+    //this calls the function  "downloadYourOwnSchedule" when the user clicks .downloadYourOwnSchedule
 
 
 
