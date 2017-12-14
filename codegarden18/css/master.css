@@ -857,6 +857,9 @@ nav {
         background-color: #f27e7e; }
 
 /* Navigation */
+nav.navbar-fixed-top {
+  margin-top: 32px; }
+
 .nav {
   position: fixed;
   width: 100%;
