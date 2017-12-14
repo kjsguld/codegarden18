@@ -82,32 +82,12 @@
     font-size: 2.5rem;
 }
 
-section {
-    display: block;
-}
-
 .block {
     max-width: 1600px;
     padding: 60px 15px;
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
-}
-
-a {
-    background-color: transparent;
-}
-
-a:active, a:hover {
-    outline: 0;
-}
-
-strong {
-    font-weight: bold;
-}
-
-small {
-    font-size: 80%;
 }
 
 *, *::before, *::after {
@@ -120,93 +100,9 @@ small {
     }
 }
 
-a, a:visited, a:hover {
-    text-decoration: none;
-}
-
-h2, h3 {
-    font-weight: bold;
-}
-
-h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    font-weight: 700;
-    color: $cg-orange;
-}
-
-@media (min-width: 992px) {
-    h2 {
-        font-size: 3rem;
-    }
-}
-
-h3 {
-    font-size: 0.6rem;
-    margin: 0 0 10px 0;
-}
-
-/* headlines with lines */
-.decorated {
-    overflow: hidden;
-    text-align: center;
-}
-
-.decorated > span {
-    position: relative;
-    display: inline-block;
-}
-
-.decorated > span:before, .decorated > span:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    border-bottom: 2px solid $cg-orange;
-    width: 592px; /* half of limiter */
-    margin: 0 20px;
-}
-
-.decorated > span:before {
-    right: 100%;
-}
-
-.decorated > span:after {
-    left: 100%;
-}
-
-@media (min-width: 992px) {
-    h3 {
-        font-size: 2.2rem;
-    }
-}
-
 .headline {
     text-align: center;
     display: block;
-}
-
-p {
-    font-size: 1.3rem;
-    line-height: 1.5;
-    margin: 5px 0;
-}
-
-@media (min-width: 992px) {
-    p {
-        font-size: 1.6rem;
-    }
-}
-
-small {
-    font-size: 1rem;
-    line-height: 1.5;
-    opacity: .6;
-}
-
-@media (min-width: 992px) {
-    small {
-        font-size: 1.3rem;
-    }
 }
 
 .day {
@@ -242,11 +138,11 @@ small {
     color: #ff9e30;
 }
 
-.day .program {
+.day {
     overflow: hidden;
 }
 
-.day .program-row {
+.day {
     float: left;
     width: 100%;
     border-bottom: 5px solid #413659;
