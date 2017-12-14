@@ -1,8 +1,31 @@
 ﻿/*
     Topbars
 */
+$topbarHeight: .5em;
 
+.aboutborder {
+    border-top: $topbarHeight solid $cg-orange;
+}
 
+.awardsTopBorder {
+    border-top: $topbarHeight solid $cg-red;
+}
+
+.feedTopBorder {
+    border-top: $topbarHeight solid $cg-red;
+}
+
+.schduleTopBorder {
+    border-top: $topbarHeight solid $cg-orange;
+}
+
+.odenseLifeBorder {
+    border-top: $topbarHeight solid $cg-green;
+}
+
+.speakerTopLine {
+    border-top: $topbarHeight solid $cg-green;
+}
 
 /* 
     Buttons 

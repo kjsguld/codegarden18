@@ -10,18 +10,19 @@
     //Salve the Path into the Image
     var image = media.Url;
 }
-
+<div class="awardsTopBorder"></div>
+<div class="container">
     <div class="project row">
-       
-        <div class="firstBox col-sm-12">
-        <h4>@Umbraco.Field("headline")</h4>
-        <p>@Umbraco.Field("creator")</p>
-         </div>
-        <img src=@image alt="@Umbraco.Field("headline")"/> 
+
+        <div class="firstBox col-sm-12 mt-4">
+            <h1>@Umbraco.Field("headline")</h1>
+            <p>@Umbraco.Field("creator")</p>
+        </div>
+        <img src=@image alt="@Umbraco.Field("headline")" />
         <div class="secondBox col-sm-12">
             @Umbraco.Field("bodytext")
         </div>
-        
+
         <div class="col-sm-12 text-center mt-4">
             <form class="vote" method="post">
                 <input type="hidden" name="project-id" value="@Model.Content.Id" />
@@ -38,7 +39,8 @@
 
         </div>
     </div>
-    
+</div>
+     
     <script>
         function vote() {
             var pid = $('input[name=project-id]').val();

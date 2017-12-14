@@ -13,7 +13,7 @@
 .firstbox { //TODO could be more scemantic
     background-color: $cg-lightblue;
     display: flex;
-    color: white;
+    color: $cg-font-color;
     width: 100%;
 }
 
@@ -123,7 +123,7 @@
 .landingPage {
     height: 100vh;
     justify-content: center;
-    color: white;
+    color: $cg-font-color;
     width: 100%;
     display: flex;
     display: -webkit-flex;
@@ -134,12 +134,10 @@
     }
 }
 
-
-
-.frontpageBlock { 
+.frontpageBlock {
     background-color: $cg-lightblue;
     display: flex;
-    color: white;
+    color: $cg-font-color;
     width: 100%;
     flex-direction: column;
 }
@@ -208,7 +206,7 @@
     }
 
     a {
-        color: white;
+        color: $cg-font-color;
     }
 
     .iconArrow {

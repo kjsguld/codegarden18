@@ -41,10 +41,10 @@
 
 @if (currentEvents.Any())
 {
-    <div class="container mt-5">
+    <div class="container mt-4">
         <div class="row">
             <div class="currentEvents col-sm-12">
-                <h5>Current events</h5>
+                <h2>Current events</h2>
                 @foreach (var item in currentEvents)
                 {
                     <div class="event">
@@ -67,7 +67,7 @@
 <div class="container @if(!currentEvents.Any()){ @Html.Raw("mt-5")} ">
     <div class="row">
         <div class="upcommingEvents col-sm-12">
-            <h5> Upcomming events</h5>
+            <h2> Upcomming events</h2>
             @foreach (var item in nextEvents)
             {
                 <div class="event">
@@ -93,7 +93,7 @@
             
             <div class="twitter mt-3">
                 <div class="twitterHeadline">
-                    <h5>Follow us on Twitter</h5>
+                    <h2>Follow us on Twitter</h2>
                 </div>
 
                 <div class="twitterFeed">
@@ -106,7 +106,7 @@
 
             <div class="instagram mt-5">
 
-                    <h5>Find us on Instagram</h5>
+                    <h2>Find us on Instagram</h2>
 
                 <div class="instagramProfiles">
                     <div class="profile1">
@@ -145,7 +145,7 @@
                     <h5> Like us on Facebook </h5>
 
 
-                <a class="button-red" href="~/Views/Feed.cshtml"> (ThumbsUP) Facebook </a>
+                <a class="button-red" href="~/Views/Feed.cshtml"> <i class="material-icons">thumb_up</i> Codegarden </a>
             </div>
            
 

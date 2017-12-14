@@ -43,14 +43,20 @@ paddigbox {
     padding-top: 10%;
     padding-bottom: 10%;
 }
+
+
+i, hr {
+    color: $cg-font-color;
+}
+hr{
+    border: 2px solid;
+}
+
+
 /* body */
 body.baseBody {
     color: $cg-font-color;
     background-color: $cg-violet;
     width: 100%; 
-}
-
-i{
-    color: $cg-font-color;
 }
 
