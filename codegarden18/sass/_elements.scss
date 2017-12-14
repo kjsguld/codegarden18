@@ -1,0 +1,41 @@
+﻿/*
+    Topbars
+*/
+
+
+
+/* 
+    Buttons 
+*/
+
+.buttonsDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 5% 5%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 80%;
+    margin-top: 5%;
+}
+
+.button-red {
+    @extend .button;
+    background-color: $cg-red;
+}
+
+.button-orange {
+    @extend .button;
+    background-color: $cg-orange;
+}
+
+.button-green {
+    @extend .button;
+    background-color: $cg-green;
+}

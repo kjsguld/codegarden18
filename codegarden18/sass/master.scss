@@ -2,22 +2,27 @@
 @import '_variables.scss';
 @import '_functions.scss';
 @import '_animations.scss';
+@import '_elements.scss';
+@import '_fonts.scss';
 
-// --- partial imports
+// --- page imports
 @import '_aboutHQ.scss';
 @import '_awardduring.scss';
 @import '_awardsbefore.scss';
 @import '_awardsafter.scss';
 @import '_category.scss';
 @import '_feed.scss';
-@import '_footer.scss';
 @import '_frontpage.scss';
-@import '_menu.scss';
-@import '_navigation.scss';
 @import '_odenseLife.scss';
 @import '_project.scss';
 @import '_schedule.scss';
 @import '_speakers.scss';
+
+// --- partial imports
+@import '_footer.scss';
+@import '_menu.scss';
+@import '_navigation.scss';
+
 
 a {
     transition: all .2s ease-in-out;
@@ -32,11 +37,6 @@ a:hover {
 .full-w-box {
     padding-left: 0;
     padding-right: 0;
-}
-
-
-p, h1, h2, h3, h4, h5, h6, a, span, strong, small{
-    font-family: 'Lato', sans-serif;
 }
 
 paddigbox {
@@ -54,51 +54,3 @@ i{
     color: $cg-font-color;
 }
 
-/* content frontpage */
-.top-buffer {
-    padding-top: 10%;
-}
-
-.buttom-buffer {
-    padding-bottom: 10%;
-}
-
-.firstbox { //TODO could be more scemantic
-    background-color: $cg-lightblue;
-    display: flex;
-    color: white;
-    width: 100%;
-}
-
-/* Buttons and elements */
-.buttonsDiv {
-    display: flex;
-    justify-content: center;
-}
-
-.button {
-    border: none;
-    color: white;
-    padding: 5% 5%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    width: 80%;
-    margin-top: 5%;
-}
-
-.button-red {
-    @extend .button;
-    background-color: $cg-red;
-}
-
-.button-orange {
-    @extend .button;
-    background-color: $cg-orange;
-}
-
-.button-green {
-    @extend .button;
-    background-color: $cg-green;
-}
