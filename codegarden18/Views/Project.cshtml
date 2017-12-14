@@ -63,6 +63,7 @@
                         $('#vote-message').html("Thanks for your vote.");
 
                     } else {
+                        $('#error-icon').addClass('active');
                         $('#vote-message').html("vote is invalid.");
                     }
                 },
@@ -72,6 +73,12 @@
                         $('#error-icon').addClass('active');
 
                         $('#vote-message').html("Please specify ticket ID.");
+                    },
+                    404: function () {
+                        $('#rotating-icon').removeClass('active');
+                        $('#error-icon').addClass('active');
+
+                        $('#vote-message').html("Vote service is offline.");                        
                     }
                 }
             })
