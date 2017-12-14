@@ -1,4 +1,8 @@
-﻿.bodyText {
+﻿.schduleTopBorder {
+    border-top: 5px solid $cg-orange;
+}
+
+.bodyText {
     color: $cg-font-color;
 }
 
@@ -51,17 +55,17 @@
 .roomBox {
     padding: .8rem;
     position: relative;
-}
 
-.roomBox p {
-    font-size: 1.2rem;
-    font-weight: 600;
-}
+    p {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
 
-.roomBox small {
-    font-size: .9rem;
-    line-height: 1.5;
-    opacity: .9;
+    small {
+        font-size: .9rem;
+        line-height: 1.5;
+        opacity: .9;
+    }
 }
 
 .roomBox:not(:last-child) {
@@ -76,10 +80,10 @@
     height: 40px;
     background-color: $cg-orange;
     border-radius: 10px;
-}
 
-.contextButton i {
-    font-size: 2.5rem;
+    i {
+        font-size: 2.5rem;
+    }
 }
 
 .block {
@@ -101,8 +105,6 @@
 }
 
 .headline {
-    text-align: center;
-    display: block;
 }
 
 .day {
@@ -129,13 +131,13 @@
 
 .day h3 {
     text-align: center;
-    padding: 1rem;
+    padding: 1rem 0;
     margin: 0;
     font-family: "Source Sans Pro", sans-serif;
     font-size: 2rem;
     font-weight: 700;
     font-style: italic;
-    color: #ff9e30;
+    color: $cg-orange;
 }
 
 .day {
@@ -145,8 +147,7 @@
 .day {
     float: left;
     width: 100%;
-    border-bottom: 5px solid #413659;
-    padding: .8rem .5rem;
+    border-bottom: 5px solid $cg-violet;
     transition: border-color .2s ease;
 }
 
@@ -155,19 +156,17 @@
     font-style: normal;
     font-weight: 400;
     src: url(https://fonts.gstatic.com/s/materialicons/v31/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
-    
-
 }
 
 .schedulePopUp {
     position: fixed;
     width: 100%;
     height: 100vh;
-    background-color: white;
+    background-color: $cg-font-color;
     bottom: 0;
     max-height: 30px;
     transition: all 0.45s ease;
-    z-index: 150;
+    z-index: 15;
     overflow: hidden;
     left: 0;
     box-shadow: 0px -3px 12px 0px black;
@@ -179,21 +178,25 @@
 
     .removeIcon {
         display: block;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         font-weight: 700;
         line-height: 1;
         color: #000;
-        text-shadow: 0 1px 0 #fff;
+        text-shadow: 0 1px 0 $cg-font-color;
         opacity: .5;
         float: none;
+
+        i {
+            margin-top: .3em;
+            font-size: 2rem;
+            color: #000;
+        }
     }
 
     a {
         transition: all 0s ease-in-out;
         text-decoration: none;
     }
-
-    
 }
 
 .schedulePopUp.open {
@@ -218,6 +221,11 @@
     flex-direction: column;
     flex-flow: wrap;
 
+    h3.day{
+        color:#000;
+        border: none;
+    }
+
     .createdScheduleBox {
         width: 45%;
         margin: 2%;
@@ -227,7 +235,7 @@
         align-items: center;
         background-color: $cg-violet;
         margin-top: 2%;
-        color: white;
+        color: $cg-font-color;
         position: relative;
 
         .removeContent {

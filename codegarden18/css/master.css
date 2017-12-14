@@ -34,8 +34,6 @@
 ._awardsduring {
   font-family: Lato;
   color: white; }
-  ._awardsduring .firstBox {
-    padding: 5%; }
   ._awardsduring .rect {
     background-color: #EF5E5E;
     width: 100%;
@@ -43,8 +41,7 @@
     border-color: #EF5E5E;
     margin-bottom: 15px;
     position: relative;
-    color: white;
-    bottom: 50px; }
+    color: white; }
     ._awardsduring .rect img {
       width: 70px;
       height: 70px;
@@ -67,8 +64,7 @@
     ._awardsduring .content p {
       text-align: justify;
       margin-right: 5px;
-      font-size: 10px;
-      bottom: 10px;
+      font-size: 0.65rem;
       position: relative; }
 
 ._awardsbefore {
@@ -656,6 +652,9 @@ nav {
   .project #vote-message {
     color: #fff; }
 
+.schduleTopBorder {
+  border-top: 5px solid #F36F21; }
+
 .bodyText {
   color: #fff; }
 
@@ -699,15 +698,13 @@ nav {
 .roomBox {
   padding: .8rem;
   position: relative; }
-
-.roomBox p {
-  font-size: 1.2rem;
-  font-weight: 600; }
-
-.roomBox small {
-  font-size: .9rem;
-  line-height: 1.5;
-  opacity: .9; }
+  .roomBox p {
+    font-size: 1.2rem;
+    font-weight: 600; }
+  .roomBox small {
+    font-size: .9rem;
+    line-height: 1.5;
+    opacity: .9; }
 
 .roomBox:not(:last-child) {
   padding-bottom: 20px;
@@ -720,12 +717,8 @@ nav {
   height: 40px;
   background-color: #F36F21;
   border-radius: 10px; }
-
-.contextButton i {
-  font-size: 2.5rem; }
-
-section {
-  display: block; }
+  .contextButton i {
+    font-size: 2.5rem; }
 
 .block {
   max-width: 1600px;
@@ -734,94 +727,12 @@ section {
   margin-right: auto;
   box-sizing: border-box; }
 
-a {
-  background-color: transparent; }
-
-a:active, a:hover {
-  outline: 0; }
-
-strong {
-  font-weight: bold; }
-
-small {
-  font-size: 80%; }
-
 *, *::before, *::after {
   box-sizing: border-box; }
 
 @media (min-width: 992px) {
   .block {
     padding: 60px; } }
-
-a, a:visited, a:hover {
-  text-decoration: none; }
-
-h2, h3 {
-  font-weight: bold; }
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  font-weight: 700;
-  color: #F36F21; }
-
-@media (min-width: 992px) {
-  h2 {
-    font-size: 3rem; } }
-
-h3 {
-  font-size: 0.6rem;
-  margin: 0 0 10px 0; }
-
-/* headlines with lines */
-.decorated {
-  overflow: hidden;
-  text-align: center; }
-
-.decorated > span {
-  position: relative;
-  display: inline-block; }
-
-.decorated > span:before, .decorated > span:after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  border-bottom: 2px solid #F36F21;
-  width: 592px;
-  /* half of limiter */
-  margin: 0 20px; }
-
-.decorated > span:before {
-  right: 100%; }
-
-.decorated > span:after {
-  left: 100%; }
-
-@media (min-width: 992px) {
-  h3 {
-    font-size: 2.2rem; } }
-
-.headline {
-  text-align: center;
-  display: block; }
-
-p {
-  font-size: 1.3rem;
-  line-height: 1.5;
-  margin: 5px 0; }
-
-@media (min-width: 992px) {
-  p {
-    font-size: 1.6rem; } }
-
-small {
-  font-size: 1rem;
-  line-height: 1.5;
-  opacity: .6; }
-
-@media (min-width: 992px) {
-  small {
-    font-size: 1.3rem; } }
 
 .day {
   width: 100%;
@@ -840,22 +751,21 @@ small {
 
 .day h3 {
   text-align: center;
-  padding: 1rem;
+  padding: 1rem 0;
   margin: 0;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 2rem;
   font-weight: 700;
   font-style: italic;
-  color: #ff9e30; }
+  color: #F36F21; }
 
-.day .program {
+.day {
   overflow: hidden; }
 
-.day .program-row {
+.day {
   float: left;
   width: 100%;
   border-bottom: 5px solid #413659;
-  padding: .8rem .5rem;
   transition: border-color .2s ease; }
 
 @font-face {
@@ -868,11 +778,11 @@ small {
   position: fixed;
   width: 100%;
   height: 100vh;
-  background-color: white;
+  background-color: #fff;
   bottom: 0;
   max-height: 30px;
   transition: all 0.45s ease;
-  z-index: 150;
+  z-index: 15;
   overflow: hidden;
   left: 0;
   box-shadow: 0px -3px 12px 0px black;
@@ -883,13 +793,17 @@ small {
   text-align: center; }
   .schedulePopUp .removeIcon {
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
     line-height: 1;
     color: #000;
     text-shadow: 0 1px 0 #fff;
     opacity: .5;
     float: none; }
+    .schedulePopUp .removeIcon i {
+      margin-top: .3em;
+      font-size: 2rem;
+      color: #000; }
   .schedulePopUp a {
     transition: all 0s ease-in-out;
     text-decoration: none; }
@@ -912,6 +826,9 @@ small {
   display: flex;
   flex-direction: column;
   flex-flow: wrap; }
+  .createYourOwnContent h3.day {
+    color: #000;
+    border: none; }
   .createYourOwnContent .createdScheduleBox {
     width: 45%;
     margin: 2%;
@@ -921,7 +838,7 @@ small {
     align-items: center;
     background-color: #413659;
     margin-top: 2%;
-    color: white;
+    color: #fff;
     position: relative; }
     .createYourOwnContent .createdScheduleBox .removeContent {
       position: absolute;
@@ -943,7 +860,7 @@ small {
   top: 0;
   left: 0;
   width: 100%;
-  height: 10px; }
+  height: 5px; }
 
 .speakerContainer p {
   word-break: break-word; }
@@ -968,6 +885,10 @@ small {
 
 .speakerDescription {
   color: #fff; }
+
+@media screen and (min-width: 460px) {
+  .img-fluid.speakerPicture {
+    max-width: 200px; } }
 
 a {
   transition: all .2s ease-in-out; }

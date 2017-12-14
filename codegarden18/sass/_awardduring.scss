@@ -3,10 +3,6 @@
     font-family: Lato;
     color: white;
 
-    .firstBox {
-        padding: 5%;
-    }
-
     .rect {
         background-color: $cg-red;
         width: 100%;
@@ -15,7 +11,7 @@
         margin-bottom: 15px;
         position: relative;
         color: white;
-        bottom:50px;
+
         img {
             width: 70px;
             height: 70px;
@@ -45,8 +41,7 @@
         p {
             text-align: justify;
             margin-right: 5px;
-            font-size:10px;
-            bottom: 10px;
+            font-size: 0.65rem;
             position:relative;
         }
     }

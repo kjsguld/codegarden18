@@ -5,14 +5,20 @@
     var presentations = Model.Content.Site().Descendants<Presentation>().OrderBy(x => x.StartTime);
 }
 
-<section id="schedule" class="schedule">
-    <div class="block">
-        <div class="container">
-            <h2 class="headline">@Model.Content.Headline</h2>
-            <div class="bodyText">@Model.Content.Bodytext</div> 
+<div class="schduleTopBorder"></div>
 
+<section id="schedule" class="schedule">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 mt-4">
+                <h2 class="headline">@Model.Content.Headline</h2>
+                <div class="bodyText">@Model.Content.Bodytext</div>
+            </div>
+        </div>
+        <div class="row">
     @{ 
         bool newday = true;
+        bool firstday = true;
         DateTime lastStartTime = new DateTime();
     }
 
@@ -22,22 +28,23 @@
         // evaluate newday
         newday = lastStartTime.DayOfYear != presentation.StartTime.DayOfYear ? true : false;
 
-        if (newday) // first case
+        if (newday && firstday)
         {
-        @:<div class="day">
-            @:<h3>@presentation.StartTime.ToString("dddd, MMMM d")</h3>
-        
+            firstday = false;
+            @:<div class="day col-sm-12">
+                @:<h3>@presentation.StartTime.ToString("dddd, MMMM d")</h3>
+        }
+        else if (newday) // case at newday but not first
+        {
+            @:</div>
+            @:<div class="day  col-sm-12">
+                @:<h3>@presentation.StartTime.ToString("dddd, MMMM d")</h3>
         }
         else if (newday && lastStartTime.Year > 1) // fix nullable yesterday workaround
         {
-        @:</div>
-        @:<div class="day">
-            @:<h3>@presentation.StartTime.ToString("dddd, MMMM d")</h3>
-        @:</div>
-        
-
-    }
-
+            @:<div class="day  col-sm-12">
+                @:<h3>@presentation.StartTime.ToString("dddd, MMMM d")</h3>
+        }
 
     <div class="timeBox">
         @{
@@ -101,9 +108,9 @@
     
         lastStartTime = presentation.StartTime;
     }
+    </div>
+</div>
 
-</div>
-</div>
 
         <div class="container">
             <div class="schedulePopUp">

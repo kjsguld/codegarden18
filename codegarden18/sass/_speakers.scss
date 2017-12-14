@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 10px;
+    height: 5px;
 }
 .speakerContainer {
     p{
@@ -37,4 +37,10 @@
 }
 .speakerDescription {
     color: #fff;
+}
+
+@media screen and (min-width: 460px) {
+    .img-fluid.speakerPicture {
+        max-width: 200px;
+    }
 }
