@@ -360,18 +360,6 @@ h1, h2 {
     width: 20%;
     margin-left: 10%; }
 
-.downArrow {
-  position: absolute;
-  bottom: 5%;
-  display: flex;
-  justify-content: center;
-  width: 100%; }
-  .downArrow a {
-    display: inline-block;
-    width: 12%; }
-  .downArrow img {
-    width: 100%; }
-
 .logo-container {
   margin: 0 auto;
   width: 65%; }
@@ -399,11 +387,26 @@ h1, h2 {
   height: 100vh;
   justify-content: center;
   color: #fff;
-  width: 100%;
   display: flex;
   display: -webkit-flex;
   display: flex;
   flex-direction: column; }
+  .landingPage .downArrow {
+    position: absolute;
+    bottom: 5%;
+    display: flex;
+    justify-content: center;
+    width: 100%; }
+    .landingPage .downArrow a {
+      display: inline-block;
+      width: 12%; }
+    .landingPage .downArrow img {
+      width: 100%; }
+  @media screen and (min-width: 460px) {
+    .landingPage .downArrow {
+      width: 95%; }
+      .landingPage .downArrow a {
+        width: 8%; } }
 
 .frontpageBlock {
   background-color: #04BFBF;
@@ -421,7 +424,7 @@ h1, h2 {
 .firstboxcontent {
   text-align: left;
   margin-left: 10%;
-  width: 70%; }
+  width: 80%; }
   .firstboxcontent span {
     width: 100%;
     display: block;

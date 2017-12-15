@@ -51,27 +51,6 @@
 }
 
 
-.downArrow {
-   position: absolute;
-   bottom: 5%;
-   display: flex;
-   justify-content: center;
-   width: 100%;
-
-   a {
-
-       display: inline-block;
-       width: 12%;
-       }
-
-    img {
-        width: 100%;
-        
-    }
-}
-
-
-
 .logo-container {
     margin: 0 auto;
     width: 65%;
@@ -124,11 +103,38 @@
     height: 100vh;
     justify-content: center;
     color: $cg-font-color;
-    width: 100%;
     display: flex;
     display: -webkit-flex;
     display: flex;
     flex-direction: column;
+
+
+    .downArrow {
+        position: absolute;
+        bottom: 5%;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        a {
+            display: inline-block;
+            width: 12%;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    @media screen and (min-width: 460px){
+        .downArrow{
+            width: 95%;
+
+            a{
+                width: 8%;
+            }
+        }
+    }
 
     .textUnderIdentity {
     }
@@ -158,7 +164,7 @@
 .firstboxcontent {
     text-align: left;
     margin-left: 10%;
-    width: 70%;
+    width: 80%;
     span{
         width: 100%;
         display: block;
